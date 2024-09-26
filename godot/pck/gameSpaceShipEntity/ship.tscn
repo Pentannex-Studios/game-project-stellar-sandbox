@@ -47,12 +47,7 @@ scale = Vector2(0.25, 0.25)
 texture = SubResource("AtlasTexture_eb2f0")
 
 [node name="shipCamera" type="Camera2D" parent="."]
-enabled = false
 zoom = Vector2(6, 6)
-limit_left = -540
-limit_top = -540
-limit_right = 540
-limit_bottom = 540
 limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true

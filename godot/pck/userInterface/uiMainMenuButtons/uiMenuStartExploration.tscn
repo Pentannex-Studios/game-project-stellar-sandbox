@@ -158,15 +158,15 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fkp5y")
 
 [node name="uiMenuStartAnimation" type="AnimationPlayer" parent="."]
-autoplay = "uiMenuStartHighlight"
-playback_process_mode = 0
+callback_mode_process = 0
 libraries = {
 "": SubResource("AnimationLibrary_jaeji")
 }
+autoplay = "uiMenuStartHighlight"
 
 [node name="uiMenuStartSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_trr1o")
-bus = &"SFX"
+bus = &"SFX Main"
 
 [connection signal="mouse_entered" from="." to="." method="_whenMouseEnteredButton"]
 [connection signal="mouse_exited" from="." to="." method="_whenMouseExitedButton"]

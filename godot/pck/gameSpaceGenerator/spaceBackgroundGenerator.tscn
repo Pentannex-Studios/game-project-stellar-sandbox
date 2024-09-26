@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ipqn6c3kseo2"]
+[gd_scene load_steps=7 format=3 uid="uid://ipqn6c3kseo2"]
 
 [ext_resource type="Script" path="res://godot/scr/spaceBackgroundGenerator.gd" id="1_yb6n2"]
-[ext_resource type="Texture2D" uid="uid://ddntvfhfjauqj" path="res://external/png/star/star2.png" id="2_ouwmk"]
+[ext_resource type="Texture2D" uid="uid://ddntvfhfjauqj" path="res://external/png/star/star2.png" id="2_qo7jg"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5hbrt"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nnm2l"]
 blend_mode = 1
@@ -10,65 +12,91 @@ blend_mode = 1
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.531579, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Gradient" id="Gradient_yq0er"]
+offsets = PackedFloat32Array(0.151786, 0.303571, 0.455357, 0.589286, 0.732143, 0.857143, 1)
+colors = PackedColorArray(1, 0.377811, 0.442103, 1, 1, 0.546665, 0.299869, 1, 0.999999, 0.967138, 0.555264, 1, 0.582829, 0.544708, 0.554469, 1, 1, 1, 1, 1, 0.324228, 0.358682, 1, 1, 0.0479181, 9.8668e-07, 0.304176, 1)
+
 [node name="spaceBgGen" type="Node2D"]
 process_priority = 1
 script = ExtResource("1_yb6n2")
 
-[node name="spacePllxMngr" type="ParallaxBackground" parent="."]
-layer = -1
+[node name="spacePllxMngr" type="Node2D" parent="."]
 
-[node name="spaceBgPllx" type="ParallaxLayer" parent="spacePllxMngr"]
-motion_scale = Vector2(0.1, 0.1)
+[node name="spaceBgPllx" type="Parallax2D" parent="spacePllxMngr"]
+scroll_scale = Vector2(0.1, 0.1)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(6700, 7000)
 
 [node name="spaceBgTex" type="Sprite2D" parent="spacePllxMngr/spaceBgPllx"]
 modulate = Color(0.101961, 0, 0.101961, 1)
+scale = Vector2(5, 5)
+texture = SubResource("PlaceholderTexture2D_5hbrt")
 
-[node name="spaceGPllx" type="ParallaxLayer" parent="spacePllxMngr"]
-motion_scale = Vector2(0.2, 0.2)
+[node name="spaceGPllx" type="Parallax2D" parent="spacePllxMngr"]
+scroll_scale = Vector2(0.2, 0.2)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(6700, 7000)
 
 [node name="spaceGasTex" type="Sprite2D" parent="spacePllxMngr/spaceGPllx"]
 modulate = Color(0.384314, 0, 0.352941, 1)
+scale = Vector2(5, 5)
 
-[node name="spaceG1Pllx" type="ParallaxLayer" parent="spacePllxMngr"]
-motion_scale = Vector2(0.4, 0.4)
+[node name="spaceG1Pllx" type="Parallax2D" parent="spacePllxMngr"]
+scroll_scale = Vector2(0.4, 0.4)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(6700, 7000)
 
 [node name="spaceGasTex1" type="Sprite2D" parent="spacePllxMngr/spaceG1Pllx"]
 modulate = Color(0.211765, 0.109804, 0.478431, 0.47451)
+z_index = 5
+scale = Vector2(5, 5)
 
-[node name="spaceG2Pllx" type="ParallaxLayer" parent="spacePllxMngr"]
-motion_scale = Vector2(0.6, 0.6)
+[node name="spaceG2Pllx" type="Parallax2D" parent="spacePllxMngr"]
+scroll_scale = Vector2(0.6, 0.6)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(6700, 7000)
 
 [node name="spaceGasTex2" type="Sprite2D" parent="spacePllxMngr/spaceG2Pllx"]
 modulate = Color(0.639216, 1, 1, 0.47451)
+z_index = 5
+scale = Vector2(5, 5)
 
-[node name="spaceSPllx" type="ParallaxLayer" parent="spacePllxMngr"]
-motion_scale = Vector2(0.9, 0.9)
+[node name="spaceSPllx" type="Parallax2D" parent="spacePllxMngr"]
+scroll_scale = Vector2(0.9, 0.9)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(6700, 7000)
 
 [node name="spaceStarTex" type="Sprite2D" parent="spacePllxMngr/spaceSPllx"]
+z_index = 5
+scale = Vector2(8, 8)
 
-[node name="spaceS1Pllx" type="ParallaxLayer" parent="spacePllxMngr"]
-motion_scale = Vector2(0.15, 0.15)
+[node name="spaceS1Pllx" type="Parallax2D" parent="spacePllxMngr"]
+scroll_scale = Vector2(0.15, 0.15)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(7000, 7000)
 
 [node name="spaceStarTex1" type="Sprite2D" parent="spacePllxMngr/spaceS1Pllx"]
+z_index = 5
+scale = Vector2(5, 5)
 
 [node name="spaceParticles" type="CPUParticles2D" parent="spacePllxMngr/spaceS1Pllx"]
+z_index = 10
 material = SubResource("CanvasItemMaterial_nnm2l")
-amount = 4096
+amount = 3128
 lifetime = 600.0
 randomness = 1.0
 lifetime_randomness = 1.0
 fixed_fps = 60
 local_coords = true
 draw_order = 1
-texture = ExtResource("2_ouwmk")
+texture = ExtResource("2_qo7jg")
 emission_shape = 3
-emission_rect_extents = Vector2(1080, 1080)
+emission_rect_extents = Vector2(7000, 7000)
 direction = Vector2(0, 0)
 gravity = Vector2(0, 0)
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_min = 0.01
-scale_amount_max = 0.2
+scale_amount_min = 0.1
+scale_amount_max = 0.6
 scale_amount_curve = SubResource("Curve_b0ilk")
-hue_variation_min = -1.0
-hue_variation_max = 1.0
+color_ramp = SubResource("Gradient_yq0er")

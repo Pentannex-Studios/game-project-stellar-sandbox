@@ -2,6 +2,6 @@
 
 [ext_resource type="Script" path="res://godot/scr/scnManager.gd" id="1_1da77"]
 
-[node name="scnManager" type="Node"]
+[node name="scnManager" type="Node" groups=["sceneManager"]]
 script = ExtResource("1_1da77")
 metadata/_edit_vertical_guides_ = [0.0]

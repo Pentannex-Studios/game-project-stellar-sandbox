@@ -5,10 +5,13 @@
 [node name="spacePhenoGen" type="Node2D"]
 script = ExtResource("1_k058o")
 
-[node name="spacePllxMngr" type="ParallaxBackground" parent="."]
-layer = 0
+[node name="spacePllxMngr" type="Node2D" parent="."]
 
-[node name="spacePTPllx" type="ParallaxLayer" parent="spacePllxMngr"]
-motion_scale = Vector2(0.2, 0.2)
+[node name="spacePTPllx" type="Parallax2D" parent="spacePllxMngr"]
+scroll_scale = Vector2(0.2, 0.2)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(6700, 7000)
 
 [node name="spacePhenoTex" type="Sprite2D" parent="spacePllxMngr/spacePTPllx"]
+z_index = 5
+scale = Vector2(5, 5)

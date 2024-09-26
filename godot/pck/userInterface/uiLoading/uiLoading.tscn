@@ -159,7 +159,7 @@ pivot_offset = Vector2(24, 24)
 theme_override_styles/panel = SubResource("StyleBoxFlat_x182q")
 
 [node name="uiAnimation" type="AnimationPlayer" parent="uiMenuLocateSectorSFX"]
-autoplay = "uiLoadingAnimation"
 libraries = {
 "": SubResource("AnimationLibrary_vw8ag")
 }
+autoplay = "uiLoadingAnimation"

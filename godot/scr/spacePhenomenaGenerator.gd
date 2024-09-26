@@ -15,9 +15,9 @@ func _exit_tree():
 
 #------------------------------------------------------------------------------#
 # IMPORTANT CODE: Load a thread for facilitating background loading
-func _loadThread(spacePheno: Array) -> void:
+func loadThread(spacePheno: Array) -> void:
 	# IGNORE: Debug
-	print("\nCreating thread for space phenomena texture loading...")
+	print("Creating thread for space phenomena texture loading...")
 	# IMPORTANT CODE: Checking if other "spacePhenomenaGenerationThread" are active
 	if is_instance_valid(_spacePhenoGenThread) and _spacePhenoGenThread.is_started():
 		_spacePhenoGenThread.wait_to_finish()
@@ -107,7 +107,19 @@ func _genSpacePheno(_spacePheno: Array) -> void:
 # IMPORTANT CODE: This is a must do due to space sector generation mechanic on menu.
 func revertSpacePhenomenaTexturesToDefault() -> void:
 	# IGNORE: Debug
-	print("Texture of nodes has been cleared.")
+	print("Texture of space phenomena nodes has been cleared.")
 	_spacePhenoTex = null
 	get_node("spacePllxMngr/spacePTPllx/spacePhenoTex").texture = null
+
+# Clear Threads.
+func clearSpaceGenThreads() -> void:
+	# IGNORE: Debug
+	print("Cleared and removed space phenomena threads properly.")
+	
+	# Dispose thread.
+	_spacePhenoGenThread.wait_to_finish()
+	
+	# Clear textures.
+	revertSpacePhenomenaTexturesToDefault()
+
 #------------------------------------------------------------------------------#

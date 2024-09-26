@@ -1,0 +1,59 @@
+[gd_scene load_steps=13 format=3 uid="uid://d0qos44ijyqv4"]
+
+[ext_resource type="Script" path="res://godot/scr/spaceEntityRockNormal.gd" id="1_8cd0b"]
+[ext_resource type="Texture2D" uid="uid://bqw7lpd67bsls" path="res://external/png/rocks/rock_00.png" id="2_ef4xr"]
+[ext_resource type="Texture2D" uid="uid://i13wbcdycge3" path="res://external/png/rocks/rock_01.png" id="3_vmlmt"]
+[ext_resource type="Texture2D" uid="uid://j0kxrp4pklah" path="res://external/png/rocks/rock_02.png" id="4_xw0u4"]
+[ext_resource type="Texture2D" uid="uid://b8ti04abf7ow6" path="res://external/png/rocks/rock_03.png" id="5_52o33"]
+[ext_resource type="Texture2D" uid="uid://c5bv1gqisktrc" path="res://external/png/rocks/rock_04.png" id="6_jx4o2"]
+[ext_resource type="Texture2D" uid="uid://c24qvv3vyxali" path="res://external/png/rocks/rock_05.png" id="7_bi1wu"]
+[ext_resource type="Texture2D" uid="uid://bmk76lfacw0y" path="res://external/png/rocks/rock_06.png" id="8_5qu7b"]
+[ext_resource type="Texture2D" uid="uid://dy7nhbtl8siyj" path="res://external/png/rocks/rock_07.png" id="9_wbsam"]
+[ext_resource type="Texture2D" uid="uid://bdww221duumbh" path="res://external/png/rocks/rock_08.png" id="10_8mmy1"]
+[ext_resource type="Texture2D" uid="uid://du7buwqyin067" path="res://external/png/rocks/rock_09.png" id="11_df1xh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khol7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ef4xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vmlmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xw0u4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_52o33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jx4o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bi1wu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5qu7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wbsam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8mmy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_df1xh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="rock" type="RigidBody2D"]
+script = ExtResource("1_8cd0b")
+
+[node name="texture" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_khol7")
+frame = 9

@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bih5luxeqykid"]
+[gd_scene load_steps=3 format=3 uid="uid://bih5luxeqykid"]
 
+[ext_resource type="Script" path="res://godot/scr/spaceGameProper.gd" id="1_5vue7"]
 [ext_resource type="PackedScene" uid="uid://dp51oah6gmomd" path="res://godot/pck/gameSpaceGenerator/spaceSectorManager.tscn" id="1_grwy1"]
 
 [node name="spaceGameProper" type="Node2D"]
+script = ExtResource("1_5vue7")
 
 [node name="spaceSectorManager" parent="." instance=ExtResource("1_grwy1")]

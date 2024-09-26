@@ -28,11 +28,12 @@ var trailLength: int = 10
 
 #------------------------------------------------------------------------------#
 func _ready() -> void:
+	pass
 	# Limit camera.
-	shipCamera.limit_top = -lib.spaceSectorSize / 2
-	shipCamera.limit_bottom = lib.spaceSectorSize / 2
-	shipCamera.limit_left = -lib.spaceSectorSize / 2
-	shipCamera.limit_right = lib.spaceSectorSize / 2
+#	shipCamera.limit_top = -lib.spaceSectorSize / 2
+#	shipCamera.limit_bottom = lib.spaceSectorSize / 2
+#	shipCamera.limit_left = -lib.spaceSectorSize / 2
+#	shipCamera.limit_right = lib.spaceSectorSize / 2
 
 func _input(_event) -> void:
 	# Moves the ship when left mouse button is pressed.
@@ -58,7 +59,7 @@ func changeShipColor(doRandomColor: bool, shipColorArray: Array) -> void:
 func _manageMovement(gDelta: float) -> void:
 	# Make the ship look at the mouse position.
 	var shipRot: float = (get_global_mouse_position() - global_position).angle()
-	rotation = lerp_angle(rotation, shipRotation, gDelta * 3)
+	rotation = lerp_angle(rotation, shipRot, gDelta * 3)
 	
 	# Facilitates movement.
 	if canMove:

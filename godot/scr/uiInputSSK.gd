@@ -31,6 +31,7 @@ func _unhandled_input(event) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if _uiSKKFocus: 
 				_uiSKKFocus = false
+				
 				_whenMouseExited() 
 				release_focus()
 
@@ -39,7 +40,9 @@ func _unhandled_input(event) -> void:
 func _checkSSK(SSK: String) -> int:
 	var _SSKValidity: Array[int] = [1, 1, 1, 1, 1, 1, 1]
 	var _SSKOverallValidity: int
+	
 	# IGNORE: Debug
+	print("\n#------------------------------------------------------------------------------#")
 	print("Checking SSK validity.")
 	
 	# SSK Validation Snippet.
@@ -49,23 +52,33 @@ func _checkSSK(SSK: String) -> int:
 			# IGNORE: Debug
 			print("    Validated SSK: Both brackets are present.")
 			_SSKValidity[0] = 3
+			
 			# The number 8 counts as 7 (INDEX)
 			if SSK.get_slice_count('|') == 8: 
+				
 				# IGNORE: Debug
 				print("    Validated SSK: 7 Delimiters are present.")
+				
 				_SSKValidity[1] = 3
+				
 				if SSK.get_slice("|", 6) in ["1", "2"]:
+					
 					# IGNORE: Debug
 					print("    Validated SSK: ", SSK.get_slice("|", 6), " is a valid space phenomena.")
+					
 					_SSKValidity[2] = 3
+					
 					for _sskColor in range(4):
 						if SSK.get_slice("|", _sskColor + 2).is_valid_html_color():
 							# IGNORE: Debug
 							print("    Validated SSK: Color ", SSK.get_slice("|", _sskColor + 2), " is a valid color.")
+							
 							_SSKValidity[_sskColor + 3] = 3
+						
 						else:
 							# IGNORE: Debug
 							print("    Validated SSK with warning: Invalid color code ", SSK.get_slice("|", _sskColor + 2), ".")    
+							
 							_SSKValidity[_sskColor + 3] = 2
 				else: 
 					# IGNORE: Debug
@@ -76,13 +89,17 @@ func _checkSSK(SSK: String) -> int:
 		else:
 			# IGNORE: Debug
 			print("    Invalidated SSK: Missing brackets.")  
-	else: _SSKValidity = [0, 0, 0, 0, 0, 0, 0]
+	
+	else: 
+		_SSKValidity = [0, 0, 0, 0, 0, 0, 0]
 	
 	# Visual return to SSK Input.
 	if _SSKValidity == [3, 3, 3, 3, 3, 3, 3]:
 		_SSKOverallValidity = 3
+	
 	elif _SSKValidity == [0, 0, 0, 0, 0, 0, 0]:
 		_SSKOverallValidity = 0
+	
 	else:
 		if _SSKValidity.has(2):
 			_SSKOverallValidity = 2
@@ -129,12 +146,16 @@ func _whenSSKLocBtnPressed():
 		await _uiSSKAnimation.animation_finished
 		_uiSSKAnimation.play_backwards("uiInputSSKHovered")
 		text = ""
+		
 		_whenTextChanged(text)
+	
 	else:
 		# If there's no text in SSK Input, the button will enter copy SSK mode.
 		DisplayServer.clipboard_set(lib.SSK)
 		_uiLocSSKBtn.text = "Copied To Clipboard!"
+		
 		await get_tree().create_timer(1).timeout
+		
 		_uiLocSSKBtn.text = "Retrieve Key"
 
 #------------------------------------------------------------------------------#
@@ -146,8 +167,10 @@ func _whenTextChanged(_stringText: String) -> void:
 		# Default, " "
 		0: 
 			modulate = Color.WHITE
+			
 			_uiLocSSKBtn.disabled = false
 			_uiSSKNote.text = ""
+			
 			# Changes to copy SSK if no text is placed.
 			_uiLocSSKBtn.text = "Retrieve Key"
 			_uiSSKLocMode = true
@@ -155,23 +178,31 @@ func _whenTextChanged(_stringText: String) -> void:
 		# Invalid SSK
 		1: 
 			modulate = Color.RED
+			
 			_uiLocSSKBtn.disabled = true
 			_uiSSKNote.text = "Invalid SSK. Check for 'key' errors."
+			
 			# Changes to locate SSK if text is placed.
 			_uiLocSSKBtn.text = "Locate Sector"
 			_uiSSKLocMode = false
+		
 		# Valid SSK Format, But presets are error. Will replace them randomly.
 		2: 
 			modulate = Color.AQUA
+			
 			_uiLocSSKBtn.disabled = false
-			_uiSSKNote.text = "Warning! Corrupted SSK. Might affect location protocol."
+			_uiSSKNote.text = "Warning! Corrupted SSK. Ignore protocol?"
+			
 			# Changes to locate SSK if text is placed.
 			_uiLocSSKBtn.text = "Locate Sector"
 			_uiSSKLocMode = false
+		
 		# Valid and Accepted SSK Format, no change done.
 		3: 
 			modulate = Color.GREEN
+			
 			_uiSSKNote.text = "Valid SSK. Welcome home."
+			
 			# Changes to locate SSK if text is placed.
 			_uiLocSSKBtn.text = "Locate Sector"
 			_uiSSKLocMode = false

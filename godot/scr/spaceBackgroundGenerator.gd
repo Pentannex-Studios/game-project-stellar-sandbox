@@ -20,10 +20,10 @@ var _spaceAsstsIdx: int = 1
 # Check "lib.gd" -> CONFIGURATION section for default values. 
 func _ready() -> void:
 	# Change "lockDef" to true when you want to maintain default configuration.
-	# "lockDefault" will run if you started this scene as standalone (Without "spaceSectorManager.tscn", scene manager).
+	# "lockDef" will run if you started this scene as standalone (Without "spaceSectorManager.tscn", scene manager).
 	var lockDef: bool = false
 	if lockDef or get_parent() == get_tree().root:
-		_loadThread(
+		loadThread(
 			[
 				[
 					lib.genRand(lib.minSpawnSeed, lib.maxSpawnSeed), 
@@ -46,15 +46,17 @@ func _exit_tree():
 
 #------------------------------------------------------------------------------#
 # IMPORTANT CODE: Load a thread for facilitating background loading
-func _loadThread(spaceArray: Array) -> void:
+func loadThread(spaceArray: Array) -> void:
 	# IGNORE: Debug
-	print("\nCreating thread for background texture loading...")
+	print("Creating thread for background texture loading...")
+	
 	# IMPORTANT CODE: Checking if other "spaceGenerationThreads" are active
 	if is_instance_valid(_spaceGenThread) and _spaceGenThread.is_started():
 		_spaceGenThread.wait_to_finish()
 	
 	# Create a new thread.
 	_spaceGenThread = Thread.new()
+	
 	# IGNORE: Debug
 	print("Thread ", _spaceGenThread, " has been created!\n")
 	
@@ -82,6 +84,7 @@ func _loadThread(spaceArray: Array) -> void:
 	
 	# Proceed to the thread function
 	_spaceGenThread.start(_genSpace.bind(spaceArray))
+	
 	# IGNORE: Debug
 	print("Printing array contents to be sent in thread ", _spaceGenThread, ": ", spaceArray)
 	# IGNORE: Debug
@@ -92,6 +95,7 @@ func _genSpace(spaceArray: Array) -> void:
 	# IGNORE: Debug
 	print("\nThread function initiated!\n")
 	print("Generating textures now.")
+	
 	# Loop basic information to the textures.
 	for _spaceTextureGenerationIteration in range(6):
 		# Creating the default configuration of the textures.
@@ -126,6 +130,7 @@ func _genSpace(spaceArray: Array) -> void:
 			_spaceTexColorRamp.colors = [Color("1a001a"), spaceArray[0][1]]
 			# IGNORE: Debug
 			print("    Adjusted space background texture! ", spaceArray[1][_spaceTextureGenerationIteration])
+		
 		elif _spaceAsstsIdx in range(2, 5):  
 			# Space gases generation.
 			# Decide to show texture or not.
@@ -138,31 +143,38 @@ func _genSpace(spaceArray: Array) -> void:
 				elif _spaceAsstsIdx == 4:
 					_spaceTexNoise.noise_type = FastNoiseLite.TYPE_PERLIN
 					_spaceTexColorRamp.offsets = [0.25, 1]
+			
 			else:
 				# Removes the objects in texture if texture is not visible to save memory.
 				spaceArray[1][_spaceTextureGenerationIteration].noise = null
 				spaceArray[1][_spaceTextureGenerationIteration].color_ramp = null
 				# IGNORE: Debug
 				print("    Queue Free'd' a texture because modulate is 0. ", spaceArray[1][_spaceTextureGenerationIteration])
+			
 			print("    Adjusted a space gas texture! ", spaceArray[1][_spaceTextureGenerationIteration], " Index: ", _spaceAsstsIdx)
+		
 		elif _spaceAsstsIdx > 4: 
 			# Space star generation.
 			_spaceTexNoise.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
 			_spaceTexNoise.frequency = 0.15
 			_spaceTexNoise.fractal_octaves = 5
 			_spaceTexNoise.fractal_gain = 2
+			
 			if _spaceAsstsIdx == 5:
 				_spaceTexColorRamp.offsets = [0.85, 1]
 				# IGNORE: Debug
 				print("    Adjusted a space star texture! ", spaceArray[1][_spaceTextureGenerationIteration])
+			
 			elif _spaceAsstsIdx == 6:
 				_spaceTexColorRamp.offsets = [0.80, 1]
 				# IGNORE: Debug
 				print("    Adjusted a space star texture! ", spaceArray[1][_spaceTextureGenerationIteration])
+		
 		# Increase index by 1 to determine what type of adjustments to add in the textures.
 		# IGNORE: Debug
 		print("    Iteration complete! Incrementing. \n")
 		_spaceAsstsIdx += 1
+		
 		# Removes objects from variable so when set the main texture to null, they will also be changed to null.
 		_spaceTexNoise = null
 		_spaceTexColorRamp = null
@@ -176,13 +188,15 @@ func _genSpace(spaceArray: Array) -> void:
 # IMPORTANT CODE: This is a must do due to space sector generation mechanic on menu.
 func revertSpaceTexturesToDefault() -> void:
 	# IGNORE: Debug
-	print("Texture of nodes has been cleared.")
+	print("Texture of space generation nodes has been cleared.")
+	
 	_spaceBgTexture = null
 	_spaceGasTex = null
 	_spaceGasTex1 = null
 	_spaceGasTex2 = null
 	_spaceStarTex = null
 	_spaceStarTex1 = null
+	
 	get_node("spacePllxMngr/spaceBgPllx/spaceBgTex").texture = null
 	get_node("spacePllxMngr/spaceGPllx/spaceGasTex").texture = null
 	get_node("spacePllxMngr/spaceG1Pllx/spaceGasTex1").texture = null
@@ -192,5 +206,16 @@ func revertSpaceTexturesToDefault() -> void:
 	get_node("spacePllxMngr/spaceGPllx/spaceGasTex").modulate = Color(1, 1, 1, 1)
 	get_node("spacePllxMngr/spaceG1Pllx/spaceGasTex1").modulate = Color(1, 1, 1, 1)
 	get_node("spacePllxMngr/spaceG2Pllx/spaceGasTex2").modulate = Color(1, 1, 1, 1)
+
+# Clear Threads.
+func clearSpaceGenThreads() -> void:
+	# IGNORE: Debug
+	print("Cleared and removed space generation thread properly.")
+	
+	# Dispose thread.
+	_spaceGenThread.wait_to_finish()
+	
+	# Clear textures.
+	revertSpaceTexturesToDefault()
 
 #------------------------------------------------------------------------------#

@@ -6,14 +6,21 @@ extends Node2D
 # Shows quotes from "lib.gd"
 @onready var _uiQuote: Label = get_node("uiLayer/uiMenu/uiLogoGrp/uiLabel")
 
+# Sound.
+#@onready var _uiBGM: AudioStreamPlayer = get_node("uiLayer/uiMenu/uiBgPlayer")
+
 # UI Elements animation. Button hover etc not included.
-@onready var _uiAnim: AnimationPlayer = get_node("uiLayer/uiMenu/uiLogoGrp/uiAnim")
-@onready var _uiAnimMngr: AnimationTree = get_node("uiLayer/uiMenu/uiLogoGrp/uiAnimMngr")
+@onready var _uiAnim: AnimationPlayer = get_node("uiLayer/uiMenu/uiAnim")
+@onready var _uiAnimMngr: AnimationTree = get_node("uiLayer/uiMenu/uiAnimMngr")
+
+# Root UI Node.
+#@onready var _uiRoot: Control = get_node("uiLayer/uiMenu")
 
 # Main menu buttons.
-#@onready var _userInterfaceStartExplorationBtn: Button = get_node("userInterfaceMenuLayer/userInterfaceMenu/uiMenuButtonGroup/uiMenuStartExploration")
+@onready var _uiStartExplorationBtn: Button = get_node("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn")
 @onready var _uiNewSectGenBtn: Button = get_node("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn")
 @onready var _uiLocSectBtn: Button = get_node("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn")
+@onready var _uiExitGameBtn: Button = get_node("uiLayer/uiMenu/uiBtnGrp/uiMenuExit")
 
 # Locate Sector buttons and inputs.
 @onready var _uiSSK: LineEdit = get_node("uiLayer/uiMenu/uiLocSect/uiSSK")
@@ -28,11 +35,14 @@ signal _montage
 func _ready() -> void:
 	# Starts the animation tree.
 	_uiAnimMngr.active = true
+	
 	# Connects the signals to its respective functions.
 	# Most of these are input buttons. 
+	_uiStartExplorationBtn.connect("exploreSpaceSector", Callable(self, "_proceedToSect"))
 	_uiNewSectGenBtn.connect("discoverSpaceSector", Callable(self, "_generateNewSect"))
 	_uiLocSectBtn.connect("locateSpaceSector", Callable(self, "_locateSect"))
 	_uiSSK.connect("locatingSpaceSector", Callable(self, "_locatingSect"))
+	_uiExitGameBtn.connect("exitGame", Callable(self, "_exitGame"))
 	
 	# Starts the camera animation and changes the quote.
 	_montage.emit()
@@ -43,8 +53,8 @@ func _input(_event) -> void:
 
 # Fires when input event happens and no GUI detects it.
 # Useful for closing panels by just clicking outside.
-func _unhandled_input(event) -> void:
-	if event is InputEventMouseButton:
+func _unhandled_input(_event) -> void:
+	if _event is InputEventMouseButton:
 		if _uiLocFocused:
 			_uiLocFocused = false
 			_locateSect(1)
@@ -55,37 +65,44 @@ func _montageGame() -> void:
 	# Locks the camera to be changed.
 	if !_menuCamChanged:
 		_menuCamChanged = true
-		var _menuCamZoom: Vector2 = lib.genRandVec2(4, 5)
-		_menuCamera.zoom =_menuCamZoom
+		var _menuCamZoom: Vector2 = lib.genRandVec2(0.5, 1, "float")
+		_menuCamera.zoom = _menuCamZoom
+	
 	# Gets a random quote to show on the title.
 	_uiQuote.text = lib.uiQuotes[lib.genRand(0,  lib.uiQuotes.size() - 1)]
+	
 	# IMPORTANT CODE: Manages camera animation on main menu.
 	var _menuCamTween: Tween = create_tween()
 	@warning_ignore("integer_division")
-	var _menuCamPos: Vector2 = lib.genRandSplitVec2(-lib.sectSize / 2, lib.sectSize / 2)
-	var _menuCamDuration: float = lib.genRand(60, 120, "float")
+	
+	var _menuCamPos: Vector2 = lib.genRandSplitVec2(-lib.sectSize, lib.sectSize)
+	var _menuCamDuration: float = lib.genRand(45, 90, "float")
+	
 	_menuCamTween.tween_property(_menuCamera, "global_position", _menuCamPos, _menuCamDuration).set_ease(Tween.EASE_OUT)
+	
 	await _menuCamTween.finished
 	_montage.emit()
 
 # Proceed to sector.
 func _proceedToSect() -> void:
-	pass
+	# Play the introduction animation on overlay while adding the playthrough.
+	_uiAnim.play("travelToSector")
 
 # Generate new sector.
 func _generateNewSect() -> void:
 	# Play the loading animation on overlay while generating another sector.
 	_uiAnim.play("generateNewSectorFade")
+	
 	# IMPORTANT CODE: Timer is a must to ensure that the animation overlay will not be late and make the loading visible.
 	await get_tree().create_timer(1.1).timeout
 	
 	# Call a signal to sector manager. To revert textures.
-	get_tree().call_group("spaceSectorManager", "revertTexturesOfSpaceTextures", true)
+	get_tree().call_group("spaceSectorManager", "reloadSpaceSector", "randomized")
 
 # Locate specified sector.
-func _locateSect(mode: int = 0) -> void:
+func _locateSect(_mode: int = 0) -> void:
 	# Play the locate overlay.
-	if mode == 0:
+	if _mode == 0:
 		_uiAnim.play("locateSectorOverlay")
 		_uiLocFocused = true
 	else: 
@@ -95,9 +112,20 @@ func _locateSect(mode: int = 0) -> void:
 func _locatingSect() -> void:
 	_uiLocFocused = false
 	_uiAnim.play_backwards("locateSectorOverlay")
+	
 	# Waiting for the panel to disappear to continue.
 	await _uiAnim.animation_finished
 	_uiAnim.play("generateNewSectorFade")
+	
 	# IMPORTANT CODE: Timer is a must to ensure that the animation overlay will not be late and make the loading visible.
 	await get_tree().create_timer(1.1).timeout
-	get_tree().call_group("spaceSectorManager", "revertTexturesOfSpaceTextures", false)
+	
+	get_tree().call_group("spaceSectorManager", "reloadSpaceSector", "preset")
+
+# Exit Game.
+func _exitGame() -> void:
+	# Call a signal to sector manager. To clear textures.
+	get_tree().call_group("spaceSectorManager", "disposeSpaceSector")
+	
+	# Signal to quit game.
+	get_tree().call_group("sceneManager", "quitGame")

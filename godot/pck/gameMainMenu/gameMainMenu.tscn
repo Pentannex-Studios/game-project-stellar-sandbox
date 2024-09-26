@@ -1,18 +1,20 @@
-[gd_scene load_steps=26 format=3 uid="uid://cl5mvnsyob8pv"]
+[gd_scene load_steps=43 format=3 uid="uid://cl5mvnsyob8pv"]
 
 [ext_resource type="Script" path="res://godot/scr/gameMainMenu.gd" id="1_u50fn"]
-[ext_resource type="AudioStream" uid="uid://dubo1ar17pvbt" path="res://external/aud/bgm/httpswww.fesliyanstudios.commusicfiles2023-05-02_-_Galaxys_Endless_Expanse_-_www.FesliyanStudios.com2023-05-02_-_Galaxys_Endless_Expanse_-_www.FesliyanStudios.com.mp3" id="2_a52l8"]
+[ext_resource type="AudioStream" uid="uid://pp5mvw30ygg7" path="res://external/aud/bgm/httpswww.fesliyanstudios.commusicfiles2023-05-02_-_Galaxys_Endless_Expanse_-_www.FesliyanStudios.com2023-05-02_-_Galaxys_Endless_Expanse_-_www.FesliyanStudios.com.mp3" id="2_a52l8"]
 [ext_resource type="FontFile" uid="uid://b7v8fse3db07l" path="res://external/font/RobotoCondensed-LightItalic.ttf" id="3_bsvqu"]
 [ext_resource type="Texture2D" uid="uid://bxob6lbcb0hdo" path="res://external/png/logo/Godot Logo.png" id="4_vwqxi"]
-[ext_resource type="Texture2D" uid="uid://d3jciavnfpe67" path="res://external/png/logo/PS Logo wName.png" id="5_5c6o5"]
+[ext_resource type="Texture2D" uid="uid://chq4nnybg1jnm" path="res://external/png/logo/eseyem.png" id="5_bmasy"]
 [ext_resource type="PackedScene" uid="uid://b357pus0d553w" path="res://godot/pck/userInterface/uiMainMenuButtons/uiMenuStartExploration.tscn" id="6_sdq32"]
 [ext_resource type="PackedScene" uid="uid://bv38r65el0wun" path="res://godot/pck/userInterface/uiLoading/uiLoading.tscn" id="6_xkrxe"]
 [ext_resource type="PackedScene" uid="uid://dl052par3gshi" path="res://godot/pck/userInterface/uiInput/uiInputSSK.tscn" id="7_8hp2b"]
 [ext_resource type="PackedScene" uid="uid://dgurew8fui5pv" path="res://godot/pck/userInterface/uiMainMenuButtons/uiMenuGenerateNewSector.tscn" id="7_blbwu"]
 [ext_resource type="PackedScene" uid="uid://bp6uu25kxrene" path="res://godot/pck/userInterface/uiMainMenuButtons/uiMenuLocateSector.tscn" id="7_fgblm"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ly7jo"]
-animation = &"RESET"
+[ext_resource type="PackedScene" uid="uid://eo7j2g77qayc" path="res://godot/pck/userInterface/uiMainMenuButtons/uiMenuExit.tscn" id="8_eiuwx"]
+[ext_resource type="FontFile" uid="uid://bkedubf4jve6l" path="res://external/font/RobotoCondensed-Regular.ttf" id="12_gub7f"]
+[ext_resource type="AudioStream" uid="uid://0xi6fy2boypb" path="res://external/aud/fx/392972__morganpurkis__radio-wave.wav" id="13_1i2da"]
+[ext_resource type="AudioStream" uid="uid://15ia6wvw2rlx" path="res://external/aud/fx/259710__alienxxx__radio_beep.wav" id="13_cg83b"]
+[ext_resource type="AudioStream" uid="uid://cddbvs3x8fq72" path="res://external/aud/fx/mixkit-radio-waves-glitch-white-noise-1041.wav" id="14_1tdah"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p0vh3"]
 animation = &"RESET"
@@ -33,18 +35,20 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ra0ku"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_r12ew"]
 states/End/position = Vector2(953.333, 88.0494)
 states/RESET/node = SubResource("AnimationNodeAnimation_p0vh3")
 states/RESET/position = Vector2(210.667, 89.4074)
-"states/RESET 2/node" = SubResource("AnimationNodeAnimation_ly7jo")
-"states/RESET 2/position" = Vector2(966.667, 146)
 states/Start/position = Vector2(60, 89.3333)
 states/uiLogoShowcaseAnimation/node = SubResource("AnimationNodeAnimation_ruwj2")
-states/uiLogoShowcaseAnimation/position = Vector2(437.333, 87.1029)
+states/uiLogoShowcaseAnimation/position = Vector2(436, 87.9588)
 states/uiMainMenuAnimation/node = SubResource("AnimationNodeAnimation_tbct6")
 states/uiMainMenuAnimation/position = Vector2(714.667, 87.8765)
-transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_dsdmg"), "RESET", "uiLogoShowcaseAnimation", SubResource("AnimationNodeStateMachineTransition_exm2w"), "uiLogoShowcaseAnimation", "uiMainMenuAnimation", SubResource("AnimationNodeStateMachineTransition_si82f")]
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_dsdmg"), "RESET", "uiLogoShowcaseAnimation", SubResource("AnimationNodeStateMachineTransition_exm2w"), "uiLogoShowcaseAnimation", "uiMainMenuAnimation", SubResource("AnimationNodeStateMachineTransition_si82f"), "uiMainMenuAnimation", "End", SubResource("AnimationNodeStateMachineTransition_ra0ku")]
 
 [sub_resource type="Animation" id="Animation_h3ajy"]
 length = 0.001
@@ -63,7 +67,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiPentannexIcon:modulate")
+tracks/1/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiEseyemIcon:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -147,31 +151,31 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiAnimMngr:active")
+tracks/8/path = NodePath("uiLayer/uiMenu/uiLocSect:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("uiLayer/uiMenu/uiLocSect:modulate")
+tracks/9/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [2]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
+tracks/10/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:mouse_filter")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -183,7 +187,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:mouse_filter")
+tracks/11/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:mouse_filter")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -195,7 +199,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:mouse_filter")
+tracks/12/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -207,7 +211,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
+tracks/13/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:mouse_filter")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -215,6 +219,138 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [2]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("uiLayer/uiMenu:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:disabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:disabled")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:disabled")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:editable")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("uiLayer/uiCutScenes/uiCSAnimMngr:active")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("uiLayer/uiMenu/uiOverlay:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("uiLayer/uiMenu/uiBgPlayer:volume_db")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("uiLayer/uiMenu/uiOverlay:color")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("uiCamera:enabled")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_cwcnj"]
@@ -330,7 +466,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.45),
 "transitions": PackedFloat32Array(0.25, 0.25),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.960784)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -363,10 +499,10 @@ tracks/3/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [2]
+"values": [0, 2]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -405,6 +541,178 @@ tracks/6/keys = {
 "values": [2, 0]
 }
 
+[sub_resource type="Animation" id="Animation_oayup"]
+resource_name = "travelToSector"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiLayer/uiMenu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiLayer/uiMenu/uiBgPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:editable")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("uiLayer/uiCutScenes/uiCSAnimMngr:active")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:mouse_filter")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:mouse_filter")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:mouse_filter")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("uiLayer/uiMenu/uiBgPlayer:volume_db")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-10.0, -80.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("uiCamera:enabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_31sw0"]
 resource_name = "uiLogoShowcaseAnimation"
 length = 25.0
@@ -423,7 +731,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiPentannexIcon:modulate")
+tracks/1/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiEseyemIcon:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -432,60 +740,58 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".")
+tracks/2/path = NodePath("uiLayer/uiMenu/uiOverlay:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_montageOnGameScreen"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("uiLayer/uiMenu/uiOverlay:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 24, 25),
+"times": PackedFloat32Array(0, 23.5, 24.5),
 "transitions": PackedFloat32Array(1, 0.5, 0.5),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(16.1, 17.1, 24, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("uiLayer/uiMenu/uiBgPlayer:playing")
+tracks/4/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [2]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiLabel:modulate")
+tracks/5/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:mouse_filter")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(16.1, 17.1, 24, 25),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
+tracks/6/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:mouse_filter")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -497,7 +803,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:mouse_filter")
+tracks/7/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -509,7 +815,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:mouse_filter")
+tracks/8/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:mouse_filter")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -521,14 +827,50 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
+tracks/9/path = NodePath("uiLayer/uiMenu/uiOverlay:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("uiLayer/uiMenu/uiBgPlayer:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("uiLayer/uiMenu/uiOverlay:color")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("uiCamera:enabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_mp2rc"]
@@ -560,31 +902,31 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiAnimMngr:active")
+tracks/2/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [2]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
+tracks/3/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
+tracks/4/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:mouse_filter")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -596,7 +938,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:mouse_filter")
+tracks/5/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:mouse_filter")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -608,7 +950,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:mouse_filter")
+tracks/6/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:mouse_filter")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -623,6 +965,7 @@ _data = {
 "RESET": SubResource("Animation_h3ajy"),
 "generateNewSectorFade": SubResource("Animation_cwcnj"),
 "locateSectorOverlay": SubResource("Animation_pjph0"),
+"travelToSector": SubResource("Animation_oayup"),
 "uiLogoShowcaseAnimation": SubResource("Animation_31sw0"),
 "uiMainMenuAnimation": SubResource("Animation_mp2rc")
 }
@@ -631,13 +974,500 @@ _data = {
 font = ExtResource("3_bsvqu")
 font_size = 25
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ic2gd"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cmn8j"]
+animation = &"intro"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gchip"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fd8t7"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hl2um"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_pecns"]
+states/End/position = Vector2(900, 112)
+states/RESET/node = SubResource("AnimationNodeAnimation_ic2gd")
+states/RESET/position = Vector2(293.333, 106)
+states/Start/position = Vector2(198.667, 112)
+states/intro/node = SubResource("AnimationNodeAnimation_cmn8j")
+states/intro/position = Vector2(406.667, 106)
+transitions = ["intro", "End", SubResource("AnimationNodeStateMachineTransition_gchip"), "Start", "RESET", SubResource("AnimationNodeStateMachineTransition_fd8t7"), "RESET", "intro", SubResource("AnimationNodeStateMachineTransition_hl2um")]
+
+[sub_resource type="Animation" id="Animation_wknwi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiCSIntro/uiCSText1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiCSOverlay:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiCSIntro/uiCSDialogHolder/uiCSDialog1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiCSIntro/uiCSDialogHolder/uiCSDialog1:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Yo Aden, wake up! "]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("uiCSIntro/uiCSDialogHolder/uiCSDialog1:theme_override_colors/font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../uiMenu/uiOverlay:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("uiCSIntro/uiCSRadio:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-15.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("uiCSIntro/uiCSDialogHolder:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("uiCSIntro/uiCSFade:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("uiCSIntro/uiCSText1:visible_characters")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+
+[sub_resource type="Animation" id="Animation_5udja"]
+resource_name = "intro"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiCSIntro/uiCSText1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 7, 22.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiCSIntro/uiCSText1:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(20.6, 20.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [34, 12]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiCSOverlay:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 22.1, 24.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiCSIntro/uiCSFade:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(22.1, 24.2, 52.5, 54),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("uiCSIntro/uiCSDialogHolder:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8, 22.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("uiCSIntro/uiCSDialogHolder/uiCSDialog1:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(7.99648, 8.08581, 10, 10.1, 11.1681, 11.2574, 13.3, 13.4, 15.2, 15.3, 18.2, 18.3, 19.2, 19.3, 22, 22.1, 24.1, 24.2, 26.1, 26.2, 27.3272, 27.4272, 29.3272, 29.4272, 30.5, 30.6, 35, 35.1, 36.3866, 36.4866, 45.9, 46, 47, 47.1, 49.6, 49.7, 51.1, 51.2, 52.4, 52.5),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("uiCSIntro/uiCSDialogHolder/uiCSDialog1:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(8, 11.1716, 15.1, 19.1, 24.1, 27.3272, 30.5, 36.3866, 47, 51.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Yo Aden, wake up! ", "Stop slacking bro.", "You're on low oxygen level again.", "I'll give you some of my extra oxygen, stay tight.", "You look like you're on drugs, its funny.", "What the heck just happened to me?", "Did you really just asked that question to me? How would I know that?", "Maybe your oxygen tank got compromised and you're inhaling some space drugs. 
+ I'm already on the ship. If you want to explore, go. But keep in mind that we have to go back.", "We are friends for 5 years! ITS ADAM NOT ADEN!", "Shut up, Daemon."]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("uiCSIntro/uiCSDialogHolder/uiCSDialog1:theme_override_colors/font_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(8, 27.3, 30.5, 47, 51.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(0, 0.996078, 0.811765, 1), Color(1, 1, 1, 1), Color(0, 0.996078, 0.811765, 1), Color(1, 1, 1, 1), Color(0, 0.996078, 0.811765, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../uiMenu/uiOverlay:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("uiCSIntro/uiCSRadio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.0318769,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0159385,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0429982,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0643077,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0428718,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0214359,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0429982,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0318769,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0159385,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0318769,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0429982,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0318769,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0159385,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0318769,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}, {
+"end_offset": 0.0159385,
+"start_offset": 0.0,
+"stream": ExtResource("13_cg83b")
+}],
+"times": PackedFloat32Array(8, 9.9, 11.1, 13.3, 15, 18.2, 19.1, 21.8, 24.1, 26.2, 27.2002, 29.3, 30.4, 34.9, 36.3866, 45.9, 46.9, 49.5, 51.1, 52.3)
+}
+tracks/9/use_blend = true
+tracks/10/type = "audio"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("uiCSIntro/uiCSRadio")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0824718,
+"stream": ExtResource("13_1i2da")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0665333,
+"stream": ExtResource("13_1i2da")
+}, {
+"end_offset": 0.0318769,
+"start_offset": 0.0824718,
+"stream": ExtResource("13_1i2da")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0824718,
+"stream": ExtResource("13_1i2da")
+}, {
+"end_offset": 0.0637539,
+"start_offset": 0.0824718,
+"stream": ExtResource("13_1i2da")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0824718,
+"stream": ExtResource("13_1i2da")
+}, {
+"end_offset": 0.175323,
+"start_offset": 0.0824718,
+"stream": ExtResource("13_1i2da")
+}, {
+"end_offset": 0.0637539,
+"start_offset": 0.0824718,
+"stream": ExtResource("13_1i2da")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0824718,
+"stream": ExtResource("13_1i2da")
+}, {
+"end_offset": 0.343985,
+"start_offset": 0.0824718,
+"stream": ExtResource("13_1i2da")
+}],
+"times": PackedFloat32Array(8, 11.0841, 15, 19.1, 24.1, 27.2002, 30.4, 36.3866, 46.9, 51.1)
+}
+tracks/10/use_blend = true
+tracks/11/type = "audio"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("uiCSIntro/uiCSRadio")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"clips": [{
+"end_offset": 34.5497,
+"start_offset": 4.73243,
+"stream": ExtResource("14_1tdah")
+}, {
+"end_offset": 34.509,
+"start_offset": 4.51786,
+"stream": ExtResource("14_1tdah")
+}, {
+"end_offset": 33.5095,
+"start_offset": 4.46233,
+"stream": ExtResource("14_1tdah")
+}, {
+"end_offset": 34.1289,
+"start_offset": 4.44382,
+"stream": ExtResource("14_1tdah")
+}, {
+"end_offset": 34.6005,
+"start_offset": 4.45456,
+"stream": ExtResource("14_1tdah")
+}, {
+"end_offset": 34.7311,
+"start_offset": 4.45456,
+"stream": ExtResource("14_1tdah")
+}, {
+"end_offset": 32.4397,
+"start_offset": 4.48644,
+"stream": ExtResource("14_1tdah")
+}, {
+"end_offset": 27.3337,
+"start_offset": 4.45456,
+"stream": ExtResource("14_1tdah")
+}, {
+"end_offset": 34.157,
+"start_offset": 4.45456,
+"stream": ExtResource("14_1tdah")
+}, {
+"end_offset": 35.5819,
+"start_offset": 4.44382,
+"stream": ExtResource("14_1tdah")
+}],
+"times": PackedFloat32Array(8.28861, 11.4, 15.3147, 19.3961, 24.4069, 27.507, 30.7319, 36.6935, 47.2, 51.4)
+}
+tracks/11/use_blend = true
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("uiCSIntro/uiCSRadio:volume_db")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(7.7, 22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-40.0, -15.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jpl2k"]
+_data = {
+"RESET": SubResource("Animation_wknwi"),
+"intro": SubResource("Animation_5udja")
+}
+
+[sub_resource type="Gradient" id="Gradient_cf208"]
+colors = PackedColorArray(0.0196078, 0.0196078, 0.0196078, 0.929412, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_biewr"]
+gradient = SubResource("Gradient_cf208")
+width = 1920
+height = 1080
+use_hdr = true
+fill_from = Vector2(0, 0.960123)
+fill_to = Vector2(0, 0.52454)
+
 [node name="uiMenu" type="Node2D"]
 script = ExtResource("1_u50fn")
 
 [node name="uiCamera" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(0.5, 0.5)
+limit_left = -7000
+limit_top = -7000
+limit_right = 7000
+limit_bottom = 7000
+limit_smoothed = true
 position_smoothing_enabled = true
-rotation_smoothing_enabled = true
+editor_draw_limits = true
 
 [node name="uiLayer" type="CanvasLayer" parent="."]
 
@@ -648,20 +1478,38 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
+
+[node name="uiAnimMngr" type="AnimationTree" parent="uiLayer/uiMenu"]
+active = false
+deterministic = false
+root_node = NodePath("../../..")
+tree_root = SubResource("AnimationNodeStateMachine_r12ew")
+anim_player = NodePath("../uiAnim")
+
+[node name="uiAnim" type="AnimationPlayer" parent="uiLayer/uiMenu"]
+root_node = NodePath("../../..")
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_taetd")
+}
 
 [node name="uiBgPlayer" type="AudioStreamPlayer" parent="uiLayer/uiMenu"]
 stream = ExtResource("2_a52l8")
-bus = &"BackgroundMusic"
+volume_db = -10.0
+mix_target = 1
+bus = &"Background Main"
+parameters/looping = true
 
 [node name="uiOverlay" type="ColorRect" parent="uiLayer/uiMenu"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+color = Color(0.0196078, 0.0196078, 0.0196078, 0)
 
 [node name="uiLogoGrp" type="Control" parent="uiLayer/uiMenu"]
 layout_mode = 1
@@ -671,18 +1519,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="uiAnimMngr" type="AnimationTree" parent="uiLayer/uiMenu/uiLogoGrp"]
-tree_root = SubResource("AnimationNodeStateMachine_r12ew")
-anim_player = NodePath("../uiAnim")
-process_callback = 0
-
-[node name="uiAnim" type="AnimationPlayer" parent="uiLayer/uiMenu/uiLogoGrp"]
-root_node = NodePath("../../../..")
-playback_process_mode = 0
-libraries = {
-"": SubResource("AnimationLibrary_taetd")
-}
 
 [node name="uiLabel" type="Label" parent="uiLayer/uiMenu/uiLogoGrp"]
 modulate = Color(1, 1, 1, 0)
@@ -724,23 +1560,22 @@ texture = ExtResource("4_vwqxi")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="uiPentannexIcon" type="TextureRect" parent="uiLayer/uiMenu/uiLogoGrp"]
+[node name="uiEseyemIcon" type="TextureRect" parent="uiLayer/uiMenu/uiLogoGrp"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.433
-anchor_top = 0.359
-anchor_right = 0.571
-anchor_bottom = 0.703
-offset_left = 0.639954
-offset_top = 0.279968
-offset_right = -8.32007
-offset_bottom = -0.23999
+anchor_left = 0.388
+anchor_top = 0.325
+anchor_right = 0.612
+anchor_bottom = 0.675
+offset_left = 0.530762
+offset_top = -3.05176e-05
+offset_right = -0.530884
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(128, 185)
-texture = ExtResource("5_5c6o5")
-expand_mode = 5
+pivot_offset = Vector2(214.509, 189)
+texture = ExtResource("5_bmasy")
+expand_mode = 3
 stretch_mode = 5
 
 [node name="uiLoading" parent="uiLayer/uiMenu/uiLogoGrp" instance=ExtResource("6_xkrxe")]
@@ -771,17 +1606,14 @@ mouse_filter = 1
 
 [node name="uiSSK" parent="uiLayer/uiMenu/uiLocSect" instance=ExtResource("7_8hp2b")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -256.0
-offset_top = -20.0
-offset_right = 256.0
-offset_bottom = 26.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -152.0
+offset_right = 576.0
+offset_bottom = -106.0
+grow_vertical = 0
 mouse_filter = 2
 
 [node name="uiBtnGrp" type="Control" parent="uiLayer/uiMenu"]
@@ -792,6 +1624,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="uiMenuExit" parent="uiLayer/uiMenu/uiBtnGrp" instance=ExtResource("8_eiuwx")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 48.0
+grow_horizontal = 0
 mouse_filter = 2
 
 [node name="uiLocSectBtn" parent="uiLayer/uiMenu/uiBtnGrp" instance=ExtResource("7_fgblm")]
@@ -835,5 +1679,116 @@ offset_bottom = -56.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
+
+[node name="uiCutScenes" type="Control" parent="uiLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="uiCSAnimMngr" type="AnimationTree" parent="uiLayer/uiCutScenes"]
+active = false
+tree_root = SubResource("AnimationNodeStateMachine_pecns")
+anim_player = NodePath("../uiCSAnim")
+
+[node name="uiCSAnim" type="AnimationPlayer" parent="uiLayer/uiCutScenes"]
+libraries = {
+"": SubResource("AnimationLibrary_jpl2k")
+}
+
+[node name="uiCSOverlay" type="ColorRect" parent="uiLayer/uiCutScenes"]
+auto_translate_mode = 1
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
+[node name="uiCSIntro" type="Control" parent="uiLayer/uiCutScenes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="uiCSFade" type="TextureRect" parent="uiLayer/uiCutScenes/uiCSIntro"]
+modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_biewr")
+
+[node name="uiCSRadio" type="AudioStreamPlayer" parent="uiLayer/uiCutScenes/uiCSIntro"]
+volume_db = -15.0
+max_polyphony = 3
+bus = &"SFX CutScene "
+
+[node name="uiCSText1" type="Label" parent="uiLayer/uiCutScenes/uiCSIntro"]
+auto_translate_mode = 1
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -15.0
+offset_right = 156.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "...and the stars said, I love you."
+label_settings = SubResource("LabelSettings_fna74")
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters_behavior = 4
+visible_ratio = -0.0294118
+
+[node name="uiCSDialogHolder" type="Control" parent="uiLayer/uiCutScenes/uiCSIntro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="uiCSDialog1" type="Label" parent="uiLayer/uiCutScenes/uiCSIntro/uiCSDialogHolder"]
+auto_translate_mode = 1
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -118.0
+offset_right = 512.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("12_gub7f")
+theme_override_font_sizes/font_size = 24
+text = "Yo Aden, wake up! "
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters_behavior = 1
 
 [connection signal="_montage" from="." to="." method="_montageGame"]
