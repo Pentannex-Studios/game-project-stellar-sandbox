@@ -15,7 +15,8 @@ var _lastScale: float
 var _hasMoved: bool = false
 
 #------------------------------------------------------------------------------#
-var adamInfo: Dictionary = {
+@onready var info: Dictionary = {
+	"type": "player",
 	"position": get_position(),
 	"rotation": get_rotation_degrees()
 }

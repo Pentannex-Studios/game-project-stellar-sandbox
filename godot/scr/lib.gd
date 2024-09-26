@@ -58,7 +58,8 @@ const gasColorMinRnge: float = 0.01
 const gasColorMaxRnge: float = 1.00
 const gasColorAlpha: float = 0.5
 
-var sectSizeMult: int = 5
+const minRocks: int = 5
+const maxRocks: int = 75
 
 #------------------------------------------------------------------------------#
 # GLOBAL OBJECTS

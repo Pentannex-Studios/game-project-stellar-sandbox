@@ -1,10 +1,41 @@
 extends Node2D
 #------------------------------------------------------------------------------#
+# IMPORTANT. All space sector information.
+# All assets and elements will place here, then when saving the sector, 
+# the dictionary will be converted to a json and hashed.
+# This script will facilitate the conversion to json and hashing.
+
+# The script is the default empty.
+var _spaceSectInformation: Dictionary = {
+	"ssk": lib.SSK,
+	"state": "fresh",
+	"asstDict": {
+		"info": {
+			"rockAmount": 0 
+		},
+		
+		"data": {
+			"background": {
+				
+			},
+		
+			"interactables": {
+				"rocks": {
+					
+				},
+				"adam": {
+					"position": Vector2(0,0),
+					"rotation": 0
+				}
+			}
+		}
+	}
+}
+
+#------------------------------------------------------------------------------#
 @onready var _spaceBgGen: Node2D = get_node("spaceBgGen")
 @onready var _spacePhenoGen: Node2D = get_node("spacePhenoGen")
 @onready var _spaceAssetGen: Node2D = get_node("spaceAssetGen")
-
-@onready var _spaceEnvironment: WorldEnvironment = get_node("spaceEnv")
 
 #------------------------------------------------------------------------------#
 var _spaceSectRandGen: bool = false
@@ -14,26 +45,6 @@ var _spaceSectSeed: int
 var _spaceSectBg: String
 var _spaceSectGas: Array = []
 var _spaceSectPheno: int
-
-# IMPORTANT. All space sector information.
-# All assets and elements will place here, then when saving the sector, 
-# the dictionary will be converted to a json and hashed.
-# This script will facilitate the conversion to json and hashing.
-var _spaceSectInformation: Dictionary = {
-	"ssk": lib.SSK,
-	"state": "fresh",
-	"asstDict": {
-		"background": {
-			
-		},
-		
-		"interactable": {
-			"adam": {
-				"position": Vector2(0,0)
-			}
-		}
-	}
-}
 
 #------------------------------------------------------------------------------#
 func _ready() -> void:
@@ -152,3 +163,6 @@ func disposeSpaceSector() -> int:
 # Accessor for space info.
 func getSectorInfo() -> Dictionary:
 	return _spaceSectInformation
+	
+func setSectorInfo(spaceInfo: Dictionary) -> void:
+	_spaceSectInformation = spaceInfo

@@ -5,7 +5,8 @@ extends RigidBody2D
 
 #------------------------------------------------------------------------------#
 # Rock info for saving.
-var rockInfo: Dictionary = {
+@onready var info: Dictionary = {
+	"type": "rock",
 	"rock_scale": _rockTexture.get_scale().x,
 	"rock_type": 0,
 	"position": get_position(),

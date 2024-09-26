@@ -84,7 +84,7 @@ func _genSpacePheno(_spacePheno: Array) -> void:
 				Color.TRANSPARENT,
 				Color(lib.genRandColor(lib.gasColorMinRnge, lib.gasColorMaxRnge, 1)),
 				Color.TRANSPARENT
-				]
+			]
 			_spacePhenoTexNoise.noise_type = FastNoiseLite.TYPE_PERLIN 
 			_spacePhenoTexNoise.frequency = 0.005
 			_spacePhenoTexNoise.fractal_type = FastNoiseLite.FRACTAL_RIDGED

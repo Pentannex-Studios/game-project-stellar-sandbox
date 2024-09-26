@@ -4,7 +4,7 @@
 [ext_resource type="Environment" uid="uid://pxr6ffxs2bp7" path="res://godot/tres/scnEnv.tres" id="2_25skj"]
 [ext_resource type="PackedScene" uid="uid://ndsnl58qknvl" path="res://godot/pck/gameSpaceGenerator/spacePhenomenaGenerator.tscn" id="3_xphlk"]
 [ext_resource type="PackedScene" uid="uid://ipqn6c3kseo2" path="res://godot/pck/gameSpaceGenerator/spaceBackgroundGenerator.tscn" id="4_ooul8"]
-[ext_resource type="Script" path="res://godot/pck/gameSpaceGenerator/spaceAssetGenerator.gd" id="5_gdvyb"]
+[ext_resource type="Script" path="res://godot/scr/spaceAssetGenerator.gd" id="5_gdvyb"]
 
 [node name="spaceSectMngr" type="Node2D" groups=["spaceSectorManager"]]
 texture_filter = 1

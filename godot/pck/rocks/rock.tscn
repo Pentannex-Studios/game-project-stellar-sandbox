@@ -51,6 +51,7 @@ animations = [{
 }]
 
 [node name="rock" type="RigidBody2D"]
+sleeping = true
 script = ExtResource("1_8cd0b")
 
 [node name="texture" type="AnimatedSprite2D" parent="."]
