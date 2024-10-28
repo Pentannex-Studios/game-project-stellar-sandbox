@@ -180,10 +180,10 @@ func _whenTextChanged(_stringText: String) -> void:
 			modulate = Color.RED
 			
 			_uiLocSSKBtn.disabled = true
-			_uiSSKNote.text = "Invalid SSK. Check for 'key' errors."
+			_uiSSKNote.text = "Invalid Code. Check for 'key' errors."
 			
 			# Changes to locate SSK if text is placed.
-			_uiLocSSKBtn.text = "Locate Sector"
+			_uiLocSSKBtn.text = "Proceed"
 			_uiSSKLocMode = false
 		
 		# Valid SSK Format, But presets are error. Will replace them randomly.
@@ -191,20 +191,20 @@ func _whenTextChanged(_stringText: String) -> void:
 			modulate = Color.AQUA
 			
 			_uiLocSSKBtn.disabled = false
-			_uiSSKNote.text = "Warning! Corrupted SSK. Ignore protocol?"
+			_uiSSKNote.text = "Warning! Corrupted code."
 			
 			# Changes to locate SSK if text is placed.
-			_uiLocSSKBtn.text = "Locate Sector"
+			_uiLocSSKBtn.text = "Proceed"
 			_uiSSKLocMode = false
 		
 		# Valid and Accepted SSK Format, no change done.
 		3: 
 			modulate = Color.GREEN
 			
-			_uiSSKNote.text = "Valid SSK. Welcome home."
+			_uiSSKNote.text = "Valid code. Welcome home."
 			
 			# Changes to locate SSK if text is placed.
-			_uiLocSSKBtn.text = "Locate Sector"
+			_uiLocSSKBtn.text = "Proceed"
 			_uiSSKLocMode = false
 			lib.SSK = _stringText
 

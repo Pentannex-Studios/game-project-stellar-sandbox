@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp51oah6gmomd"]
+[gd_scene load_steps=5 format=3 uid="uid://dp51oah6gmomd"]
 
 [ext_resource type="Script" path="res://godot/scr/spaceSectorManager.gd" id="1_152lw"]
 [ext_resource type="Environment" uid="uid://pxr6ffxs2bp7" path="res://godot/tres/scnEnv.tres" id="2_25skj"]
 [ext_resource type="PackedScene" uid="uid://ndsnl58qknvl" path="res://godot/pck/gameSpaceGenerator/spacePhenomenaGenerator.tscn" id="3_xphlk"]
 [ext_resource type="PackedScene" uid="uid://ipqn6c3kseo2" path="res://godot/pck/gameSpaceGenerator/spaceBackgroundGenerator.tscn" id="4_ooul8"]
-[ext_resource type="Script" path="res://godot/scr/spaceAssetGenerator.gd" id="5_gdvyb"]
 
 [node name="spaceSectMngr" type="Node2D" groups=["spaceSectorManager"]]
 texture_filter = 1
@@ -25,7 +24,6 @@ polygon = PackedVector2Array(7000, 7000, 7000, -7000, -7000, -7000, -7000, 7000,
 [node name="spaceBgGen" parent="." instance=ExtResource("4_ooul8")]
 
 [node name="spaceAssetGen" type="Node2D" parent="."]
-script = ExtResource("5_gdvyb")
 
 [node name="spaceEnvObject" type="Node2D" parent="spaceAssetGen"]
 
@@ -55,3 +53,5 @@ limit_begin = Vector2(-7000, -7000)
 limit_end = Vector2(6700, 7000)
 
 [node name="spaceObjects" type="Node2D" parent="spaceAssetGen"]
+z_index = 6
+z_as_relative = false

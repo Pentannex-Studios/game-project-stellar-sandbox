@@ -1114,7 +1114,7 @@ atlas = ExtResource("1_gev2w")
 region = Rect2(82, 34, 14, 27)
 
 [node name="adam" type="CharacterBody2D" groups=["player"]]
-z_index = 4
+z_index = 1
 motion_mode = 1
 script = ExtResource("1_4u8em")
 metadata/_edit_vertical_guides_ = [-39.0]

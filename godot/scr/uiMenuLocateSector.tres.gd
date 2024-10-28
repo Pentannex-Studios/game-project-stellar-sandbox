@@ -24,4 +24,3 @@ func _whenMousePressed() -> void:
 	
 	# FORMAT: Release focus on the button.
 	release_focus()
-

@@ -3,9 +3,6 @@ extends Node2D
 # Montage camera for map.
 @onready var _menuCamera: Camera2D = get_node("uiCamera")
 
-# Shows quotes from "lib.gd"
-@onready var _uiQuote: Label = get_node("uiLayer/uiMenu/uiLogoGrp/uiLabel")
-
 # Sound.
 #@onready var _uiBGM: AudioStreamPlayer = get_node("uiLayer/uiMenu/uiBgPlayer")
 
@@ -67,9 +64,6 @@ func _montageGame() -> void:
 		_menuCamChanged = true
 		var _menuCamZoom: Vector2 = lib.genRandVec2(0.5, 1, "float")
 		_menuCamera.zoom = _menuCamZoom
-	
-	# Gets a random quote to show on the title.
-	_uiQuote.text = lib.uiQuotes[lib.genRand(0,  lib.uiQuotes.size() - 1)]
 	
 	# IMPORTANT CODE: Manages camera animation on main menu.
 	var _menuCamTween: Tween = create_tween()

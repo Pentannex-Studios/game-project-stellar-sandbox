@@ -1,7 +1,5 @@
 extends Node2D
 #------------------------------------------------------------------------------#
-@onready var _spaceParticles: CPUParticles2D = get_node("spacePllxMngr/spaceS1Pllx/spaceParticles")
-
 var _spaceBgTexture: NoiseTexture2D 
 var _spaceGasTex: NoiseTexture2D
 var _spaceGasTex1: NoiseTexture2D
@@ -35,8 +33,6 @@ func _ready() -> void:
 				]
 			]
 		)
-	
-	_spaceParticles.preprocess = lib.genRand(100, 300)
 
 # Kills the thread when scene exits the tree.
 # IMPORTANT CODE: Its a must do to prevent warning and potential crash.
@@ -154,6 +150,10 @@ func _genSpace(spaceArray: Array) -> void:
 			print("    Adjusted a space gas texture! ", spaceArray[1][_spaceTextureGenerationIteration], " Index: ", _spaceAsstsIdx)
 		
 		elif _spaceAsstsIdx > 4: 
+			# Creating the default configuration of the textures.
+			spaceArray[1][_spaceTextureGenerationIteration].width = lib.sectSize * 3
+			spaceArray[1][_spaceTextureGenerationIteration].height = lib.sectSize * 3
+			
 			# Space star generation.
 			_spaceTexNoise.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
 			_spaceTexNoise.frequency = 0.15
@@ -161,7 +161,7 @@ func _genSpace(spaceArray: Array) -> void:
 			_spaceTexNoise.fractal_gain = 2
 			
 			if _spaceAsstsIdx == 5:
-				_spaceTexColorRamp.offsets = [0.85, 1]
+				_spaceTexColorRamp.offsets = [0.9, 1]
 				# IGNORE: Debug
 				print("    Adjusted a space star texture! ", spaceArray[1][_spaceTextureGenerationIteration])
 			

@@ -88,7 +88,7 @@ offset_bottom = 83.0
 theme = ExtResource("1_00chu")
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.392157)
 theme_override_fonts/font = ExtResource("1_1bhsh")
-placeholder_text = "Input your SSK here to initiate sector protocol."
+placeholder_text = "Input your SSK here to change the mindscape."
 alignment = 1
 max_length = 62
 context_menu_enabled = false
@@ -122,7 +122,7 @@ offset_top = -0.00799942
 offset_right = 104.0
 offset_bottom = 25.992
 theme = ExtResource("1_00chu")
-text = "FIND A SECTOR"
+text = "CUSTOMIZE YOUR EXPERIENCE"
 
 [node name="uiSSKPanel" type="Panel" parent="."]
 layout_mode = 0

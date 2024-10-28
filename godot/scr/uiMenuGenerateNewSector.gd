@@ -21,9 +21,8 @@ func _whenMouseExitedButton() -> void:
 func _whenMousePressed() -> void:
 	uiMenuGenerateNewSectorAnimation.play_backwards("uiMenuGenerateHovered")
 	# IGNORE: Debug
-	print("\nGenerate new sector option selected.")
+	print("\n#------------------------------------------------------------------------------#\nGenerate new sector option selected.")
 	discoverSpaceSector.emit()
 	
 	# FORMAT: Release focus on the button.
 	release_focus()
-

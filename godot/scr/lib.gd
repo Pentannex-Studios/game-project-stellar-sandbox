@@ -26,40 +26,17 @@ extends Node
 # GLOBAL CONFIGURATION 
 #------------------------------------------------------------------------------#
 
-# MAIN MENU
-const uiQuotes: PackedStringArray = [
-	"Within the cosmic expanse, remember that you are a universe unto yourself, filled with infinite possibilities waiting to be explored.",
-	"Like a star illuminating the night sky, let your inner light shine brightly and guide you on your unique journey through life.",
-	"In the vastness of space, know that your presence matters.",
-	"Just as the moon reflects the sun's radiance, may you reflect the beauty and brilliance within you to inspire others.",
-	"When you look up at the stars, remember that you too are made of stardust, carrying the shine within your very being.",
-	"Amidst the boundless universe, your dreams and aspirations are the guiding constellations that will lead you to your true destiny.",
-	"Like a comet streaking across the night sky, may your life be filled with moments of awe-inspiring wonder.",
-	"The cosmic fabric weaves your story into the narrative constellations of the universe, reminding you that your journey is both unique and meaningful.",
-	"When you feel lost, remember that you are an explorer of the stars, destined to discover your own path.",
-	"Embrace the cosmic symphony within your soul, for you are an instrument of harmony and purpose in the grand orchestra of life.",
-	"In the grand cosmos, remember that you are a precious creation, deserving of love, happiness, and the pursuit of your dreams.",
-	"Just as stars twinkle in the night sky, let your brilliance shine forth and illuminate the world with the unique gifts you possess.",
-	"You are a celestial marvel, a rare gem amidst the vastness of space. Embrace your uniqueness and let it guide you to greatness.",
-	"Like a comet leaving a dazzling trail, strive to leave your mark on the universe, knowing that your efforts are meaningful and significant.",
-	"Within you lies an entire galaxy of untapped potential. Harness the power of your dreams and reach for the stars, for you are capable of extraordinary achievements.",
-	"In the cosmic dance of life, remember that you are the lead, choreographing your own steps with purpose, passion, and determination.",
-	"You are a cosmic architect, capable of shaping your own destiny. Build a life that aligns with your truest desires and aspirations.",
-	"Like the planets in perfect alignment, trust in the divine order of the universe and have faith in your ability to overcome challenges and manifest your highest aspirations.",
-	"As you navigate the vast cosmic ocean of possibilities, remember that every decision you make has the power to shape your reality. Choose wisely and strive for excellence.",
-	"In the fabric of existence, you are an essential thread woven with care and intention. Embrace your worth and always give your best, for the universe celebrates your every effort."
-] 
-
 # GAME
 const minSpawnSeed: int = -9223372036854775807
 const maxSpawnSeed: int = 9223372036854775807
 const sectSize = 1920
+const sectSizeMult = 5 # Scale multiplier for the space bg.
 const gasColorMinRnge: float = 0.01
 const gasColorMaxRnge: float = 1.00
 const gasColorAlpha: float = 0.5
 
-const minRocks: int = 5
-const maxRocks: int = 75
+const minRocks: int = 500
+const maxRocks: int = 1500
 
 #------------------------------------------------------------------------------#
 # GLOBAL OBJECTS

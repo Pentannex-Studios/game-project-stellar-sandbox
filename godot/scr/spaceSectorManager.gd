@@ -1,44 +1,10 @@
 extends Node2D
 #------------------------------------------------------------------------------#
-# IMPORTANT. All space sector information.
-# All assets and elements will place here, then when saving the sector, 
-# the dictionary will be converted to a json and hashed.
-# This script will facilitate the conversion to json and hashing.
-
-# The script is the default empty.
-var _spaceSectInformation: Dictionary = {
-	"ssk": lib.SSK,
-	"state": "fresh",
-	"asstDict": {
-		"info": {
-			"rockAmount": 0 
-		},
-		
-		"data": {
-			"background": {
-				
-			},
-		
-			"interactables": {
-				"rocks": {
-					
-				},
-				"adam": {
-					"position": Vector2(0,0),
-					"rotation": 0
-				}
-			}
-		}
-	}
-}
-
-#------------------------------------------------------------------------------#
 @onready var _spaceBgGen: Node2D = get_node("spaceBgGen")
 @onready var _spacePhenoGen: Node2D = get_node("spacePhenoGen")
-@onready var _spaceAssetGen: Node2D = get_node("spaceAssetGen")
 
 #------------------------------------------------------------------------------#
-var _spaceSectRandGen: bool = false
+var _spaceSectRandGen: bool = true
 
 var _spaceSectKey: String = "[|{0}|{1}|{2}|{3}|{4}|{5}|]"
 var _spaceSectSeed: int
@@ -115,12 +81,6 @@ func _loadSpaceSector() -> void:
 	print("\nStarted space generation.")
 	# Proceed to generation of space.
 	_spaceBgGen.loadThread([[_spaceSectSeed, _spaceSectBg, _spaceSectGas[0], _spaceSectGas[1], _spaceSectGas[2], _spaceSectPheno]])
-	
-	# Wait for the scene to be created.
-	await get_tree().create_timer(0.05).timeout
-	# IGNORE: Debug
-	print("\nStarted asset generation.")
-	_spaceAssetGen.loadThread(_spaceSectInformation)
 
 # Reloads the sector.
 # IMPORTANT CODE: This is the method TO BE USED in other scripts when changing background.
@@ -157,12 +117,3 @@ func disposeSpaceSector() -> int:
 	print(" ")
 	
 	return 0
-
-#------------------------------------------------------------------------------#
-# Sector Tools.
-# Accessor for space info.
-func getSectorInfo() -> Dictionary:
-	return _spaceSectInformation
-	
-func setSectorInfo(spaceInfo: Dictionary) -> void:
-	_spaceSectInformation = spaceInfo

@@ -49,8 +49,7 @@ theme = ExtResource("1_1atw1")
 theme_override_colors/font_color = Color(1, 1, 1, 0.392157)
 theme_override_fonts/font = ExtResource("1_icer6")
 theme_override_font_sizes/font_size = 15
-text = "LOCATE SECTOR
-"
+text = "CUSTOMIZE"
 flat = true
 script = ExtResource("2_ch47w")
 

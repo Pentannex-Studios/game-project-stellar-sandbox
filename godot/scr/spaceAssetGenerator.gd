@@ -17,6 +17,10 @@ func loadThread(sectorInfo: Dictionary) -> void:
 	
 	# IGNORE: Debug
 	print("\nReading sector information for asset generation...")
+	# Clear the objects every runtime of sector loading.
+	if _spaceObjects.get_child_count() > 0:
+		for _obj in _spaceObjects.get_children():
+			_obj.queue_free()
 	
 	# Checks the sector information if its new sector or saved one.
 	# To know if it will generate random objects or load from the asset dict
@@ -28,13 +32,13 @@ func loadThread(sectorInfo: Dictionary) -> void:
 		
 		# Random spawning of basic objects.
 		_randomizedSpawn()
-	
+
 	elif sectorInfo.state == "restored":
 		# Generates objects based on asset dictionary.
 		_loadSpawn(sectorInfo.asstDict)
 	
 	# Spawn player after all of the shenanigans inside with the spawning.
-	_spawnPlayer()
+	#_spawnPlayer()
 
 #------------------------------------------------------------------------------#
 # Custom functions, helpers for generating / loading assets.
@@ -56,7 +60,7 @@ func _loadSpawn(_assetDictionary: Dictionary) -> void:
 	print("\nAssets defined. Spawning...")
 
 #------------------------------------------------------------------------------#
-# Functions to spawn objects.
+# Functions to spawn objects, either randomized or loaded.
 # Rocks. Spawn random of from a dict.
 func _spawnRocks(_spaceSectSeed: int, _overrideValue: int = 0) -> void:
 	# IGNORE: Debug
@@ -76,7 +80,7 @@ func _spawnRocks(_spaceSectSeed: int, _overrideValue: int = 0) -> void:
 		for _rock in range(_rockAmount):
 			var _rockInst: Node = _assetDirectory.rock.instantiate()
 			_spaceObjects.call_deferred("add_child", _rockInst)
-			_rockInst.set_position(lib.genRandSplitVec2(0, lib.sectSize, "float"))
+			_rockInst.set_position(lib.genRandSplitVec2(0, lib.sectSize * lib.sectSizeMult, "float"))
 			_rockInst.set_rotation_degrees(lib.genRand(0, 360, "float"))
 	
 	elif _overrideValue > 0:
