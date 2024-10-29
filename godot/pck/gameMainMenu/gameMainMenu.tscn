@@ -325,10 +325,22 @@ tracks/22/keys = {
 "update": 1,
 "values": [-1]
 }
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiTriggerWarning:modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_cwcnj"]
 resource_name = "generateNewSectorFade"
-length = 30.0
+length = 10.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -337,10 +349,10 @@ tracks/0/path = NodePath("uiLayer/uiMenu/uiFadeOverlay:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 29.1, 30),
+"times": PackedFloat32Array(0, 1, 9.06285, 9.96284),
 "transitions": PackedFloat32Array(0.25, 0.25, 0.25, 0.25),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -349,7 +361,7 @@ tracks/1/path = NodePath("uiLayer/uiMenu/uiBtnGrp:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 1, 29.1, 30),
+"times": PackedFloat32Array(0.1, 1, 9.06285, 9.96284),
 "transitions": PackedFloat32Array(0.25, 0.25, 0.25, 0.25),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -361,7 +373,7 @@ tracks/2/path = NodePath("uiLayer/uiMenu/uiLoading:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.1, 2, 28.1, 29),
+"times": PackedFloat32Array(1.1, 2, 8.06285, 8.96284),
 "transitions": PackedFloat32Array(0.25, 0.25, 0.25, 0.25),
 "update": 0,
 "values": [Color(0.0196078, 0.0196078, 0.0196078, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.0196078, 0.0196078, 0.0196078, 1)]
@@ -373,7 +385,7 @@ tracks/3/path = NodePath("uiLayer/uiMenu/uiLoading:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1, 1.1, 29, 29.1),
+"times": PackedFloat32Array(1, 1.1, 8.96284, 9.06285),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [false, true, true, false]
@@ -397,7 +409,7 @@ tracks/5/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:mouse_filter")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 29.8),
+"times": PackedFloat32Array(0, 9.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 0]
@@ -409,7 +421,7 @@ tracks/6/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:mouse_filter")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 29.8),
+"times": PackedFloat32Array(0, 9.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 0]
@@ -421,7 +433,7 @@ tracks/7/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 29.8),
+"times": PackedFloat32Array(0, 9.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 0]
@@ -433,7 +445,7 @@ tracks/8/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:mouse_filter")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 29.8),
+"times": PackedFloat32Array(0, 9.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 0]
@@ -452,7 +464,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.45),
 "transitions": PackedFloat32Array(0.25, 0.25),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 0.960784)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.960784)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -529,7 +541,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_oayup"]
 resource_name = "travelToSector"
-length = 10.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -693,7 +705,7 @@ tracks/13/path = NodePath("uiLayer/uiMenu/uiFadeOverlay:color")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 2, 7.96667, 10),
+"times": PackedFloat32Array(0, 2, 19.0334, 19.8667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
@@ -705,7 +717,7 @@ tracks/14/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiTransText:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(1.1, 2.06667, 7.96667, 10),
+"times": PackedFloat32Array(13.6667, 14.6334, 16.9334, 18.9667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -717,15 +729,27 @@ tracks/15/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiTransText:visible_characte
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(1, 9.7),
+"times": PackedFloat32Array(1, 18.6667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [-1, 11]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiTriggerWarning:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(2.03333, 4.1, 13.5667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_31sw0"]
 resource_name = "uiLogoShowcaseAnimation"
-length = 30.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -757,10 +781,10 @@ tracks/2/path = NodePath("uiLayer/uiMenu/uiFadeOverlay:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 28.4333, 29.4333),
+"times": PackedFloat32Array(0, 18.5333, 19.5333),
 "transitions": PackedFloat32Array(1, 0.5, 0.5),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -769,7 +793,7 @@ tracks/3/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiLabel:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(16.1, 17.1, 28.9333, 29.9333),
+"times": PackedFloat32Array(16.1, 17.1, 19.0333, 19.9333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -1087,11 +1111,33 @@ offset_right = 357.5
 offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "This game explores sensitive themes, including mental health struggles, trauma, emotional isolation, and self-discovery. Throughout the story, players may encounter scenes that involve introspective reflection on life’s challenges, personal loss, and moments of deep emotional vulnerability.
-
-While the experience is designed to invoke empathy and reflection, it may be intense or triggering for some players. Please proceed with caution, and remember that you can take breaks as needed."
+text = "The Journey to the Starlit Veil"
 label_settings = SubResource("LabelSettings_fna74")
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters_behavior = 1
+
+[node name="uiTriggerWarning" type="Label" parent="uiLayer/uiMenu/uiLogoGrp"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.5
+offset_top = -147.0
+offset_right = 357.5
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The Journey to the Starlit Veil explores themes of mental health, emotional struggles, and self-reflection. This story involves depictions of loneliness, self-doubt, and moments of personal hardship that may be intense or unsettling for some players.
+
+Please take your time, engage at your own pace, and feel free to step away if needed. Your well-being comes first."
+label_settings = SubResource("LabelSettings_fna74")
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters_behavior = 1
 

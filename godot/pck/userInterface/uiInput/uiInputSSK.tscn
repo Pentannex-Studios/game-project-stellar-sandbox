@@ -88,7 +88,7 @@ offset_bottom = 83.0
 theme = ExtResource("1_00chu")
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.392157)
 theme_override_fonts/font = ExtResource("1_1bhsh")
-placeholder_text = "Input your SSK here to change the mindscape."
+placeholder_text = "Input your code to shift the mindscape to your liking."
 alignment = 1
 max_length = 62
 context_menu_enabled = false
@@ -122,7 +122,7 @@ offset_top = -0.00799942
 offset_right = 104.0
 offset_bottom = 25.992
 theme = ExtResource("1_00chu")
-text = "CUSTOMIZE YOUR EXPERIENCE"
+text = "Align the stars"
 
 [node name="uiSSKPanel" type="Panel" parent="."]
 layout_mode = 0
@@ -149,7 +149,7 @@ theme = ExtResource("1_00chu")
 theme_override_colors/font_color = Color(1, 1, 1, 0.784314)
 theme_override_fonts/font = ExtResource("3_la0yy")
 theme_override_font_sizes/font_size = 16
-text = "Retrieve Key"
+text = "Get Code"
 flat = true
 
 [node name="uiLocSSKPanel" type="Panel" parent="uiLocSSKBtn"]

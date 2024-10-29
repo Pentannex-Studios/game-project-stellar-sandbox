@@ -59,23 +59,24 @@ func _unhandled_input(_event) -> void:
 #------------------------------------------------------------------------------#
 # Tween camera position across random positions in the map.
 func _montageGame() -> void:
-	# Locks the camera to be changed.
-	if !_menuCamChanged:
-		_menuCamChanged = true
-		var _menuCamZoom: Vector2 = lib.genRandVec2(0.5, 1, "float")
-		_menuCamera.zoom = _menuCamZoom
-	
-	# IMPORTANT CODE: Manages camera animation on main menu.
-	var _menuCamTween: Tween = create_tween()
-	@warning_ignore("integer_division")
-	
-	var _menuCamPos: Vector2 = lib.genRandSplitVec2(-lib.sectSize, lib.sectSize)
-	var _menuCamDuration: float = lib.genRand(45, 90, "float")
-	
-	_menuCamTween.tween_property(_menuCamera, "global_position", _menuCamPos, _menuCamDuration).set_ease(Tween.EASE_OUT)
-	
-	await _menuCamTween.finished
-	_montage.emit()
+	if _menuCamera.is_current():
+		# Locks the camera to be changed.
+		if !_menuCamChanged:
+			_menuCamChanged = true
+			var _menuCamZoom: Vector2 = lib.genRandVec2(0.5, 1, "float")
+			_menuCamera.zoom = _menuCamZoom
+		
+		# IMPORTANT CODE: Manages camera animation on main menu.
+		var _menuCamTween: Tween = create_tween()
+		@warning_ignore("integer_division")
+		
+		var _menuCamPos: Vector2 = lib.genRandSplitVec2(-lib.sectSize, lib.sectSize)
+		var _menuCamDuration: float = lib.genRand(45, 90, "float")
+		
+		_menuCamTween.tween_property(_menuCamera, "global_position", _menuCamPos, _menuCamDuration).set_ease(Tween.EASE_OUT)
+		
+		await _menuCamTween.finished
+		_montage.emit()
 
 # Proceed to sector.
 func _proceedToSect() -> void:

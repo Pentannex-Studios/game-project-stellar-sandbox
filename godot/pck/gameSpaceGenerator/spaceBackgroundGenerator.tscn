@@ -1,8 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://ipqn6c3kseo2"]
+[gd_scene load_steps=7 format=3 uid="uid://ipqn6c3kseo2"]
 
 [ext_resource type="Script" path="res://godot/scr/spaceBackgroundGenerator.gd" id="1_yb6n2"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5hbrt"]
+
+[sub_resource type="Curve" id="Curve_osqpl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pm73p"]
+curve = SubResource("Curve_osqpl")
+
+[sub_resource type="CurveTexture" id="CurveTexture_mrwsj"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c8mhu"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(4800, 4800, 4800)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 3.0
+alpha_curve = SubResource("CurveTexture_pm73p")
+emission_curve = SubResource("CurveTexture_mrwsj")
 
 [node name="spaceBgGen" type="Node2D"]
 process_priority = 1
@@ -20,13 +40,24 @@ modulate = Color(0.101961, 0, 0.101961, 1)
 scale = Vector2(5, 5)
 texture = SubResource("PlaceholderTexture2D_5hbrt")
 
+[node name="stars" type="GPUParticles2D" parent="spacePllxMngr/spaceBgPllx"]
+modulate = Color(1, 1, 1, 0.25)
+amount = 100000
+process_material = SubResource("ParticleProcessMaterial_c8mhu")
+lifetime = 10.0
+speed_scale = 0.1
+fixed_fps = 60
+interpolate = false
+fract_delta = false
+visibility_rect = Rect2(-4800, -4800, 9600, 9600)
+local_coords = true
+
 [node name="spaceGPllx" type="Parallax2D" parent="spacePllxMngr"]
 scroll_scale = Vector2(0.2, 0.2)
 limit_begin = Vector2(-7000, -7000)
 limit_end = Vector2(6700, 7000)
 
 [node name="spaceGasTex" type="Sprite2D" parent="spacePllxMngr/spaceGPllx"]
-modulate = Color(0.384314, 0, 0.352941, 1)
 z_index = 7
 scale = Vector2(5, 5)
 
@@ -50,21 +81,3 @@ limit_end = Vector2(6700, 7000)
 modulate = Color(0.639216, 1, 1, 0.47451)
 z_index = 9
 scale = Vector2(5, 5)
-
-[node name="spaceSPllx" type="Parallax2D" parent="spacePllxMngr"]
-scroll_scale = Vector2(0.9, 0.9)
-limit_begin = Vector2(-7000, -7000)
-limit_end = Vector2(6700, 7000)
-
-[node name="spaceStarTex" type="Sprite2D" parent="spacePllxMngr/spaceSPllx"]
-z_index = 5
-scale = Vector2(5, 5)
-
-[node name="spaceS1Pllx" type="Parallax2D" parent="spacePllxMngr"]
-scroll_scale = Vector2(0.15, 0.15)
-limit_begin = Vector2(-7000, -7000)
-limit_end = Vector2(7000, 7000)
-
-[node name="spaceStarTex1" type="Sprite2D" parent="spacePllxMngr/spaceS1Pllx"]
-z_index = 5
-scale = Vector2(3, 3)

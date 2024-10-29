@@ -156,7 +156,7 @@ func _whenSSKLocBtnPressed():
 		
 		await get_tree().create_timer(1).timeout
 		
-		_uiLocSSKBtn.text = "Retrieve Key"
+		_uiLocSSKBtn.text = "Get Code"
 
 #------------------------------------------------------------------------------#
 # Fires when user inputs text in the textbox.
@@ -172,7 +172,7 @@ func _whenTextChanged(_stringText: String) -> void:
 			_uiSSKNote.text = ""
 			
 			# Changes to copy SSK if no text is placed.
-			_uiLocSSKBtn.text = "Retrieve Key"
+			_uiLocSSKBtn.text = "Get Code"
 			_uiSSKLocMode = true
 			
 		# Invalid SSK
@@ -180,7 +180,7 @@ func _whenTextChanged(_stringText: String) -> void:
 			modulate = Color.RED
 			
 			_uiLocSSKBtn.disabled = true
-			_uiSSKNote.text = "Invalid Code. Check for 'key' errors."
+			_uiSSKNote.text = "Invalid Code. Check for errors."
 			
 			# Changes to locate SSK if text is placed.
 			_uiLocSSKBtn.text = "Proceed"

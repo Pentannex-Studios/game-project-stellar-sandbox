@@ -33,6 +33,7 @@ lib="*res://godot/scr/lib.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=4
 window/size/borderless=true
 window/size/window_width_override=1024
 window/size/window_height_override=600
@@ -93,7 +94,7 @@ limits/debugger/max_chars_per_second=2147483647
 [physics]
 
 2d/run_on_separate_thread=true
-common/physics_ticks_per_second=144
+2d/default_gravity=0.0
 2d/default_gravity_vector=Vector2(0, 0)
 
 [rendering]
@@ -108,3 +109,4 @@ environment/ssil/quality=0
 textures/decals/filter=5
 environment/defaults/default_clear_color=Color(0.069363, 4.87595e-05, 0.118277, 1)
 viewport/hdr_2d=true
+2d/snap/snap_2d_vertices_to_pixel=true

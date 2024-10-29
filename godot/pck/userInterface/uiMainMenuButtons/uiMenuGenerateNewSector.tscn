@@ -49,8 +49,7 @@ theme = ExtResource("1_j04sh")
 theme_override_colors/font_color = Color(1, 1, 1, 0.392157)
 theme_override_fonts/font = ExtResource("1_tgh6m")
 theme_override_font_sizes/font_size = 15
-text = "DISCOVER MORE
-"
+text = "Shift the Cosmos"
 flat = true
 script = ExtResource("2_x5il4")
 

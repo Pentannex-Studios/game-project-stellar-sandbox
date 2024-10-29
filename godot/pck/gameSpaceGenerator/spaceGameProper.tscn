@@ -1,9 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://bih5luxeqykid"]
+[gd_scene load_steps=4 format=3 uid="uid://bih5luxeqykid"]
 
 [ext_resource type="Script" path="res://godot/scr/spaceGameProper.gd" id="1_5vue7"]
 [ext_resource type="PackedScene" uid="uid://dp51oah6gmomd" path="res://godot/pck/gameSpaceGenerator/spaceSectorManager.tscn" id="1_grwy1"]
+[ext_resource type="Environment" uid="uid://pxr6ffxs2bp7" path="res://godot/tres/scnEnv.tres" id="2_3pcfi"]
 
 [node name="spaceGameProper" type="Node2D"]
 script = ExtResource("1_5vue7")
 
-[node name="spaceSectorManager" parent="." instance=ExtResource("1_grwy1")]
+[node name="gameCutscenes" type="Node2D" parent="."]
+
+[node name="mindscape" type="Node2D" parent="."]
+
+[node name="spaceEnv" type="WorldEnvironment" parent="mindscape"]
+environment = ExtResource("2_3pcfi")
+
+[node name="spaceSectorManager" parent="mindscape" instance=ExtResource("1_grwy1")]
+
+[node name="spaceAssetManager" type="Node2D" parent="mindscape"]
+
+[node name="spaceEnvObject" type="Node2D" parent="mindscape/spaceAssetManager"]
+
+[node name="6" type="Parallax2D" parent="mindscape/spaceAssetManager/spaceEnvObject"]
+scroll_scale = Vector2(0.1, 0.1)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(6700, 7000)
+
+[node name="5" type="Parallax2D" parent="mindscape/spaceAssetManager/spaceEnvObject"]
+scroll_scale = Vector2(0.15, 0.15)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(7000, 7000)
+
+[node name="4" type="Parallax2D" parent="mindscape/spaceAssetManager/spaceEnvObject"]
+scroll_scale = Vector2(0.25, 0.25)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(6700, 7000)
+
+[node name="3" type="Parallax2D" parent="mindscape/spaceAssetManager/spaceEnvObject"]
+scroll_scale = Vector2(0.35, 0.35)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(6700, 7000)
+
+[node name="2" type="Parallax2D" parent="mindscape/spaceAssetManager/spaceEnvObject"]
+scroll_scale = Vector2(0.5, 0.5)
+limit_begin = Vector2(-7000, -7000)
+limit_end = Vector2(6700, 7000)
+
+[node name="spaceObjects" type="Node2D" parent="mindscape/spaceAssetManager"]
+z_index = 6
+z_as_relative = false

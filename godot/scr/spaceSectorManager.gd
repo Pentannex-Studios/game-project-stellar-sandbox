@@ -117,3 +117,6 @@ func disposeSpaceSector() -> int:
 	print(" ")
 	
 	return 0
+
+func getBackground() -> Node2D:
+	return _spaceBgGen

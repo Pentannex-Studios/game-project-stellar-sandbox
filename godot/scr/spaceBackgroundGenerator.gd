@@ -1,11 +1,11 @@
 extends Node2D
 #------------------------------------------------------------------------------#
+@onready var _stars: GPUParticles2D = get_node("spacePllxMngr/spaceBgPllx/stars")
+
 var _spaceBgTexture: NoiseTexture2D 
 var _spaceGasTex: NoiseTexture2D
 var _spaceGasTex1: NoiseTexture2D
 var _spaceGasTex2: NoiseTexture2D
-var _spaceStarTex: NoiseTexture2D
-var _spaceStarTex1: NoiseTexture2D
 
 #------------------------------------------------------------------------------#
 var _spaceGenThread: Thread
@@ -61,22 +61,18 @@ func loadThread(spaceArray: Array) -> void:
 	_spaceGasTex = NoiseTexture2D.new()
 	_spaceGasTex1 = NoiseTexture2D.new()
 	_spaceGasTex2 = NoiseTexture2D.new()
-	_spaceStarTex = NoiseTexture2D.new()
-	_spaceStarTex1 = NoiseTexture2D.new()
 	
 	get_node("spacePllxMngr/spaceBgPllx/spaceBgTex").texture = _spaceBgTexture
 	get_node("spacePllxMngr/spaceGPllx/spaceGasTex").texture = _spaceGasTex
 	get_node("spacePllxMngr/spaceG1Pllx/spaceGasTex1").texture = _spaceGasTex1
 	get_node("spacePllxMngr/spaceG2Pllx/spaceGasTex2").texture = _spaceGasTex2
-	get_node("spacePllxMngr/spaceSPllx/spaceStarTex").texture = _spaceStarTex
-	get_node("spacePllxMngr/spaceS1Pllx/spaceStarTex1").texture = _spaceStarTex1
 	
 	get_node("spacePllxMngr/spaceGPllx/spaceGasTex").modulate = spaceArray[0][2]
 	get_node("spacePllxMngr/spaceG1Pllx/spaceGasTex1").modulate = spaceArray[0][3]
 	get_node("spacePllxMngr/spaceG2Pllx/spaceGasTex2").modulate = spaceArray[0][4]
 	
 	# Append the textures in an array to be send in the thread.
-	spaceArray.append([_spaceBgTexture, _spaceGasTex, _spaceGasTex1, _spaceGasTex2, _spaceStarTex, _spaceStarTex1])
+	spaceArray.append([_spaceBgTexture, _spaceGasTex, _spaceGasTex1, _spaceGasTex2])
 	
 	# Proceed to the thread function
 	_spaceGenThread.start(_genSpace.bind(spaceArray))
@@ -85,6 +81,13 @@ func loadThread(spaceArray: Array) -> void:
 	print("Printing array contents to be sent in thread ", _spaceGenThread, ": ", spaceArray)
 	# IGNORE: Debug
 	print("\nLoading space background textures in the thread...")
+	
+	# Load the stars.
+	_stars.set_lifetime(0.5)
+	_stars.set_speed_scale(1)
+	await get_tree().create_timer(lib.genRand(5, 9)).timeout
+	_stars.set_lifetime(60)
+	_stars.set_speed_scale(0.1)
 
 # IMPORTANT CODE: Thread Function for background space generation. 
 func _genSpace(spaceArray: Array) -> void:
@@ -93,7 +96,7 @@ func _genSpace(spaceArray: Array) -> void:
 	print("Generating textures now.")
 	
 	# Loop basic information to the textures.
-	for _spaceTextureGenerationIteration in range(6):
+	for _spaceTextureGenerationIteration in range(4):
 		# Creating the default configuration of the textures.
 		spaceArray[1][_spaceTextureGenerationIteration].width = lib.sectSize
 		spaceArray[1][_spaceTextureGenerationIteration].height = lib.sectSize
@@ -122,8 +125,8 @@ func _genSpace(spaceArray: Array) -> void:
 		if _spaceAsstsIdx == 1:
 			# Space background generation.
 			_spaceTexNoise.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
-			_spaceTexColorRamp.offsets = [0.5, 1]
-			_spaceTexColorRamp.colors = [Color("1a001a"), spaceArray[0][1]]
+			_spaceTexColorRamp.offsets = [0, 5]
+			_spaceTexColorRamp.colors = [Color.TRANSPARENT, spaceArray[0][1]]
 			# IGNORE: Debug
 			print("    Adjusted space background texture! ", spaceArray[1][_spaceTextureGenerationIteration])
 		
@@ -147,32 +150,7 @@ func _genSpace(spaceArray: Array) -> void:
 				# IGNORE: Debug
 				print("    Queue Free'd' a texture because modulate is 0. ", spaceArray[1][_spaceTextureGenerationIteration])
 			
-			print("    Adjusted a space gas texture! ", spaceArray[1][_spaceTextureGenerationIteration], " Index: ", _spaceAsstsIdx)
-		
-		elif _spaceAsstsIdx > 4: 
-			# Creating the default configuration of the textures.
-			spaceArray[1][_spaceTextureGenerationIteration].width = lib.sectSize * 3
-			spaceArray[1][_spaceTextureGenerationIteration].height = lib.sectSize * 3
-			
-			# Space star generation.
-			_spaceTexNoise.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
-			_spaceTexNoise.frequency = 0.15
-			_spaceTexNoise.fractal_octaves = 5
-			_spaceTexNoise.fractal_gain = 2
-			
-			if _spaceAsstsIdx == 5:
-				_spaceTexColorRamp.offsets = [0.9, 1]
-				# IGNORE: Debug
-				print("    Adjusted a space star texture! ", spaceArray[1][_spaceTextureGenerationIteration])
-			
-			elif _spaceAsstsIdx == 6:
-				_spaceTexColorRamp.offsets = [0.80, 1]
-				# IGNORE: Debug
-				print("    Adjusted a space star texture! ", spaceArray[1][_spaceTextureGenerationIteration])
-		
-		# Increase index by 1 to determine what type of adjustments to add in the textures.
-		# IGNORE: Debug
-		print("    Iteration complete! Incrementing. \n")
+			print("    Adjusted a space gas texture! ", spaceArray[1][_spaceTextureGenerationIteration], " Index: ", _spaceAsstsIdx, "\n")
 		_spaceAsstsIdx += 1
 		
 		# Removes objects from variable so when set the main texture to null, they will also be changed to null.
@@ -194,15 +172,11 @@ func revertSpaceTexturesToDefault() -> void:
 	_spaceGasTex = null
 	_spaceGasTex1 = null
 	_spaceGasTex2 = null
-	_spaceStarTex = null
-	_spaceStarTex1 = null
 	
 	get_node("spacePllxMngr/spaceBgPllx/spaceBgTex").texture = null
 	get_node("spacePllxMngr/spaceGPllx/spaceGasTex").texture = null
 	get_node("spacePllxMngr/spaceG1Pllx/spaceGasTex1").texture = null
 	get_node("spacePllxMngr/spaceG2Pllx/spaceGasTex2").texture = null
-	get_node("spacePllxMngr/spaceSPllx/spaceStarTex").texture = null
-	get_node("spacePllxMngr/spaceS1Pllx/spaceStarTex1").texture = null
 	get_node("spacePllxMngr/spaceGPllx/spaceGasTex").modulate = Color(1, 1, 1, 1)
 	get_node("spacePllxMngr/spaceG1Pllx/spaceGasTex1").modulate = Color(1, 1, 1, 1)
 	get_node("spacePllxMngr/spaceG2Pllx/spaceGasTex2").modulate = Color(1, 1, 1, 1)
@@ -219,3 +193,13 @@ func clearSpaceGenThreads() -> void:
 	revertSpaceTexturesToDefault()
 
 #------------------------------------------------------------------------------#
+# Edit the gas colors.
+func editSpaceGasColor(gas: int = 0, gasColor: Color = Color(1, 1, 1, 1)) -> void:
+	var _gases: Array = [
+		get_node("spacePllxMngr/spaceGPllx/spaceGasTex"),
+		get_node("spacePllxMngr/spaceG1Pllx/spaceGasTex1"),
+		get_node("spacePllxMngr/spaceG2Pllx/spaceGasTex2")
+	]
+	
+	var _tween: Tween = create_tween()
+	_tween.tween_property(_gases[gas], "modulate", gasColor, 5).set_ease(Tween.EASE_IN_OUT)
