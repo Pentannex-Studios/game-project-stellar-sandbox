@@ -1,7 +1,7 @@
 extends Node
 #------------------------------------------------------------------------------#
 # Scene paths here.
-var _gameProperPath: String = "res://godot/pck/gameSpaceGenerator/spaceGameProper.tscn"
+var _gameProperPath: String = "res://godot/pck/gameMindscapeGen/gameProper.tscn"
 var _uiMenuPath: String = "res://godot/pck/gameMainMenu/gameMainMenu.tscn"
 #------------------------------------------------------------------------------#
 

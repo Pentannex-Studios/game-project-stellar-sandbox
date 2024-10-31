@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dput70sdrayl" path="res://godot/tres/uiGlobalTheme.tres" id="1_00chu"]
 [ext_resource type="FontFile" uid="uid://bkedubf4jve6l" path="res://external/font/RobotoCondensed-Regular.ttf" id="1_1bhsh"]
-[ext_resource type="Script" path="res://godot/scr/uiInputSSK.gd" id="2_2nrcw"]
+[ext_resource type="Script" path="res://godot/scr/uiInputCode.gd" id="2_2nrcw"]
 [ext_resource type="FontFile" uid="uid://b3f6o2t3fsb05" path="res://external/font/RobotoCondensed-Light.ttf" id="3_la0yy"]
 [ext_resource type="AudioStream" uid="uid://m4ny8ff47g0h" path="res://external/aud/fx/select_008 .ogg" id="5_f27em"]
 

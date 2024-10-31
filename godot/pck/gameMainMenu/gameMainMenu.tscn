@@ -5,11 +5,11 @@
 [ext_resource type="FontFile" uid="uid://b7v8fse3db07l" path="res://external/font/RobotoCondensed-LightItalic.ttf" id="3_bsvqu"]
 [ext_resource type="Texture2D" uid="uid://bxob6lbcb0hdo" path="res://external/png/logo/Godot Logo.png" id="4_vwqxi"]
 [ext_resource type="Texture2D" uid="uid://chq4nnybg1jnm" path="res://external/png/logo/eseyem.png" id="5_bmasy"]
-[ext_resource type="PackedScene" uid="uid://b357pus0d553w" path="res://godot/pck/userInterface/uiMainMenuButtons/uiMenuStartExploration.tscn" id="6_sdq32"]
+[ext_resource type="PackedScene" uid="uid://b357pus0d553w" path="res://godot/pck/userInterface/uiMainMenuButtons/uiMenuStart.tscn" id="6_sdq32"]
 [ext_resource type="PackedScene" uid="uid://bv38r65el0wun" path="res://godot/pck/userInterface/uiLoading/uiLoading.tscn" id="6_xkrxe"]
-[ext_resource type="PackedScene" uid="uid://dl052par3gshi" path="res://godot/pck/userInterface/uiInput/uiInputSSK.tscn" id="7_8hp2b"]
-[ext_resource type="PackedScene" uid="uid://dgurew8fui5pv" path="res://godot/pck/userInterface/uiMainMenuButtons/uiMenuGenerateNewSector.tscn" id="7_blbwu"]
-[ext_resource type="PackedScene" uid="uid://bp6uu25kxrene" path="res://godot/pck/userInterface/uiMainMenuButtons/uiMenuLocateSector.tscn" id="7_fgblm"]
+[ext_resource type="PackedScene" uid="uid://dl052par3gshi" path="res://godot/pck/userInterface/uiInput/uiInputCode.tscn" id="7_8hp2b"]
+[ext_resource type="PackedScene" uid="uid://dgurew8fui5pv" path="res://godot/pck/userInterface/uiMainMenuButtons/uiMenuGenMs.tscn" id="7_blbwu"]
+[ext_resource type="PackedScene" uid="uid://bp6uu25kxrene" path="res://godot/pck/userInterface/uiMainMenuButtons/uiMenuCodeBtn.tscn" id="7_fgblm"]
 [ext_resource type="PackedScene" uid="uid://eo7j2g77qayc" path="res://godot/pck/userInterface/uiMainMenuButtons/uiMenuExit.tscn" id="8_eiuwx"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p0vh3"]
@@ -1001,13 +1001,12 @@ script = ExtResource("1_u50fn")
 
 [node name="uiCamera" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+process_callback = 0
 limit_left = -7000
 limit_top = -7000
 limit_right = 7000
 limit_bottom = 7000
 limit_smoothed = true
-position_smoothing_enabled = true
-editor_draw_limits = true
 
 [node name="uiLayer" type="CanvasLayer" parent="."]
 

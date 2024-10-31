@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ndsnl58qknvl"]
 
-[ext_resource type="Script" path="res://godot/scr/spacePhenomenaGenerator.gd" id="1_k058o"]
+[ext_resource type="Script" path="res://godot/scr/msPhenomenaGen.gd" id="1_k058o"]
 
 [node name="spacePhenoGen" type="Node2D"]
 script = ExtResource("1_k058o")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b357pus0d553w"]
 
-[ext_resource type="Script" path="res://godot/scr/uiMenuStartExploration.gd" id="2_4ujau"]
+[ext_resource type="Script" path="res://godot/scr/uiMenuStart.gd" id="2_4ujau"]
 [ext_resource type="Theme" uid="uid://dput70sdrayl" path="res://godot/tres/uiGlobalTheme.tres" id="3_tctqs"]
 [ext_resource type="AudioStream" uid="uid://m4ny8ff47g0h" path="res://external/aud/fx/select_008 .ogg" id="3_trr1o"]
 
