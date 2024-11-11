@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=3 uid="uid://bih5luxeqykid"]
+
+[ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameProper/gameProper.gd" id="1_hjay7"]
+[ext_resource type="PackedScene" uid="uid://d2knxogc4ing1" path="res://assets/godot/scn/baseGame/gameProper/userInterface/toMenu/uiToMenu.tscn" id="2_55g80"]
+[ext_resource type="Environment" uid="uid://pxr6ffxs2bp7" path="res://assets/godot/tres/scnEnv.tres" id="2_h31ue"]
+[ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameProper/userInterface/gameProperUI.gd" id="2_jws2c"]
+[ext_resource type="PackedScene" uid="uid://dp51oah6gmomd" path="res://assets/godot/scn/baseGame/gameProper/gameMindscapeGen/mindScapeMngr.tscn" id="3_y1nyr"]
+[ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameProper/gameArcMngr.gd" id="4_ok0yk"]
+
+[sub_resource type="Animation" id="Animation_33myk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiFadeOverlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiPauseMenu:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiPauseMenu/uiToMenu:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_e5n1m"]
+resource_name = "pause"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiFadeOverlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.25),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 0.960784)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiPauseMenu:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiPauseMenu/uiToMenu:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cehgd"]
+_data = {
+"RESET": SubResource("Animation_33myk"),
+"pause": SubResource("Animation_e5n1m")
+}
+
+[node name="spaceGameProper" type="Node2D" groups=["gameManager"]]
+script = ExtResource("1_hjay7")
+
+[node name="uiLayer" type="CanvasLayer" parent="."]
+
+[node name="uiMenu" type="Control" parent="uiLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_jws2c")
+
+[node name="uiAnim" type="AnimationPlayer" parent="uiLayer/uiMenu"]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_cehgd")
+}
+
+[node name="uiFadeOverlay" type="ColorRect" parent="uiLayer/uiMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0196078, 0.0196078, 0.0196078, 0)
+
+[node name="uiPauseMenu" type="Control" parent="uiLayer/uiMenu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="uiToMenu" parent="uiLayer/uiMenu/uiPauseMenu" instance=ExtResource("2_55g80")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -101.0
+offset_top = -55.0
+offset_right = -21.0
+offset_bottom = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="mindscape" type="Node2D" parent="."]
+
+[node name="spaceEnv" type="WorldEnvironment" parent="mindscape"]
+environment = ExtResource("2_h31ue")
+
+[node name="spaceSectorManager" parent="mindscape" instance=ExtResource("3_y1nyr")]
+
+[node name="spaceGameArc" type="Node2D" parent="."]
+script = ExtResource("4_ok0yk")
+
+[editable path="mindscape/spaceSectorManager"]
+[editable path="mindscape/spaceSectorManager/spacePhenoGen"]
+[editable path="mindscape/spaceSectorManager/spaceBgGen"]

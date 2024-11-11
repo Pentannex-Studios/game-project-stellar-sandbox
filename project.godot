@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Stellar Sandbox"
-run/main_scene="res://godot/scn/scnManager.tscn"
+run/main_scene="res://assets/godot/scn/scnManager.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 run/max_fps=60
 boot_splash/bg_color=Color(0.0196078, 0.0196078, 0.0196078, 1)
@@ -22,12 +22,12 @@ boot_splash/minimum_display_time=100
 
 [audio]
 
-buses/default_bus_layout="res://godot/tres/soundBus.tres"
+buses/default_bus_layout="res://assets/godot/tres/soundBus.tres"
 driver/mix_rate=96000
 
 [autoload]
 
-lib="*res://godot/scr/lib.gd"
+lib="*res://assets/godot/scr/lib.gd"
 
 [display]
 

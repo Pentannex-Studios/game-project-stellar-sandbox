@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://bp6uu25kxrene"]
+
+[ext_resource type="Theme" uid="uid://dput70sdrayl" path="res://assets/godot/tres/uiGlobalTheme.tres" id="1_1atw1"]
+[ext_resource type="FontFile" uid="uid://b3f6o2t3fsb05" path="res://assets/external/font/RobotoCondensed-Light.ttf" id="1_icer6"]
+[ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/codeValidation/uiMenuCodeBtn.gd" id="2_ch47w"]
+[ext_resource type="AudioStream" uid="uid://u57hkwqqf64b" path="res://assets/external/aud/fx/select_007.ogg" id="3_pcdra"]
+
+[sub_resource type="Animation" id="Animation_f2c4x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.392157)]
+}
+
+[sub_resource type="Animation" id="Animation_twdhm"]
+resource_name = "uiMenuLocateHovered"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5bkib"]
+_data = {
+"RESET": SubResource("Animation_f2c4x"),
+"uiMenuLocateHovered": SubResource("Animation_twdhm")
+}
+
+[node name="uiMenuCodeValidation" type="Button"]
+offset_right = 192.0
+offset_bottom = 32.0
+theme = ExtResource("1_1atw1")
+theme_override_colors/font_color = Color(1, 1, 1, 0.392157)
+theme_override_fonts/font = ExtResource("1_icer6")
+theme_override_font_sizes/font_size = 15
+text = "Align the Stars"
+flat = true
+script = ExtResource("2_ch47w")
+
+[node name="uiMenuCodeValidationAnimation" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_5bkib")
+}
+autoplay = "uiMenuStartHighlight"
+
+[node name="uiMenuCodeValidationSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pcdra")
+bus = &"SFX Main"
+
+[connection signal="mouse_entered" from="." to="." method="_whenMouseEnteredButton"]
+[connection signal="mouse_exited" from="." to="." method="_whenMouseExitedButton"]
+[connection signal="pressed" from="." to="." method="_whenMousePressed"]
