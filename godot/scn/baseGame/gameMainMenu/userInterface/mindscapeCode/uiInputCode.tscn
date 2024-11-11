@@ -1,0 +1,182 @@
+[gd_scene load_steps=12 format=3 uid="uid://dl052par3gshi"]
+
+[ext_resource type="Theme" uid="uid://dput70sdrayl" path="res://godot/tres/uiGlobalTheme.tres" id="1_00chu"]
+[ext_resource type="FontFile" uid="uid://bkedubf4jve6l" path="res://external/font/RobotoCondensed-Regular.ttf" id="1_1bhsh"]
+[ext_resource type="Script" path="res://godot/scn/baseGame/gameMainMenu/userInterface/mindscapeCode/uiInputCode.gd" id="2_2nrcw"]
+[ext_resource type="FontFile" uid="uid://b3f6o2t3fsb05" path="res://external/font/RobotoCondensed-Light.ttf" id="3_la0yy"]
+[ext_resource type="AudioStream" uid="uid://m4ny8ff47g0h" path="res://external/aud/fx/select_008 .ogg" id="5_f27em"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38a0v"]
+bg_color = Color(1, 1, 1, 0.0784314)
+border_color = Color(1, 1, 1, 0.196078)
+corner_radius_bottom_right = 15
+corner_detail = 1
+
+[sub_resource type="Animation" id="Animation_hh1qn"]
+resource_name = "uiInputMSKHovered"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiMSKPanel:theme_override_styles/panel:border_width_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.8),
+"transitions": PackedFloat32Array(0.25, 0.25),
+"update": 0,
+"values": [0, 560]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_colors/font_placeholder_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.8),
+"transitions": PackedFloat32Array(0.25, 0.25),
+"update": 0,
+"values": [Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2o8r"]
+_data = {
+"uiInputMSKHovered": SubResource("Animation_hh1qn")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mk4h5"]
+bg_color = Color(1, 1, 1, 0.0784314)
+border_color = Color(1, 1, 1, 0.196078)
+corner_detail = 1
+
+[sub_resource type="Animation" id="Animation_qiqty"]
+resource_name = "uiInputMSKLocateHovered"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiLocMSKBtn/uiLocMSKPanel:theme_override_styles/panel:border_width_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.8),
+"transitions": PackedFloat32Array(0.25, 0.25),
+"update": 0,
+"values": [0, 150]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiLocMSKBtn:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.8),
+"transitions": PackedFloat32Array(0.25, 0.25),
+"update": 0,
+"values": [Color(1, 1, 1, 0.784314), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_by1xw"]
+_data = {
+"uiInputMSKLocateHovered": SubResource("Animation_qiqty")
+}
+
+[node name="uiMSK" type="LineEdit" groups=["SSKInput"]]
+offset_top = 35.0
+offset_right = 512.0
+offset_bottom = 83.0
+theme = ExtResource("1_00chu")
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.392157)
+theme_override_fonts/font = ExtResource("1_1bhsh")
+placeholder_text = "Input your code to shift the mindscape to your liking."
+alignment = 1
+max_length = 62
+context_menu_enabled = false
+clear_button_enabled = true
+caret_blink = true
+script = ExtResource("2_2nrcw")
+
+[node name="uiMSKSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_f27em")
+bus = &"SFX Main"
+
+[node name="uiMSKNote" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.466
+anchor_top = -0.115
+anchor_right = -1.466
+anchor_bottom = -0.115
+offset_left = 910.592
+offset_top = 71.52
+offset_right = 1262.59
+offset_bottom = 97.52
+theme = ExtResource("1_00chu")
+
+[node name="uiMSKTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.729
+anchor_bottom = -0.729
+offset_top = -0.00799942
+offset_right = 104.0
+offset_bottom = 25.992
+theme = ExtResource("1_00chu")
+text = "Align the stars"
+
+[node name="uiMSKPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 48.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_38a0v")
+
+[node name="uiMSKAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h2o8r")
+}
+
+[node name="uiLocMSKBtn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.625
+anchor_bottom = -0.625
+offset_left = 8.0
+offset_top = 96.0
+offset_right = 136.0
+offset_bottom = 120.0
+theme = ExtResource("1_00chu")
+theme_override_colors/font_color = Color(1, 1, 1, 0.784314)
+theme_override_fonts/font = ExtResource("3_la0yy")
+theme_override_font_sizes/font_size = 16
+text = "Get Code"
+flat = true
+
+[node name="uiLocMSKPanel" type="Panel" parent="uiLocMSKBtn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.062
+anchor_top = -0.333
+anchor_right = -0.062
+anchor_bottom = -0.333
+offset_left = -0.0639997
+offset_top = -0.0079999
+offset_right = 143.936
+offset_bottom = 39.992
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mk4h5")
+
+[node name="uiLocMSKAnim" type="AnimationPlayer" parent="uiLocMSKBtn"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_by1xw")
+}
+
+[connection signal="mouse_entered" from="." to="." method="_whenMouseEntered"]
+[connection signal="mouse_exited" from="." to="." method="_whenMouseExited"]
+[connection signal="property_list_changed" from="." to="." method="whenNodePropChanged"]
+[connection signal="text_changed" from="." to="." method="_whenTextChanged"]
+[connection signal="animation_finished" from="uiMSKAnimation" to="." method="whenUiMSKAnimFinished"]
+[connection signal="mouse_entered" from="uiLocMSKBtn" to="." method="_whenMSKLocBtnMouseEntered"]
+[connection signal="mouse_exited" from="uiLocMSKBtn" to="." method="_whenMSKLocBtnMouseExited"]
+[connection signal="pressed" from="uiLocMSKBtn" to="." method="_whenMSKLocBtnPressed"]

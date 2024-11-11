@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bih5luxeqykid"]
+
+[ext_resource type="Script" path="res://godot/scn/baseGame/gameProper/gameProper.gd" id="1_hjay7"]
+[ext_resource type="Environment" uid="uid://pxr6ffxs2bp7" path="res://godot/tres/scnEnv.tres" id="2_h31ue"]
+[ext_resource type="PackedScene" uid="uid://dp51oah6gmomd" path="res://godot/scn/baseGame/gameProper/gameMindscapeGen/mindScapeMngr.tscn" id="3_y1nyr"]
+[ext_resource type="Script" path="res://godot/scn/baseGame/gameProper/gameArcMngr.gd" id="4_ok0yk"]
+
+[node name="spaceGameProper" type="Node2D" groups=["gameManager"]]
+script = ExtResource("1_hjay7")
+
+[node name="mindscape" type="Node2D" parent="."]
+
+[node name="spaceEnv" type="WorldEnvironment" parent="mindscape"]
+environment = ExtResource("2_h31ue")
+
+[node name="spaceSectorManager" parent="mindscape" instance=ExtResource("3_y1nyr")]
+
+[node name="spaceGameArc" type="Node2D" parent="."]
+script = ExtResource("4_ok0yk")
+
+[editable path="mindscape/spaceSectorManager"]
+[editable path="mindscape/spaceSectorManager/spacePhenoGen"]
+[editable path="mindscape/spaceSectorManager/spaceBgGen"]

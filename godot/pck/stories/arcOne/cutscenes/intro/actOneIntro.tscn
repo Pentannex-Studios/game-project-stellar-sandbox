@@ -1,0 +1,148 @@
+[gd_scene load_steps=28 format=3 uid="uid://cj5xjmrmho42y"]
+
+[ext_resource type="Script" path="res://godot/pck/stories/arcOne/cutscenes/intro/actOneIntro.gd" id="1_442ev"]
+[ext_resource type="Texture2D" uid="uid://dpnkjs40qfjmx" path="res://external/png/cutscenes/actOne/intro/clouds.png" id="1_be7gw"]
+[ext_resource type="Texture2D" uid="uid://dyyp02nq7i732" path="res://external/png/cutscenes/actOne/intro/fade.png" id="1_dxsej"]
+[ext_resource type="Script" path="res://godot/pck/stories/arcOne/cutscenes/parallaxMngr.gd" id="2_ugpn3"]
+[ext_resource type="Texture2D" uid="uid://chsas77a3dqkd" path="res://external/png/cutscenes/actOne/intro/ledge/f0.png" id="6_hc7ql"]
+[ext_resource type="Texture2D" uid="uid://nc5amywdf2e6" path="res://external/png/cutscenes/actOne/intro/ledge/f1.png" id="7_vlusn"]
+[ext_resource type="Texture2D" uid="uid://f0t60we7d8ds" path="res://external/png/cutscenes/actOne/intro/ledge/f2.png" id="8_0gd2m"]
+[ext_resource type="Texture2D" uid="uid://cgnuecv80icha" path="res://external/png/cutscenes/actOne/intro/ledge/f3.png" id="9_446dq"]
+[ext_resource type="Texture2D" uid="uid://bqsebyx1l32mv" path="res://external/png/cutscenes/actOne/intro/ledge/f4.png" id="10_ym3vx"]
+[ext_resource type="Texture2D" uid="uid://dofobeu7xxmfd" path="res://external/png/cutscenes/actOne/intro/ledge/f5.png" id="11_wgp7i"]
+[ext_resource type="Texture2D" uid="uid://b360lfqu0rhvt" path="res://external/png/cutscenes/actOne/intro/ledge/f6.png" id="12_hhc8q"]
+[ext_resource type="Texture2D" uid="uid://bbbcx3huqny4x" path="res://external/png/cutscenes/actOne/intro/ledge/f7.png" id="13_3au0b"]
+[ext_resource type="Texture2D" uid="uid://c8qqlwu2dftxy" path="res://external/png/cutscenes/actOne/intro/person/f1.png" id="14_gr64c"]
+[ext_resource type="Texture2D" uid="uid://b1clkuni7ke3u" path="res://external/png/cutscenes/actOne/intro/person/f2.png" id="15_8hx52"]
+[ext_resource type="Texture2D" uid="uid://cs1wyv8vjatbm" path="res://external/png/cutscenes/actOne/intro/person/f3.png" id="16_uv5pa"]
+[ext_resource type="Texture2D" uid="uid://ck8ppju5171mw" path="res://external/png/cutscenes/actOne/intro/person/f4.png" id="17_rjn3o"]
+[ext_resource type="Texture2D" uid="uid://b6na52ceb15jj" path="res://external/png/cutscenes/actOne/intro/person/f5.png" id="18_rx5oj"]
+[ext_resource type="Texture2D" uid="uid://cp2tdv4pswt15" path="res://external/png/cutscenes/actOne/intro/person/f6.png" id="19_t1qee"]
+[ext_resource type="Texture2D" uid="uid://c3bce1bf8md4j" path="res://external/png/cutscenes/actOne/intro/person/f7.png" id="20_78plt"]
+[ext_resource type="Texture2D" uid="uid://qxd7ydsovknu" path="res://external/png/cutscenes/actOne/intro/person/f8.png" id="21_j8tq5"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t2x2w"]
+animation = &"intro"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q1wvb"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_m0uvq"]
+states/intro/node = SubResource("AnimationNodeAnimation_t2x2w")
+states/intro/position = Vector2(320, 102)
+transitions = ["Start", "intro", SubResource("AnimationNodeStateMachineTransition_q1wvb")]
+
+[sub_resource type="Animation" id="Animation_6w2dl"]
+resource_name = "intro"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7sd5i"]
+_data = {
+"intro": SubResource("Animation_6w2dl")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vrg6j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_hc7ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vlusn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0gd2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_446dq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ym3vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wgp7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hhc8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3au0b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d7dmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_gr64c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8hx52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uv5pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rjn3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_rx5oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_t1qee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_78plt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_j8tq5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="actOneIntro" type="CanvasLayer"]
+layer = -1
+script = ExtResource("1_442ev")
+
+[node name="actOne" type="Node2D" parent="."]
+
+[node name="animMngr" type="AnimationTree" parent="actOne"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_m0uvq")
+anim_player = NodePath("../animation")
+
+[node name="animation" type="AnimationPlayer" parent="actOne"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_7sd5i")
+}
+
+[node name="parallax" type="Node2D" parent="actOne"]
+script = ExtResource("2_ugpn3")
+
+[node name="clouds" type="Sprite2D" parent="actOne/parallax"]
+position = Vector2(960, 540)
+scale = Vector2(1.025, 1.025)
+texture = ExtResource("1_be7gw")
+
+[node name="city" type="Sprite2D" parent="actOne/parallax"]
+position = Vector2(960, 540)
+scale = Vector2(1.025, 1.025)
+texture = ExtResource("1_dxsej")
+
+[node name="ledge" type="AnimatedSprite2D" parent="actOne/parallax"]
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_vrg6j")
+autoplay = "default"
+frame_progress = 0.572576
+
+[node name="person" type="AnimatedSprite2D" parent="actOne/parallax/ledge"]
+position = Vector2(-12, 198)
+scale = Vector2(0.545724, 0.545724)
+sprite_frames = SubResource("SpriteFrames_d7dmo")
+autoplay = "default"
+frame_progress = 0.6088

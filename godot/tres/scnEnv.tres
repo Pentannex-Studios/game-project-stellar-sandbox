@@ -1,12 +1,4 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://pxr6ffxs2bp7"]
-
-[sub_resource type="Gradient" id="Gradient_kw84b"]
-colors = PackedColorArray(0, 0, 0, 0.756863, 1, 1, 1, 0.733333)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_si5cm"]
-gradient = SubResource("Gradient_kw84b")
-use_hdr = true
-fill_to = Vector2(0.554054, 0.564189)
+[gd_resource type="Environment" format=3 uid="uid://pxr6ffxs2bp7"]
 
 [resource]
 background_mode = 3
@@ -16,8 +8,7 @@ tonemap_white = 5.0
 glow_enabled = true
 glow_levels/7 = 1.0
 glow_normalized = true
-glow_bloom = 0.75
+glow_bloom = 1.0
 glow_blend_mode = 1
 fog_enabled = true
 adjustment_enabled = true
-adjustment_color_correction = SubResource("GradientTexture2D_si5cm")
