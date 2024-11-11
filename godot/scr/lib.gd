@@ -27,30 +27,33 @@ extends Node
 #------------------------------------------------------------------------------#
 
 # GAME
+# Space sector configs.
+var MSK: String = "[|179645356571623424|ce624280|ee308280|00000000|356cfd80|2|]"
+
 const minSpawnSeed: int = -9223372036854775807
 const maxSpawnSeed: int = 9223372036854775807
-const sectSize = 1920
-const sectSizeMult = 5 # Scale multiplier for the space bg.
+const sectSize: int = 1920
+const sectSizeMult: int = 5 # Scale multiplier for the space bg.
 const gasColorMinRnge: float = 0.01
 const gasColorMaxRnge: float = 1.00
 const gasColorAlpha: float = 0.5
 
-const minRocks: int = 500
-const maxRocks: int = 1500
+# Gameplay.
+var gameplay_enabled: bool = false
+
+
+
+
+
 
 #------------------------------------------------------------------------------#
-# GLOBAL OBJECTS
 #------------------------------------------------------------------------------#
-var rng: Object = RandomNumberGenerator.new()
-
 #------------------------------------------------------------------------------#
-# GLOBAL INITIATION 
-#------------------------------------------------------------------------------#
-var MSK: String = "[|179645356571623424|ce624280|ee308280|00000000|356cfd80|2|]"
-
 #------------------------------------------------------------------------------#
 # GLOBAL GENERATORS 
 #------------------------------------------------------------------------------#
+var rng: Object = RandomNumberGenerator.new()
+
 # Generating random numbers. 
 func genRand(minVal: float, maxVal: float, type: String = "int", inclNegs: bool = false):
 	# "minVal" for lowest value.
@@ -108,12 +111,6 @@ func genTrueOrFalse() -> bool:
 #------------------------------------------------------------------------------#
 # GLOBAL TOOLS 
 #------------------------------------------------------------------------------#
-# Reparant a child node "child" to another node "newParent".
-func reparentNode(child: Node, newParent: Node) -> void:
-	var oldParent = child.get_parent()
-	oldParent.remove_child(child)
-	newParent.add_child(child)
-
 # Take a Screenshot.
 func takeScreenShot(vprt: Viewport) -> void:
 	if OS.has_feature("standalone"):

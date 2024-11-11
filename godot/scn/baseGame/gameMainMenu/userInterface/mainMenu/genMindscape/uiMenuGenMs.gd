@@ -4,7 +4,7 @@ extends Button
 #------------------------------------------------------------------------------#
 
 @onready var uiMenuGenMindscapeAnimation: AnimationPlayer = get_node("uiMenuGenMindscapeAnimation")
-@onready var uiMenuGenMindscapeSFX: AudioStreamPlayer = get_node("uiMenuGenMindscapeGenerateSFX")
+@onready var uiMenuGenMindscapeSFX: AudioStreamPlayer = get_node("uiMenuGenMindscapeSFX")
 
 #------------------------------------------------------------------------------#
 signal discoverMindscape

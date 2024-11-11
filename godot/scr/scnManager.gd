@@ -21,8 +21,8 @@ func _ready() -> void:
 	print("Initiated PseudoTree ", self, " Initiating scene loading.")
 	
 	# Load mainmenu and game proper to be added to scene.
-	_checkScnRes(_loadPckdScn(_gameProperPath))
 	_checkScnRes(_loadPckdScn(_uiMenuPath))
+	_checkScnRes(_loadPckdScn(_gameProperPath))
 	
 	# Load random game arc.
 	await get_tree().create_timer(2).timeout

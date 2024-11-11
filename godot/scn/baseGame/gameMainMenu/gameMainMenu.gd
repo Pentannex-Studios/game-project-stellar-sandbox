@@ -26,6 +26,8 @@ signal _montage
 
 #------------------------------------------------------------------------------#
 func _ready() -> void:
+	_uiAnimMngr.set_active(true)
+	
 	# Connects the signals to its respective functions.
 	# Most of these are input buttons. 
 	_uiStartExplorationBtn.connect("exploreMindscape", Callable(self, "_proceedToMindscape"))
@@ -68,7 +70,8 @@ func _montageGame() -> void:
 		
 		_menuCamTween.tween_property(_menuCamera, "global_position", _menuCamPos, _menuCamDuration).set_ease(Tween.EASE_OUT)
 		
-		await _menuCamTween.finished
+		if _menuCamTween:
+			await _menuCamTween.finished
 		_montage.emit()
 
 # Proceed to sector.
@@ -78,6 +81,12 @@ func _proceedToMindscape() -> void:
 	
 	# Call a signal to game manager. To load cutscene.
 	get_tree().call_group("gameManager", "playCutscene")
+	
+	# Enable gameplay and disable process of mainmenu.
+	await _uiAnim.animation_finished
+	lib.gameplay_enabled = true
+	for _node in get_children():
+		_node.set_process_mode(Node.PROCESS_MODE_DISABLED)
 
 # Generate new sector.
 func _generateNewMindscape() -> void:
@@ -120,3 +129,17 @@ func _exitGame() -> void:
 	
 	# Signal to quit game.
 	get_tree().call_group("sceneManager", "quitGame")
+
+# Enable mainmenu process.
+func goToMainMenu() -> void:
+	# Enable mainmenu.
+	lib.gameplay_enabled = false
+	for _node in get_children():
+		_node.set_process_mode(Node.PROCESS_MODE_INHERIT)
+	_menuCamera.set_enabled(true)
+	_montage.emit()
+	
+	# Reset the animation and replay the mainmenu.
+	_uiAnim.play("RESET")
+	await _uiAnim.animation_finished
+	_uiAnim.play("uiMainMenuAnimation")

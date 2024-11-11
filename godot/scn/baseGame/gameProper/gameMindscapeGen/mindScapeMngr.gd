@@ -65,7 +65,7 @@ func _loadSpaceSector() -> void:
 	print("Generated Space Sector Key (SSK): ", _spaceSectKey.format([_spaceSectSeed, _spaceSectBg, _spaceSectGas[0], _spaceSectGas[1], _spaceSectGas[2], _spaceSectPheno]))
 	
 	# Update SSK Key and send signals to any placeholders.
-	lib.SSK = _spaceSectKey.format([_spaceSectSeed, _spaceSectBg, _spaceSectGas[0], _spaceSectGas[1], _spaceSectGas[2], _spaceSectPheno])
+	lib.MSK = _spaceSectKey.format([_spaceSectSeed, _spaceSectBg, _spaceSectGas[0], _spaceSectGas[1], _spaceSectGas[2], _spaceSectPheno])
 	get_tree().call_group("SSKInput", "updatePlaceholderText")
 	
 	# Wait for the scene to be created.

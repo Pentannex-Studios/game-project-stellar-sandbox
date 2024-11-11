@@ -1,4 +1,5 @@
-# Load game arcs and store most important information here.
+# Load game arcs and store most important information here that is not common.
+# If common, put in lib singleton.
 # Save the played arcs and scores in file.
 # Probably put here the loading and saving features.
 

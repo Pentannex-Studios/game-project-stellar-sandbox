@@ -148,6 +148,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="uiMenuLocateSectorSFX" type="Panel" parent="."]
 layout_mode = 0
@@ -156,6 +157,7 @@ offset_top = 8.0
 offset_right = 56.0
 offset_bottom = 56.0
 pivot_offset = Vector2(24, 24)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x182q")
 
 [node name="uiAnimation" type="AnimationPlayer" parent="uiMenuLocateSectorSFX"]

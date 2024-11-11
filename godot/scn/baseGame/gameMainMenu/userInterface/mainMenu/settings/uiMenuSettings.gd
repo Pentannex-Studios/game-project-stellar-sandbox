@@ -12,16 +12,16 @@ signal gameSettings
 #------------------------------------------------------------------------------#
 # Play hover animation button when mouse entered button.
 func _whenMouseEnteredButton() -> void:
-	uiMenuSettingsAnimation.play("uiMenuLocateHovered")
+	uiMenuSettingsAnimation.play("uiMenuSettingsHovered")
 	uiMenuSettingsSFX.play()
 
 # Play hover animation button when mouse exits button.
 func _whenMouseExitedButton() -> void:
-	uiMenuSettingsAnimation.play_backwards("uiMenuLocateHovered")
+	uiMenuSettingsAnimation.play_backwards("uiMenuSettingsHovered")
 
 # Emit signal to main menu manager.
 func _whenMousePressed() -> void:
-	uiMenuSettingsAnimation.play_backwards("uiMenuLocateHovered")
+	uiMenuSettingsAnimation.play_backwards("uiMenuSettingsHovered")
 	gameSettings.emit()
 	
 	# FORMAT: Release focus on the button.

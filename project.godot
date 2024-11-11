@@ -43,6 +43,8 @@ window/stretch/aspect="expand"
 [global_group]
 
 player=""
+mainMenu=""
+gameManager=""
 
 [gui]
 
