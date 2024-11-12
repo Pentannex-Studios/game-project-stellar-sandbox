@@ -12,7 +12,7 @@ var _uiMenuPath: String = "res://assets/godot/scn/baseGame/gameMainMenu/gameMain
 #------------------------------------------------------------------------------#
 # Arc paths here.
 var _arcPaths: Array[String] = [
-	"res://godot/pck/stories/arcOne/arcManager/arcOneManager.tscn"
+	"res://assets/godot/pck/stories/arcOne/arcManager/arcOneManager.tscn"
 ]
 
 #------------------------------------------------------------------------------#
