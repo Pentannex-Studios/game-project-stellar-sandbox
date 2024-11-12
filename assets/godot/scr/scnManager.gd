@@ -6,8 +6,8 @@
 extends Node
 #------------------------------------------------------------------------------#
 # Scene paths here.
-var _gameProperPath: String = "res://godot/scn/baseGame/gameProper/gameProper.tscn"
-var _uiMenuPath: String = "res://godot/scn/baseGame/gameMainMenu/gameMainMenu.tscn"
+var _gameProperPath: String = "res://assets/godot/scn/baseGame/gameProper/gameProper.tscn"
+var _uiMenuPath: String = "res://assets/godot/scn/baseGame/gameMainMenu/gameMainMenu.tscn"
 
 #------------------------------------------------------------------------------#
 # Arc paths here.
