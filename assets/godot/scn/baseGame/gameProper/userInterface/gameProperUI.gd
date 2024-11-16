@@ -18,3 +18,4 @@ func _unhandled_input(_event: InputEvent) -> void:
 			else:
 				paused = true
 				_uiAnim.play("pause")
+			get_tree().paused = paused

@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://cj5xjmrmho42y"]
+[gd_scene load_steps=32 format=3 uid="uid://cj5xjmrmho42y"]
 
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/actOneIntro.gd" id="1_442ev"]
 [ext_resource type="Texture2D" uid="uid://dpnkjs40qfjmx" path="res://assets/external/png/cutscenes/actOne/intro/clouds.png" id="1_be7gw"]
 [ext_resource type="Texture2D" uid="uid://dyyp02nq7i732" path="res://assets/external/png/cutscenes/actOne/intro/fade.png" id="1_dxsej"]
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/parallaxMngr.gd" id="2_ugpn3"]
+[ext_resource type="Texture2D" uid="uid://brhmtrddh4sp1" path="res://assets/external/png/fx/vignette.png" id="2_urgu6"]
 [ext_resource type="Texture2D" uid="uid://chsas77a3dqkd" path="res://assets/external/png/cutscenes/actOne/intro/ledge/f0.png" id="6_hc7ql"]
 [ext_resource type="Texture2D" uid="uid://nc5amywdf2e6" path="res://assets/external/png/cutscenes/actOne/intro/ledge/f1.png" id="7_vlusn"]
 [ext_resource type="Texture2D" uid="uid://f0t60we7d8ds" path="res://assets/external/png/cutscenes/actOne/intro/ledge/f2.png" id="8_0gd2m"]
@@ -20,23 +21,124 @@
 [ext_resource type="Texture2D" uid="uid://cp2tdv4pswt15" path="res://assets/external/png/cutscenes/actOne/intro/person/f6.png" id="19_t1qee"]
 [ext_resource type="Texture2D" uid="uid://c3bce1bf8md4j" path="res://assets/external/png/cutscenes/actOne/intro/person/f7.png" id="20_78plt"]
 [ext_resource type="Texture2D" uid="uid://qxd7ydsovknu" path="res://assets/external/png/cutscenes/actOne/intro/person/f8.png" id="21_j8tq5"]
+[ext_resource type="FontFile" uid="uid://dwvsoh5o21col" path="res://assets/external/font/ComingSoon.ttf" id="22_rj375"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t2x2w"]
 animation = &"intro"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q1wvb"]
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_m0uvq"]
 states/intro/node = SubResource("AnimationNodeAnimation_t2x2w")
 states/intro/position = Vector2(320, 102)
 transitions = ["Start", "intro", SubResource("AnimationNodeStateMachineTransition_q1wvb")]
 
+[sub_resource type="Animation" id="Animation_myfo5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiLayer/uiMenu/ctFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiLayer/uiMenu/ctTextField:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiLayer/uiMenu/ctTextField:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiLayer/uiMenu/ctVignette:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_6w2dl"]
 resource_name = "intro"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiLayer/uiMenu/ctFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.96667, 7.05833, 8.36667, 10, 11.5333, 12.9667, 13.9667, 15.275, 16.9083, 18.4417, 19.875, 21.9, 23.5333, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiLayer/uiMenu/ctTextField:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 6.03333, 7.03333, 9.03333, 10, 13.9, 15, 19, 19.9667, 23.8667, 24.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiLayer/uiMenu/ctTextField:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8.96667, 18.9333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["It's very cold...", "Yet I oddly feel so warm...", "The stars surely look bright today..."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiLayer/uiMenu/ctVignette:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.3, 9.03333),
+"transitions": PackedFloat32Array(0.7, 0.7),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7sd5i"]
 _data = {
+"RESET": SubResource("Animation_myfo5"),
 "intro": SubResource("Animation_6w2dl")
 }
 
@@ -104,11 +206,18 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_fmof5"]
+font = ExtResource("22_rj375")
+font_size = 25
+outline_size = 1
+
 [node name="actOneIntro" type="CanvasLayer"]
-layer = -1
+layer = 0
 script = ExtResource("1_442ev")
 
 [node name="actOne" type="Node2D" parent="."]
+z_index = 99
+z_as_relative = false
 
 [node name="animMngr" type="AnimationTree" parent="actOne"]
 root_node = NodePath("../..")
@@ -120,6 +229,7 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_7sd5i")
 }
+autoplay = "intro"
 
 [node name="parallax" type="Node2D" parent="actOne"]
 script = ExtResource("2_ugpn3")
@@ -138,11 +248,61 @@ texture = ExtResource("1_dxsej")
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_vrg6j")
 autoplay = "default"
-frame_progress = 0.572576
+frame_progress = 0.211812
 
 [node name="person" type="AnimatedSprite2D" parent="actOne/parallax/ledge"]
 position = Vector2(-12, 198)
 scale = Vector2(0.545724, 0.545724)
 sprite_frames = SubResource("SpriteFrames_d7dmo")
 autoplay = "default"
-frame_progress = 0.6088
+frame_progress = 0.0328367
+
+[node name="uiLayer" type="CanvasLayer" parent="."]
+
+[node name="uiMenu" type="Control" parent="uiLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ctVignette" type="TextureRect" parent="uiLayer/uiMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+texture = ExtResource("2_urgu6")
+stretch_mode = 6
+
+[node name="ctFade" type="ColorRect" parent="uiLayer/uiMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ctTextField" type="Label" parent="uiLayer/uiMenu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -823.0
+offset_top = -120.0
+offset_right = 827.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_fmof5")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

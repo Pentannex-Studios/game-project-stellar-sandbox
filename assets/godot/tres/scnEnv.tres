@@ -2,6 +2,7 @@
 
 [resource]
 background_mode = 3
+background_canvas_max_layer = 1
 tonemap_mode = 1
 tonemap_exposure = 0.85
 tonemap_white = 5.0
@@ -10,5 +11,4 @@ glow_levels/7 = 1.0
 glow_normalized = true
 glow_bloom = 1.0
 glow_blend_mode = 1
-fog_enabled = true
 adjustment_enabled = true

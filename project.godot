@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Stellar Sandbox"
+config/name="The Journey to the Starlit Veil"
 run/main_scene="res://assets/godot/scn/scnManager.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="userdata"
 config/features=PackedStringArray("4.3", "Mobile")
-run/max_fps=60
+run/max_fps=144
 boot_splash/bg_color=Color(0.0196078, 0.0196078, 0.0196078, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
@@ -39,12 +41,14 @@ window/size/window_width_override=1024
 window/size/window_height_override=600
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [global_group]
 
 player=""
 mainMenu=""
 gameManager=""
+gameArcManager=""
 
 [gui]
 

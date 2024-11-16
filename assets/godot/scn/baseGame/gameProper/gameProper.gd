@@ -9,6 +9,12 @@ extends Node2D
 @onready var _spaceGameArc: Node2D = get_node("spaceGameArc")
 
 #------------------------------------------------------------------------------#
+func _ready() -> void:
+	# EDITOR only, checks if the root of the game scene is this scene.
+	if get_parent() == get_tree().root:
+		lib.gameplay_enabled = true
+
+#------------------------------------------------------------------------------#
 # Load game arc loaded from the scene loader and place it.
 func loadGameArc(arc: Object) -> void:
 	# Clean the game arc from other stuff.

@@ -98,6 +98,7 @@ script = ExtResource("1_hjay7")
 [node name="uiLayer" type="CanvasLayer" parent="."]
 
 [node name="uiMenu" type="Control" parent="uiLayer"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -155,7 +156,16 @@ environment = ExtResource("2_h31ue")
 
 [node name="spaceSectorManager" parent="mindscape" instance=ExtResource("3_y1nyr")]
 
-[node name="spaceGameArc" type="Node2D" parent="."]
+[node name="spaceBgTex" parent="mindscape/spaceSectorManager/spaceBgGen/spacePllxMngr/spaceBgPllx" index="0"]
+modulate = Color(1, 1, 1, 1)
+
+[node name="spaceGasTex1" parent="mindscape/spaceSectorManager/spaceBgGen/spacePllxMngr/spaceG1Pllx" index="0"]
+modulate = Color(1, 1, 1, 1)
+
+[node name="spaceGasTex2" parent="mindscape/spaceSectorManager/spaceBgGen/spacePllxMngr/spaceG2Pllx" index="0"]
+modulate = Color(1, 1, 1, 1)
+
+[node name="spaceGameArc" type="Node2D" parent="." groups=["gameArcManager"]]
 script = ExtResource("4_ok0yk")
 
 [editable path="mindscape/spaceSectorManager"]
