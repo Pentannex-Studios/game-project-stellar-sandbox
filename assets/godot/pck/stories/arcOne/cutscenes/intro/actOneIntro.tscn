@@ -1,37 +1,58 @@
-[gd_scene load_steps=32 format=3 uid="uid://cj5xjmrmho42y"]
+[gd_scene load_steps=47 format=3 uid="uid://cj5xjmrmho42y"]
 
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/actOneIntro.gd" id="1_442ev"]
-[ext_resource type="Texture2D" uid="uid://dpnkjs40qfjmx" path="res://assets/external/png/cutscenes/actOne/intro/clouds.png" id="1_be7gw"]
-[ext_resource type="Texture2D" uid="uid://dyyp02nq7i732" path="res://assets/external/png/cutscenes/actOne/intro/fade.png" id="1_dxsej"]
+[ext_resource type="Texture2D" uid="uid://dpnkjs40qfjmx" path="res://assets/external/png/cutscenes/actOne/intro/partOne/clouds.png" id="1_be7gw"]
+[ext_resource type="Texture2D" uid="uid://dyyp02nq7i732" path="res://assets/external/png/cutscenes/actOne/intro/partOne/fade.png" id="1_dxsej"]
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/parallaxMngr.gd" id="2_ugpn3"]
 [ext_resource type="Texture2D" uid="uid://brhmtrddh4sp1" path="res://assets/external/png/fx/vignette.png" id="2_urgu6"]
-[ext_resource type="Texture2D" uid="uid://chsas77a3dqkd" path="res://assets/external/png/cutscenes/actOne/intro/ledge/f0.png" id="6_hc7ql"]
-[ext_resource type="Texture2D" uid="uid://nc5amywdf2e6" path="res://assets/external/png/cutscenes/actOne/intro/ledge/f1.png" id="7_vlusn"]
-[ext_resource type="Texture2D" uid="uid://f0t60we7d8ds" path="res://assets/external/png/cutscenes/actOne/intro/ledge/f2.png" id="8_0gd2m"]
-[ext_resource type="Texture2D" uid="uid://cgnuecv80icha" path="res://assets/external/png/cutscenes/actOne/intro/ledge/f3.png" id="9_446dq"]
-[ext_resource type="Texture2D" uid="uid://bqsebyx1l32mv" path="res://assets/external/png/cutscenes/actOne/intro/ledge/f4.png" id="10_ym3vx"]
-[ext_resource type="Texture2D" uid="uid://dofobeu7xxmfd" path="res://assets/external/png/cutscenes/actOne/intro/ledge/f5.png" id="11_wgp7i"]
-[ext_resource type="Texture2D" uid="uid://b360lfqu0rhvt" path="res://assets/external/png/cutscenes/actOne/intro/ledge/f6.png" id="12_hhc8q"]
-[ext_resource type="Texture2D" uid="uid://bbbcx3huqny4x" path="res://assets/external/png/cutscenes/actOne/intro/ledge/f7.png" id="13_3au0b"]
-[ext_resource type="Texture2D" uid="uid://c8qqlwu2dftxy" path="res://assets/external/png/cutscenes/actOne/intro/person/f1.png" id="14_gr64c"]
-[ext_resource type="Texture2D" uid="uid://b1clkuni7ke3u" path="res://assets/external/png/cutscenes/actOne/intro/person/f2.png" id="15_8hx52"]
-[ext_resource type="Texture2D" uid="uid://cs1wyv8vjatbm" path="res://assets/external/png/cutscenes/actOne/intro/person/f3.png" id="16_uv5pa"]
-[ext_resource type="Texture2D" uid="uid://ck8ppju5171mw" path="res://assets/external/png/cutscenes/actOne/intro/person/f4.png" id="17_rjn3o"]
-[ext_resource type="Texture2D" uid="uid://b6na52ceb15jj" path="res://assets/external/png/cutscenes/actOne/intro/person/f5.png" id="18_rx5oj"]
-[ext_resource type="Texture2D" uid="uid://cp2tdv4pswt15" path="res://assets/external/png/cutscenes/actOne/intro/person/f6.png" id="19_t1qee"]
-[ext_resource type="Texture2D" uid="uid://c3bce1bf8md4j" path="res://assets/external/png/cutscenes/actOne/intro/person/f7.png" id="20_78plt"]
-[ext_resource type="Texture2D" uid="uid://qxd7ydsovknu" path="res://assets/external/png/cutscenes/actOne/intro/person/f8.png" id="21_j8tq5"]
+[ext_resource type="Texture2D" uid="uid://chsas77a3dqkd" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f0.png" id="6_hc7ql"]
+[ext_resource type="Texture2D" uid="uid://nc5amywdf2e6" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f1.png" id="7_vlusn"]
+[ext_resource type="Texture2D" uid="uid://f0t60we7d8ds" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f2.png" id="8_0gd2m"]
+[ext_resource type="Texture2D" uid="uid://cgnuecv80icha" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f3.png" id="9_446dq"]
+[ext_resource type="Texture2D" uid="uid://bqsebyx1l32mv" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f4.png" id="10_ym3vx"]
+[ext_resource type="Texture2D" uid="uid://dofobeu7xxmfd" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f5.png" id="11_wgp7i"]
+[ext_resource type="Texture2D" uid="uid://b360lfqu0rhvt" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f6.png" id="12_hhc8q"]
+[ext_resource type="Texture2D" uid="uid://bbbcx3huqny4x" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f7.png" id="13_3au0b"]
+[ext_resource type="Texture2D" uid="uid://c8qqlwu2dftxy" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f1.png" id="14_gr64c"]
+[ext_resource type="Texture2D" uid="uid://b1clkuni7ke3u" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f2.png" id="15_8hx52"]
+[ext_resource type="Texture2D" uid="uid://cs1wyv8vjatbm" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f3.png" id="16_uv5pa"]
+[ext_resource type="Texture2D" uid="uid://ck8ppju5171mw" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f4.png" id="17_rjn3o"]
+[ext_resource type="Texture2D" uid="uid://b6na52ceb15jj" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f5.png" id="18_rx5oj"]
+[ext_resource type="Texture2D" uid="uid://cp2tdv4pswt15" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f6.png" id="19_t1qee"]
+[ext_resource type="Texture2D" uid="uid://c3bce1bf8md4j" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f7.png" id="20_78plt"]
+[ext_resource type="Texture2D" uid="uid://qxd7ydsovknu" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f8.png" id="21_j8tq5"]
+[ext_resource type="Texture2D" uid="uid://d2d3t40cgtu7j" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/fade.png" id="21_jjea7"]
+[ext_resource type="Shader" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/actOneIntro.gdshader" id="21_qomga"]
+[ext_resource type="Texture2D" uid="uid://bhpqdispdwlr4" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_0.png" id="22_nt63j"]
 [ext_resource type="FontFile" uid="uid://dwvsoh5o21col" path="res://assets/external/font/ComingSoon.ttf" id="22_rj375"]
+[ext_resource type="Texture2D" uid="uid://b566rhxtpvcpm" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_1.png" id="23_nmlq8"]
+[ext_resource type="Texture2D" uid="uid://heax4hjtyr8k" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_2.png" id="24_cm6jj"]
+[ext_resource type="Texture2D" uid="uid://dnqhb4amodyit" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_3.png" id="25_tjtef"]
+[ext_resource type="Texture2D" uid="uid://bcg1adqx06uqg" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_4.png" id="26_f6023"]
+[ext_resource type="Texture2D" uid="uid://7mwpvjvmxsqh" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_5.png" id="27_oplgc"]
+[ext_resource type="Texture2D" uid="uid://bqpnn01ss6eut" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_6.png" id="28_k36pl"]
+[ext_resource type="Texture2D" uid="uid://c682rbwiwcoq6" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_7.png" id="29_t7jwa"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t2x2w"]
-animation = &"intro"
+animation = &"part1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pxhud"]
+animation = &"part2"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q1wvb"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5bde2"]
+switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_m0uvq"]
-states/intro/node = SubResource("AnimationNodeAnimation_t2x2w")
-states/intro/position = Vector2(320, 102)
-transitions = ["Start", "intro", SubResource("AnimationNodeStateMachineTransition_q1wvb")]
+states/part1/node = SubResource("AnimationNodeAnimation_t2x2w")
+states/part1/position = Vector2(320, 102)
+states/part2/node = SubResource("AnimationNodeAnimation_pxhud")
+states/part2/position = Vector2(452.667, 92.3333)
+transitions = ["Start", "part1", SubResource("AnimationNodeStateMachineTransition_q1wvb"), "part1", "part2", SubResource("AnimationNodeStateMachineTransition_5bde2")]
+graph_offset = Vector2(-58, -3)
 
 [sub_resource type="Animation" id="Animation_myfo5"]
 length = 0.001
@@ -83,9 +104,57 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("actOne/cutscenePart2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("actOne/cutscenePart1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/blur_sharp")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/pixel")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
 
 [sub_resource type="Animation" id="Animation_6w2dl"]
-resource_name = "intro"
+resource_name = "part1"
 length = 25.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -97,7 +166,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.96667, 7.05833, 8.36667, 10, 11.5333, 12.9667, 13.9667, 15.275, 16.9083, 18.4417, 19.875, 21.9, 23.5333, 25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373)]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -135,11 +204,136 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(2, 2), Vector2(1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("actOne/cutscenePart2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("actOne/cutscenePart1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/blur_sharp")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/pixel")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="Animation" id="Animation_2acbw"]
+resource_name = "part2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("actOne/cutscenePart1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("actOne/cutscenePart2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiLayer/uiMenu/ctFade:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.490196)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiLayer/uiMenu/ctVignette:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 4.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/blur_sharp")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.5, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/pixel")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0, 1.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7sd5i"]
 _data = {
 "RESET": SubResource("Animation_myfo5"),
-"intro": SubResource("Animation_6w2dl")
+"part1": SubResource("Animation_6w2dl"),
+"part2": SubResource("Animation_2acbw")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vrg6j"]
@@ -206,6 +400,43 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqifj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_nt63j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_nmlq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cm6jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_tjtef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_f6023")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_oplgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_k36pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_t7jwa")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 24.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xbsor"]
+shader = ExtResource("21_qomga")
+shader_parameter/blur_sharp = 1.5
+shader_parameter/pixel = 2.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_fmof5"]
 font = ExtResource("22_rj375")
 font_size = 25
@@ -229,38 +460,67 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_7sd5i")
 }
-autoplay = "intro"
 
-[node name="parallax" type="Node2D" parent="actOne"]
+[node name="cutscenePart1" type="Node2D" parent="actOne" node_paths=PackedStringArray("bg", "fg")]
 script = ExtResource("2_ugpn3")
+bg = NodePath("clouds")
+fg = NodePath("city")
 
-[node name="clouds" type="Sprite2D" parent="actOne/parallax"]
+[node name="clouds" type="Sprite2D" parent="actOne/cutscenePart1"]
 position = Vector2(960, 540)
 scale = Vector2(1.025, 1.025)
 texture = ExtResource("1_be7gw")
 
-[node name="city" type="Sprite2D" parent="actOne/parallax"]
+[node name="city" type="Sprite2D" parent="actOne/cutscenePart1"]
 position = Vector2(960, 540)
 scale = Vector2(1.025, 1.025)
 texture = ExtResource("1_dxsej")
 
-[node name="ledge" type="AnimatedSprite2D" parent="actOne/parallax"]
+[node name="ledge" type="AnimatedSprite2D" parent="actOne/cutscenePart1"]
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_vrg6j")
 autoplay = "default"
 frame_progress = 0.211812
 
-[node name="person" type="AnimatedSprite2D" parent="actOne/parallax/ledge"]
+[node name="person" type="AnimatedSprite2D" parent="actOne/cutscenePart1/ledge"]
 position = Vector2(-12, 198)
 scale = Vector2(0.545724, 0.545724)
 sprite_frames = SubResource("SpriteFrames_d7dmo")
 autoplay = "default"
 frame_progress = 0.0328367
 
+[node name="cutscenePart2" type="Node2D" parent="actOne" node_paths=PackedStringArray("bg")]
+visible = false
+script = ExtResource("2_ugpn3")
+bg = NodePath("clouds")
+
+[node name="clouds" type="Sprite2D" parent="actOne/cutscenePart2"]
+position = Vector2(960, 540)
+scale = Vector2(1.025, 1.025)
+texture = ExtResource("21_jjea7")
+
+[node name="person" type="AnimatedSprite2D" parent="actOne/cutscenePart2"]
+position = Vector2(960, 540)
+scale = Vector2(1.025, 1.025)
+sprite_frames = SubResource("SpriteFrames_mqifj")
+animation = &"moving"
+autoplay = "moving"
+frame_progress = 0.296746
+
 [node name="uiLayer" type="CanvasLayer" parent="."]
 
 [node name="uiMenu" type="Control" parent="uiLayer"]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ctBlur" type="ColorRect" parent="uiLayer/uiMenu"]
+material = SubResource("ShaderMaterial_xbsor")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

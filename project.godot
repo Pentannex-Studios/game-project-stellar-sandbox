@@ -42,6 +42,7 @@ window/size/window_height_override=600
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
+mouse_cursor/custom_image="res://assets/external/png/fx/cursor.png"
 
 [global_group]
 
