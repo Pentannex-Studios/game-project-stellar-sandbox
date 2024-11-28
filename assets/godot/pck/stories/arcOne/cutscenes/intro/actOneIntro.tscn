@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cj5xjmrmho42y"]
+[gd_scene load_steps=52 format=3 uid="uid://cj5xjmrmho42y"]
 
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/actOneIntro.gd" id="1_442ev"]
 [ext_resource type="Texture2D" uid="uid://dpnkjs40qfjmx" path="res://assets/external/png/cutscenes/actOne/intro/partOne/clouds.png" id="1_be7gw"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://7mwpvjvmxsqh" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_5.png" id="27_oplgc"]
 [ext_resource type="Texture2D" uid="uid://bqpnn01ss6eut" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_6.png" id="28_k36pl"]
 [ext_resource type="Texture2D" uid="uid://c682rbwiwcoq6" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_7.png" id="29_t7jwa"]
+[ext_resource type="Texture2D" uid="uid://epirk4ej3ruh" path="res://assets/external/png/fx/scribble.png" id="30_vcqiu"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t2x2w"]
 animation = &"part1"
@@ -152,6 +153,66 @@ tracks/7/keys = {
 "update": 0,
 "values": [2.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("actOne/cutscenePart2/person/scribble:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.52549, 0.215686, 0.866667, 0.552941)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("actOne/cutscenePart2/person:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 540)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("actOne/cutscenePart1:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("actOne/cutscenePart1:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("uiLayer/uiMenu/ctTextField:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(137, 953)]
+}
 
 [sub_resource type="Animation" id="Animation_6w2dl"]
 resource_name = "part1"
@@ -252,10 +313,46 @@ tracks/7/keys = {
 "update": 0,
 "values": [2.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("actOne/cutscenePart1:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.53333, 24.9),
+"transitions": PackedFloat32Array(1.2, 0.2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.445, 1.445)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("actOne/cutscenePart1:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.56667, 24.9),
+"transitions": PackedFloat32Array(1.2, 0.2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-408, -442)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("uiLayer/uiMenu/ctTextField:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(137, 953)]
+}
 
 [sub_resource type="Animation" id="Animation_2acbw"]
 resource_name = "part2"
-length = 5.0
+length = 25.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -287,10 +384,10 @@ tracks/2/path = NodePath("uiLayer/uiMenu/ctFade:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 5, 14.9667, 16.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.490196)]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.490196), Color(0, 0, 0, 0.490196), Color(0, 0, 0, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -328,8 +425,68 @@ tracks/5/keys = {
 "update": 0,
 "values": [2.0, 1.0]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("actOne/cutscenePart2/person/scribble:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.26667, 4.16667, 7.46667, 11.3667, 14.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.52549, 0.215686, 0.866667, 0), Color(0.52549, 0.215686, 0.866667, 0.552941), Color(0.560784, 0, 0.278431, 0.552941), Color(0.254902, 0.576471, 0.67451, 0.552941), Color(0, 0, 0.0196078, 0.552941)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("actOne/cutscenePart2/person:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.8, 14.6667),
+"transitions": PackedFloat32Array(0.5, 1.2),
+"update": 0,
+"values": [Vector2(960, 540), Vector2(598, 906)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("uiLayer/uiMenu/ctTextField:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(3.26667, 4.86667, 16.0667, 17.1667, 19.2333, 24.9333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("uiLayer/uiMenu/ctTextField:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(3.36667, 16.6667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(137, 50), Vector2(137, 540)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("uiLayer/uiMenu/ctTextField:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(3.36667, 16.6333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Why does it hurt so much?", "What if this is the only way?"]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7sd5i"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mv8st"]
 _data = {
 "RESET": SubResource("Animation_myfo5"),
 "part1": SubResource("Animation_6w2dl"),
@@ -432,6 +589,35 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7ypp"]
+atlas = ExtResource("30_vcqiu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iykih"]
+atlas = ExtResource("30_vcqiu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow115"]
+atlas = ExtResource("30_vcqiu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3dil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7ypp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iykih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow115")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xbsor"]
 shader = ExtResource("21_qomga")
 shader_parameter/blur_sharp = 1.5
@@ -458,7 +644,7 @@ anim_player = NodePath("../animation")
 [node name="animation" type="AnimationPlayer" parent="actOne"]
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_7sd5i")
+"": SubResource("AnimationLibrary_mv8st")
 }
 
 [node name="cutscenePart1" type="Node2D" parent="actOne" node_paths=PackedStringArray("bg", "fg")]
@@ -505,7 +691,15 @@ scale = Vector2(1.025, 1.025)
 sprite_frames = SubResource("SpriteFrames_mqifj")
 animation = &"moving"
 autoplay = "moving"
-frame_progress = 0.296746
+frame_progress = 0.888184
+
+[node name="scribble" type="AnimatedSprite2D" parent="actOne/cutscenePart2/person"]
+modulate = Color(0.52549, 0.215686, 0.866667, 0.552941)
+position = Vector2(365.854, -261.463)
+scale = Vector2(7.34451, 7.34451)
+sprite_frames = SubResource("SpriteFrames_k3dil")
+autoplay = "default"
+frame_progress = 0.102549
 
 [node name="uiLayer" type="CanvasLayer" parent="."]
 
@@ -557,7 +751,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -823.0
-offset_top = -120.0
+offset_top = -127.0
 offset_right = 827.0
 offset_bottom = -88.0
 grow_horizontal = 2

@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dr4i15woagsi"]
+[gd_scene load_steps=5 format=3 uid="uid://dr4i15woagsi"]
 
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/arcManager/arcOneManager.gd" id="1_q3ovk"]
-[ext_resource type="PackedScene" uid="uid://cj5xjmrmho42y" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/actOneIntro.tscn" id="2_fm8n7"]
 
 [sub_resource type="Animation" id="Animation_uiee7"]
 length = 0.001
@@ -103,5 +102,3 @@ z_index = 6
 z_as_relative = false
 
 [node name="spaceCutsceneManager" type="Node2D" parent="."]
-
-[node name="actOneIntro" parent="spaceCutsceneManager" instance=ExtResource("2_fm8n7")]
