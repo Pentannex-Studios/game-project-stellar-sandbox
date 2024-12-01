@@ -7,7 +7,7 @@ render_mode unshaded;
 uniform sampler2D screen_tex : hint_screen_texture, filter_nearest, repeat_disable;
 //Blur Sharp
 uniform float blur_sharp: hint_range(-5.0, 5.0, 0.1) = 0.0;
-uniform float pixel: hint_range(1.0, 5.0, 1.0) = 1.0;
+uniform float pixel: hint_range(1.0, 5.0, 0.1) = 1.0;
 
 void fragment() {
 	// Screen Coordinates
