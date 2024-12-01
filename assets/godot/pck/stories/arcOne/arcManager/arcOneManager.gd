@@ -1,3 +1,3 @@
-# The story arc script of Lila's arc.
+# The story arc script of protagonist's arc.
 
 extends Node2D
