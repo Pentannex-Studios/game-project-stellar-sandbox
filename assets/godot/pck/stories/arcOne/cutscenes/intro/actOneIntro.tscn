@@ -1010,7 +1010,6 @@ z_index = 99
 z_as_relative = false
 
 [node name="animMngr" type="AnimationTree" parent="actOne"]
-active = false
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeStateMachine_m0uvq")
 anim_player = NodePath("../animation")

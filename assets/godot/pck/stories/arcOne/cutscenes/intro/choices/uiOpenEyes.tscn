@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dput70sdrayl" path="res://assets/godot/tres/uiGlobalTheme.tres" id="1_xgyfw"]
 [ext_resource type="FontFile" uid="uid://b3f6o2t3fsb05" path="res://assets/external/font/RobotoCondensed-Light.ttf" id="2_ru28i"]
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/choices/uiOEChoice.gd" id="3_1vgwj"]
-[ext_resource type="AudioStream" uid="uid://u57hkwqqf64b" path="res://assets/external/aud/fx/select_007.ogg" id="4_lo6ky"]
+[ext_resource type="AudioStream" uid="uid://m4ny8ff47g0h" path="res://assets/external/aud/fx/select_008 .ogg" id="4_xinnd"]
 
 [sub_resource type="Animation" id="Animation_f2c4x"]
 length = 0.001
@@ -64,7 +64,7 @@ libraries = {
 autoplay = "uiMenuStartHighlight"
 
 [node name="uiOpenEyesSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_lo6ky")
+stream = ExtResource("4_xinnd")
 volume_db = -10.0
 bus = &"SFX Main"
 
