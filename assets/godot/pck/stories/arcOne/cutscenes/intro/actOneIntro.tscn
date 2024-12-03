@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cj5xjmrmho42y"]
+[gd_scene load_steps=71 format=3 uid="uid://cj5xjmrmho42y"]
 
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/actOneIntro.gd" id="1_442ev"]
 [ext_resource type="Texture2D" uid="uid://dpnkjs40qfjmx" path="res://assets/external/png/cutscenes/actOne/intro/partOne/clouds.png" id="1_be7gw"]
@@ -41,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://c682rbwiwcoq6" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_7.png" id="29_t7jwa"]
 [ext_resource type="Texture2D" uid="uid://cp3gxe6lqxvfn" path="res://assets/external/png/cutscenes/actOne/intro/partThree/person_foot/ledge_foot_7.png" id="29_v2ihb"]
 [ext_resource type="Texture2D" uid="uid://epirk4ej3ruh" path="res://assets/external/png/fx/scribble.png" id="30_vcqiu"]
-[ext_resource type="Texture2D" uid="uid://cv5cts6erppe0" path="res://assets/external/png/cutscenes/actOne/intro/partThree/background.png" id="31_a4yng"]
+[ext_resource type="Texture2D" uid="uid://om7ffmg4k1dn" path="res://assets/external/png/cutscenes/actOne/intro/partThree/background.png" id="31_a4yng"]
 [ext_resource type="PackedScene" uid="uid://b1hrcl6c5rljc" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/choices/uiCloseEyes.tscn" id="43_cpm3s"]
 [ext_resource type="PackedScene" uid="uid://debki8wei70mw" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/choices/uiOpenEyes.tscn" id="43_lt4hg"]
 
@@ -834,6 +834,26 @@ _data = {
 "part3": SubResource("Animation_6565s")
 }
 
+[sub_resource type="Curve" id="Curve_mxrue"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pm73p"]
+curve = SubResource("Curve_mxrue")
+
+[sub_resource type="CurveTexture" id="CurveTexture_mrwsj"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ec53r"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(4800, 4800, 4800)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 3.0
+alpha_curve = SubResource("CurveTexture_pm73p")
+emission_curve = SubResource("CurveTexture_mrwsj")
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_vrg6j"]
 animations = [{
 "frames": [{
@@ -1019,6 +1039,19 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_mv8st")
 }
+
+[node name="stars" type="GPUParticles2D" parent="actOne"]
+modulate = Color(1, 1, 1, 0.25)
+amount = 100000
+process_material = SubResource("ParticleProcessMaterial_ec53r")
+lifetime = 10.0
+preprocess = 30.0
+speed_scale = 0.1
+fixed_fps = 60
+interpolate = false
+fract_delta = false
+visibility_rect = Rect2(-4800, -4800, 9600, 9600)
+local_coords = true
 
 [node name="cutscenePart1" type="Node2D" parent="actOne" node_paths=PackedStringArray("bg", "fg")]
 script = ExtResource("2_ugpn3")
