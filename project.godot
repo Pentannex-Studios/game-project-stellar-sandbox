@@ -50,6 +50,7 @@ player=""
 mainMenu=""
 gameManager=""
 gameArcManager=""
+gameArc=""
 
 [gui]
 

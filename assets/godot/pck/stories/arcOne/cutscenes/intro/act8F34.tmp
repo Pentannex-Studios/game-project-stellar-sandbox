@@ -1,0 +1,634 @@
+[gd_scene load_steps=69 format=3 uid="uid://cj5xjmrmho42y"]
+
+[ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/actOneIntro.gd" id="1_442ev"]
+[ext_resource type="Texture2D" uid="uid://dpnkjs40qfjmx" path="res://assets/external/png/cutscenes/actOne/intro/partOne/clouds.png" id="1_be7gw"]
+[ext_resource type="Texture2D" uid="uid://dyyp02nq7i732" path="res://assets/external/png/cutscenes/actOne/intro/partOne/fade.png" id="1_dxsej"]
+[ext_resource type="AudioStream" uid="uid://bl3xw2jtp4isb" path="res://assets/external/aud/bgm/732903__klankbeeld__night-city-village-450-am-230821_0618.wav" id="2_84mxe"]
+[ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/parallaxMngr.gd" id="2_ugpn3"]
+[ext_resource type="Texture2D" uid="uid://brhmtrddh4sp1" path="res://assets/external/png/fx/vignette.png" id="2_urgu6"]
+[ext_resource type="AudioStream" uid="uid://baqse71ifojm1" path="res://assets/external/aud/fx/683431__sholecoltis__wave_wind_2.wav" id="3_q36bq"]
+[ext_resource type="Texture2D" uid="uid://chsas77a3dqkd" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f0.png" id="6_hc7ql"]
+[ext_resource type="Texture2D" uid="uid://nc5amywdf2e6" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f1.png" id="7_vlusn"]
+[ext_resource type="Texture2D" uid="uid://f0t60we7d8ds" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f2.png" id="8_0gd2m"]
+[ext_resource type="Texture2D" uid="uid://cgnuecv80icha" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f3.png" id="9_446dq"]
+[ext_resource type="Texture2D" uid="uid://bqsebyx1l32mv" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f4.png" id="10_ym3vx"]
+[ext_resource type="Texture2D" uid="uid://dofobeu7xxmfd" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f5.png" id="11_wgp7i"]
+[ext_resource type="Texture2D" uid="uid://b360lfqu0rhvt" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f6.png" id="12_hhc8q"]
+[ext_resource type="Texture2D" uid="uid://bbbcx3huqny4x" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f7.png" id="13_3au0b"]
+[ext_resource type="Texture2D" uid="uid://c8qqlwu2dftxy" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f1.png" id="14_gr64c"]
+[ext_resource type="Texture2D" uid="uid://b1clkuni7ke3u" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f2.png" id="15_8hx52"]
+[ext_resource type="Texture2D" uid="uid://cs1wyv8vjatbm" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f3.png" id="16_uv5pa"]
+[ext_resource type="Texture2D" uid="uid://ck8ppju5171mw" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f4.png" id="17_rjn3o"]
+[ext_resource type="Texture2D" uid="uid://b6na52ceb15jj" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f5.png" id="18_rx5oj"]
+[ext_resource type="Texture2D" uid="uid://cp2tdv4pswt15" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f6.png" id="19_t1qee"]
+[ext_resource type="Texture2D" uid="uid://c3bce1bf8md4j" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f7.png" id="20_78plt"]
+[ext_resource type="Texture2D" uid="uid://qxd7ydsovknu" path="res://assets/external/png/cutscenes/actOne/intro/partOne/person/f8.png" id="21_j8tq5"]
+[ext_resource type="Texture2D" uid="uid://d2d3t40cgtu7j" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/fade.png" id="21_jjea7"]
+[ext_resource type="Shader" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/actOneIntro.gdshader" id="21_qomga"]
+[ext_resource type="Texture2D" uid="uid://clxdy6ki4wxc6" path="res://assets/external/png/cutscenes/actOne/intro/partThree/person_foot/ledge_foot_0.png" id="22_40k36"]
+[ext_resource type="Texture2D" uid="uid://bhpqdispdwlr4" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_0.png" id="22_nt63j"]
+[ext_resource type="FontFile" uid="uid://dwvsoh5o21col" path="res://assets/external/font/ComingSoon.ttf" id="22_rj375"]
+[ext_resource type="Texture2D" uid="uid://jcyc2xtlu0w2" path="res://assets/external/png/cutscenes/actOne/intro/partThree/person_foot/ledge_foot_1.png" id="23_i1124"]
+[ext_resource type="Texture2D" uid="uid://b566rhxtpvcpm" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_1.png" id="23_nmlq8"]
+[ext_resource type="Texture2D" uid="uid://drim8txn7ssll" path="res://assets/external/png/cutscenes/actOne/intro/partThree/person_foot/ledge_foot_2.png" id="24_atiqy"]
+[ext_resource type="Texture2D" uid="uid://heax4hjtyr8k" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_2.png" id="24_cm6jj"]
+[ext_resource type="Texture2D" uid="uid://bsvu5mhfbx4e7" path="res://assets/external/png/cutscenes/actOne/intro/partThree/person_foot/ledge_foot_3.png" id="25_1cgls"]
+[ext_resource type="Texture2D" uid="uid://dnqhb4amodyit" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_3.png" id="25_tjtef"]
+[ext_resource type="Texture2D" uid="uid://foalelfnyl0l" path="res://assets/external/png/cutscenes/actOne/intro/partThree/person_foot/ledge_foot_4.png" id="26_bpl58"]
+[ext_resource type="Texture2D" uid="uid://bcg1adqx06uqg" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_4.png" id="26_f6023"]
+[ext_resource type="Texture2D" uid="uid://bqgplxeal5141" path="res://assets/external/png/cutscenes/actOne/intro/partThree/person_foot/ledge_foot_5.png" id="27_egjbi"]
+[ext_resource type="Texture2D" uid="uid://7mwpvjvmxsqh" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_5.png" id="27_oplgc"]
+[ext_resource type="Texture2D" uid="uid://ba1op6gtu7ebv" path="res://assets/external/png/cutscenes/actOne/intro/partThree/person_foot/ledge_foot_6.png" id="28_6jw5a"]
+[ext_resource type="Texture2D" uid="uid://bqpnn01ss6eut" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_6.png" id="28_k36pl"]
+[ext_resource type="Texture2D" uid="uid://c682rbwiwcoq6" path="res://assets/external/png/cutscenes/actOne/intro/partTwo/person/person/person_7.png" id="29_t7jwa"]
+[ext_resource type="Texture2D" uid="uid://cp3gxe6lqxvfn" path="res://assets/external/png/cutscenes/actOne/intro/partThree/person_foot/ledge_foot_7.png" id="29_v2ihb"]
+[ext_resource type="Texture2D" uid="uid://epirk4ej3ruh" path="res://assets/external/png/fx/scribble.png" id="30_vcqiu"]
+[ext_resource type="Texture2D" uid="uid://om7ffmg4k1dn" path="res://assets/external/png/cutscenes/actOne/intro/partThree/background.png" id="31_a4yng"]
+[ext_resource type="PackedScene" uid="uid://b1hrcl6c5rljc" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/choices/uiCloseEyes.tscn" id="43_cpm3s"]
+[ext_resource type="PackedScene" uid="uid://debki8wei70mw" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/choices/uiOpenEyes.tscn" id="43_lt4hg"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t2x2w"]
+animation = &"part1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pxhud"]
+animation = &"part2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c0ya0"]
+animation = &"part3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q1wvb"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5bde2"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0xhuc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_m0uvq"]
+states/part1/node = SubResource("AnimationNodeAnimation_t2x2w")
+states/part1/position = Vector2(320, 102)
+states/part2/node = SubResource("AnimationNodeAnimation_pxhud")
+states/part2/position = Vector2(452.667, 92.3333)
+states/part3/node = SubResource("AnimationNodeAnimation_c0ya0")
+states/part3/position = Vector2(578, 104.333)
+transitions = ["Start", "part1", SubResource("AnimationNodeStateMachineTransition_q1wvb"), "part1", "part2", SubResource("AnimationNodeStateMachineTransition_5bde2"), "part2", "part3", SubResource("AnimationNodeStateMachineTransition_0xhuc")]
+graph_offset = Vector2(-58, -3)
+
+[sub_resource type="Animation" id="Animation_myfo5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiLayer/uiMenu/ctFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiLayer/uiMenu/ctTextField:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiLayer/uiMenu/ctTextField:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiLayer/uiMenu/ctVignette:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("actOne/cutscenePart2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("actOne/cutscenePart1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/blur_sharp")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/pixel")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("actOne/cutscenePart2/person/scribble:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.52549, 0.215686, 0.866667, 0.552941)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("actOne/cutscenePart2/person:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 540)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("actOne/cutscenePart1:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("actOne/cutscenePart1:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("uiLayer/uiMenu/ctTextField:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(137, 953)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("actOne/cutscenePart2/person:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("actOne/cutscenePart3:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("actOne/cutscenePart3/personFeet:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("actOne/cutscenePart3/city:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("uiLayer/uiMenu/interactives/uiOpenEyes:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("uiLayer/uiMenu/interactives/uiCloseEyes:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("uiLayer/uiMenu/interactives/uiCloseEyes:mouse_filter")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("uiLayer/uiMenu/interactives/uiOpenEyes:mouse_filter")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_6w2dl"]
+resource_name = "part1"
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiLayer/uiMenu/ctFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.96667, 7.05833, 8.36667, 10, 11.5333, 12.9667, 13.9667, 15.275, 16.9083, 18.4417, 19.875, 21.9, 23.5333, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiLayer/uiMenu/ctTextField:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 6.03333, 7.03333, 9.03333, 10, 13.9, 15, 19, 19.9667, 23.8667, 24.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiLayer/uiMenu/ctTextField:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8.96667, 18.9333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["It's very cold...", "Yet I oddly feel so warm...", "The stars surely look bright today..."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiLayer/uiMenu/ctVignette:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.3, 9.03333),
+"transitions": PackedFloat32Array(0.7, 0.7),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("actOne/cutscenePart2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("actOne/cutscenePart1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/blur_sharp")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/pixel")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("actOne/cutscenePart1:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.53333, 24.9),
+"transitions": PackedFloat32Array(1.2, 0.2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.445, 1.445)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("actOne/cutscenePart1:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.56667, 24.9),
+"transitions": PackedFloat32Array(1.2, 0.2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-408, -442)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("uiLayer/uiMenu/ctTextField:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(137, 953)]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"editCursorVisibility"
+}]
+}
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("actOne/bgm")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_84mxe")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/12/use_blend = true
+tracks/13/type = "audio"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("actOne/sfx")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_q36bq")
+}],
+"times": PackedFloat32Array(2.23333)
+}
+tracks/13/use_blend = true
+
+[sub_resource type="Animation" id="Animation_2acbw"]
+resource_name = "part2"
+length = 17.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("actOne/cutscenePart1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("actOne/cutscenePart2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiLayer/uiMenu/ctFade:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 5, 12.7333, 16.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.490196), Color(0, 0, 0, 0.490196), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiLayer/uiMenu/ctVignette:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 4.96667, 8.8, 16.5667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/blur_sharp")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.966667, 13.5, 16.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.5, 1.0, 1.0, 2.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/pixel")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.966667, 13.4667, 16.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 1.0, 1.0, 2.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("actOne/cutscenePart2/person/scribble:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.26667, 4.16667, 7.46667, 11.3667, 14.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.52549, 0.215686, 0.866667, 0), Color(0.52549, 0.215686, 0.866667, 0.552941), Color(0.560784, 0, 0.278431, 0.552941), Color(0.254902, 0.576471, 0.67451, 0.552941), Color(0, 0, 0.0196078, 0.552941)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("actOne/cutscenePart2/person:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0666667, 17),
+"transitions": PackedFloat32Array(1.62451, 1.62451),
+"update": 0,
+"values": [Vector2(960, 540), Vector2(598, 906)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("uiLayer/uiMenu/ctTextField:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(3.26667, 4.86667, 16.0667),
+"transitions": PackedFloat32Array(1.62451, 1.62451, 1.62451),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("uiLayer/uiMenu/ctTextField:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(3.36667),
+"transitions": Pac

@@ -1,10 +1,14 @@
-[gd_scene load_steps=71 format=3 uid="uid://cj5xjmrmho42y"]
+[gd_scene load_steps=62 format=3 uid="uid://cj5xjmrmho42y"]
 
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/actOneIntro.gd" id="1_442ev"]
 [ext_resource type="Texture2D" uid="uid://dpnkjs40qfjmx" path="res://assets/external/png/cutscenes/actOne/intro/partOne/clouds.png" id="1_be7gw"]
 [ext_resource type="Texture2D" uid="uid://dyyp02nq7i732" path="res://assets/external/png/cutscenes/actOne/intro/partOne/fade.png" id="1_dxsej"]
+[ext_resource type="AudioStream" uid="uid://bl3xw2jtp4isb" path="res://assets/external/aud/bgm/ambience/732903__klankbeeld__night-city-village-450-am-230821_0618.wav" id="2_84mxe"]
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/parallaxMngr.gd" id="2_ugpn3"]
 [ext_resource type="Texture2D" uid="uid://brhmtrddh4sp1" path="res://assets/external/png/fx/vignette.png" id="2_urgu6"]
+[ext_resource type="AudioStream" uid="uid://baqse71ifojm1" path="res://assets/external/aud/fx/ambience/683431__sholecoltis__wave_wind_2.wav" id="3_ei8nf"]
+[ext_resource type="AudioStream" uid="uid://d4i1k1loht5yf" path="res://assets/external/aud/fx/ambience/616096__bigvegie__softlament.wav" id="4_4alig"]
+[ext_resource type="AudioStream" uid="uid://dche7srrkh82b" path="res://assets/external/aud/fx/ambience/62120__strongheartbeat__my-heart-beat-for-halloween.mp3" id="5_wflcy"]
 [ext_resource type="Texture2D" uid="uid://chsas77a3dqkd" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f0.png" id="6_hc7ql"]
 [ext_resource type="Texture2D" uid="uid://nc5amywdf2e6" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f1.png" id="7_vlusn"]
 [ext_resource type="Texture2D" uid="uid://f0t60we7d8ds" path="res://assets/external/png/cutscenes/actOne/intro/partOne/ledge/f2.png" id="8_0gd2m"]
@@ -44,36 +48,6 @@
 [ext_resource type="Texture2D" uid="uid://om7ffmg4k1dn" path="res://assets/external/png/cutscenes/actOne/intro/partThree/background.png" id="31_a4yng"]
 [ext_resource type="PackedScene" uid="uid://b1hrcl6c5rljc" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/choices/uiCloseEyes.tscn" id="43_cpm3s"]
 [ext_resource type="PackedScene" uid="uid://debki8wei70mw" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/choices/uiOpenEyes.tscn" id="43_lt4hg"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t2x2w"]
-animation = &"part1"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pxhud"]
-animation = &"part2"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c0ya0"]
-animation = &"part3"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q1wvb"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5bde2"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0xhuc"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_m0uvq"]
-states/part1/node = SubResource("AnimationNodeAnimation_t2x2w")
-states/part1/position = Vector2(320, 102)
-states/part2/node = SubResource("AnimationNodeAnimation_pxhud")
-states/part2/position = Vector2(452.667, 92.3333)
-states/part3/node = SubResource("AnimationNodeAnimation_c0ya0")
-states/part3/position = Vector2(578, 104.333)
-transitions = ["Start", "part1", SubResource("AnimationNodeStateMachineTransition_q1wvb"), "part1", "part2", SubResource("AnimationNodeStateMachineTransition_5bde2"), "part2", "part3", SubResource("AnimationNodeStateMachineTransition_0xhuc")]
-graph_offset = Vector2(-58, -3)
 
 [sub_resource type="Animation" id="Animation_myfo5"]
 length = 0.001
@@ -331,8 +305,8 @@ tracks/20/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_6w2dl"]
-resource_name = "part1"
-length = 25.0
+resource_name = "animation"
+length = 82.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -340,7 +314,7 @@ tracks/0/path = NodePath("uiLayer/uiMenu/ctFade:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.96667, 7.05833, 8.36667, 10, 11.5333, 12.9667, 13.9667, 15.275, 16.9083, 18.4417, 19.875, 21.9, 23.5333, 25),
+"times": PackedFloat32Array(0.0333333, 2.96667, 7.05833, 8.36667, 10, 11.5333, 12.9667, 13.9667, 15.275, 16.9083, 18.4417, 19.875, 21.9, 23.5333, 25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.768627), Color(0, 0, 0, 0.831373), Color(0, 0, 0, 0.682353), Color(0, 0, 0, 1)]
@@ -352,7 +326,7 @@ tracks/1/path = NodePath("uiLayer/uiMenu/ctTextField:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 6.03333, 7.03333, 9.03333, 10, 13.9, 15, 19, 19.9667, 23.8667, 24.9667),
+"times": PackedFloat32Array(0.0333333, 1, 6.03333, 7.03333, 9.03333, 10, 13.9, 15, 19, 19.9667, 23.8667, 24.9667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -415,7 +389,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.5]
+"values": [1.0]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -427,7 +401,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2.0]
+"values": [1.0]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -462,7 +436,7 @@ tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(137, 953)]
 }
 tracks/11/type = "method"
@@ -479,380 +453,470 @@ tracks/11/keys = {
 "method": &"editCursorVisibility"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_2acbw"]
-resource_name = "part2"
-length = 17.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("actOne/cutscenePart1:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("actOne/cutscenePart2:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("uiLayer/uiMenu/ctFade:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 5, 12.7333, 16.9667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.490196), Color(0, 0, 0, 0.490196), Color(0, 0, 0, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("uiLayer/uiMenu/ctVignette:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1, 4.96667, 8.8, 16.5667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1.25, 1.25), Vector2(1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/blur_sharp")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.966667, 13.5, 16.9667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [1.5, 1.0, 1.0, 2.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/pixel")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.966667, 13.4667, 16.9667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [2.0, 1.0, 1.0, 2.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("actOne/cutscenePart2/person/scribble:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(1.26667, 4.16667, 7.46667, 11.3667, 14.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(0.52549, 0.215686, 0.866667, 0), Color(0.52549, 0.215686, 0.866667, 0.552941), Color(0.560784, 0, 0.278431, 0.552941), Color(0.254902, 0.576471, 0.67451, 0.552941), Color(0, 0, 0.0196078, 0.552941)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("actOne/cutscenePart2/person:position")
-tracks/7/interp = 2
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.0666667, 17),
-"transitions": PackedFloat32Array(1.62451, 1.62451),
-"update": 0,
-"values": [Vector2(960, 540), Vector2(598, 906)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("uiLayer/uiMenu/ctTextField:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(3.26667, 4.86667, 16.0667),
-"transitions": PackedFloat32Array(1.62451, 1.62451, 1.62451),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("uiLayer/uiMenu/ctTextField:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(3.36667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2(137, 50)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("uiLayer/uiMenu/ctTextField:text")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(3.36667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Why does it hurt so much?"]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("actOne/cutscenePart2/person:modulate")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 3.43333, 14.4667, 17),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.808998, 0.808998, 0.808998, 1), Color(0.419813, 0.419813, 0.419813, 1), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_6565s"]
-resource_name = "part3"
-length = 40.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("actOne/cutscenePart3:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("actOne/cutscenePart1:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("uiLayer/uiMenu/ctFade:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 11.9, 14.1, 16.3333, 17.5, 29.8, 38.9333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0.466667)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("uiLayer/uiMenu/ctTextField:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(5, 9.6, 13.3333, 15, 16.3333, 22.1667, 28.3667, 29.7, 31.6333, 32.8, 34.1333, 36.0667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("uiLayer/uiMenu/ctTextField:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(4.9, 14.1333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(137, 75), Vector2(137, 540)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("uiLayer/uiMenu/ctTextField:text")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(4.9, 14.1333, 28.3, 32.2667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": ["Is this the only way?", "I can't take it anymore...", "What do I do now? Can I handle it... or is it safer this way?", "I have to choose..."]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("uiLayer/uiMenu/ctVignette:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.233333, 1.13333, 3.66667, 6.63333, 9.6, 12.7333, 16.0333, 17.9667, 29.0334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.825, 1.825), Vector2(1, 1), Vector2(1.27, 1.27), Vector2(1, 1), Vector2(1.295, 1.295), Vector2(1, 1), Vector2(1.35, 1.35), Vector2(1, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/blur_sharp")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 1.96667, 4.86667, 7.86667, 11.0667, 13.6, 16.3667, 17.4, 27.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [1.5, 0.0, 3.0, 0.0, 3.0, 0.0, 3.0, 2.0, 5.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/pixel")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0.0333333, 3.1, 6.33333, 9.33333, 12.0667, 14.9333, 17.4, 27.7667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [2.0, 1.0, 2.0, 1.0, 2.0, 1.0, 2.0, 5.0]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("actOne/cutscenePart3/personFeet:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 14.1667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("actOne/cutscenePart3/city:modulate")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(16.4, 28.8667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.270733, 0.177765, 0.320585, 1)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("uiLayer/uiMenu/interactives/uiOpenEyes:modulate")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 34.5, 37.9667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("uiLayer/uiMenu/interactives/uiCloseEyes:modulate")
+tracks/12/path = NodePath("actOne/cutscenePart1:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 34.5, 37.9667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"times": PackedFloat32Array(25.0917),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("uiLayer/uiMenu/interactives/uiCloseEyes:mouse_filter")
+tracks/13/path = NodePath("actOne/cutscenePart2:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 34.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(25.0917),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2, 0]
+"values": [true]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("uiLayer/uiMenu/interactives/uiOpenEyes:mouse_filter")
+tracks/14/path = NodePath("uiLayer/uiMenu/ctFade:color")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 34.4),
+"times": PackedFloat32Array(25.0917, 26.0917, 30.0917, 37.825, 42.0584),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.490196), Color(0, 0, 0, 0.490196), Color(0, 0, 0, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("uiLayer/uiMenu/ctVignette:scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(26.0917, 30.0583, 33.8917, 41.6584),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/blur_sharp")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(25.0917, 26.0583, 38.5917, 42.0584),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.5, 1.0, 1.0, 2.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/pixel")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(25.0917, 26.0583, 38.5584, 42.0584),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 1.0, 1.0, 2.0]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("actOne/cutscenePart2/person/scribble:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(26.3583, 29.2583, 32.5583, 36.4584, 39.7917),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.52549, 0.215686, 0.866667, 0), Color(0.52549, 0.215686, 0.866667, 0.552941), Color(0.560784, 0, 0.278431, 0.552941), Color(0.254902, 0.576471, 0.67451, 0.552941), Color(0, 0, 0.0196078, 0.552941)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("actOne/cutscenePart2/person:position")
+tracks/19/interp = 2
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(25.1583, 42.0917),
+"transitions": PackedFloat32Array(1.62451, 1.62451),
+"update": 0,
+"values": [Vector2(960, 540), Vector2(598, 906)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("uiLayer/uiMenu/ctTextField:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(28.3583, 29.9583, 41.1584),
+"transitions": PackedFloat32Array(1.62451, 1.62451, 1.62451),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("uiLayer/uiMenu/ctTextField:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(28.4583),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(137, 50)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("uiLayer/uiMenu/ctTextField:text")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(28.4583),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Why does it hurt so much?"]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("actOne/cutscenePart2/person:modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(25.0917, 28.525, 39.5584, 42.0917),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.808998, 0.808998, 0.808998, 1), Color(0.419813, 0.419813, 0.419813, 1), Color(0, 0, 0, 1)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("actOne/cutscenePart3:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 41.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("actOne/cutscenePart1:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(41.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("uiLayer/uiMenu/ctFade:color")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(41.9, 53.8, 56, 58.2333, 59.4, 71.7, 80.8333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0.466667)]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("uiLayer/uiMenu/ctTextField:modulate")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(46.9, 51.5, 55.2333, 56.9, 58.2333, 64.0667, 70.2667, 71.6, 73.5333, 74.7, 76.0333, 77.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("uiLayer/uiMenu/ctTextField:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(46.8, 56.0333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(137, 75), Vector2(137, 540)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("uiLayer/uiMenu/ctTextField:text")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(46.8, 56.0333, 70.2, 74.1667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["Is this the only way?", "I can't take it anymore...", "Can I face this... or is it better to stay safe?", "I have to choose..."]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("uiLayer/uiMenu/ctVignette:scale")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(42.1333, 43.0333, 45.5666, 51.5, 54.6333, 57.9333, 59.8667, 70.9334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.825, 1.825), Vector2(1, 1), Vector2(1, 1), Vector2(1.295, 1.295), Vector2(1, 1), Vector2(1.35, 1.35), Vector2(1, 1)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/blur_sharp")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(41.9, 43.8666, 46.7666, 49.7666, 52.9667, 55.5, 58.2667, 59.3, 69.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.5, 0.0, 3.0, 0.0, 3.0, 0.0, 3.0, 2.0, 5.0]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("uiLayer/uiMenu/ctBlur:material:shader_parameter/pixel")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(41.9333, 45, 48.2333, 51.2333, 53.9667, 56.8333, 59.3, 69.6667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 1.0, 2.0, 1.0, 2.0, 1.0, 2.0, 5.0]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("actOne/cutscenePart3/personFeet:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(41.9, 56.0667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("actOne/cutscenePart3/city:modulate")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(58.3, 70.7667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.270733, 0.177765, 0.320585, 1)]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("uiLayer/uiMenu/interactives/uiOpenEyes:modulate")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(41.9, 76.4, 79.8667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("uiLayer/uiMenu/interactives/uiCloseEyes:modulate")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(41.9, 76.4, 79.8667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("uiLayer/uiMenu/interactives/uiCloseEyes:mouse_filter")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(41.9, 76.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 0]
 }
-tracks/15/type = "method"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath(".")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(36.0333),
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("uiLayer/uiMenu/interactives/uiOpenEyes:mouse_filter")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(41.9, 76.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/39/type = "method"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath(".")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(78.5333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [true],
 "method": &"editCursorVisibility"
 }]
 }
+tracks/40/type = "audio"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("actOne/animation/sfx")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ei8nf")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ei8nf")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ei8nf")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ei8nf")
+}],
+"times": PackedFloat32Array(2.93333, 9.06667, 17.6681, 23.7667)
+}
+tracks/40/use_blend = true
+tracks/41/type = "audio"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("actOne/animation/bgm")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"clips": [{
+"end_offset": 73.1064,
+"start_offset": 0.08,
+"stream": ExtResource("2_84mxe")
+}],
+"times": PackedFloat32Array(0.089901)
+}
+tracks/41/use_blend = true
+tracks/42/type = "audio"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("actOne/animation/bgm2")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"clips": [{
+"end_offset": 348.775,
+"start_offset": 0.09,
+"stream": ExtResource("5_wflcy")
+}],
+"times": PackedFloat32Array(0.099901)
+}
+tracks/42/use_blend = true
+tracks/43/type = "audio"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("actOne/animation/bgm3")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"clips": [{
+"end_offset": 115.996,
+"start_offset": 0.11,
+"stream": ExtResource("4_4alig")
+}],
+"times": PackedFloat32Array(0.123201)
+}
+tracks/43/use_blend = true
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("actOne/animation/bgm:volume_db")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(78.8114, 81.8614),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/45/type = "value"
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/path = NodePath("actOne/animation/bgm2:volume_db")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/keys = {
+"times": PackedFloat32Array(22, 25.0833, 28.181, 78.8411, 81.8911),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -80.0, 0.0, 0.0, -80.0]
+}
+tracks/46/type = "value"
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/path = NodePath("actOne/animation/bgm3:volume_db")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/keys = {
+"times": PackedFloat32Array(22, 25.05, 28.1815, 78.8416, 81.8916),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-20.0, -80.0, -20.0, -20.0, -80.0]
+}
+tracks/47/type = "value"
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/path = NodePath("actOne/animation/sfx:volume_db")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/keys = {
+"times": PackedFloat32Array(78.637, 81.687),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mv8st"]
 _data = {
 "RESET": SubResource("Animation_myfo5"),
-"part1": SubResource("Animation_6w2dl"),
-"part2": SubResource("Animation_2acbw"),
-"part3": SubResource("Animation_6565s")
+"animation": SubResource("Animation_6w2dl")
 }
-
-[sub_resource type="Curve" id="Curve_mxrue"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_pm73p"]
-curve = SubResource("Curve_mxrue")
-
-[sub_resource type="CurveTexture" id="CurveTexture_mrwsj"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ec53r"]
-particle_flag_disable_z = true
-emission_shape_scale = Vector3(4800, 4800, 4800)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-gravity = Vector3(0, 0, 0)
-scale_min = 2.0
-scale_max = 3.0
-alpha_curve = SubResource("CurveTexture_pm73p")
-emission_curve = SubResource("CurveTexture_mrwsj")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vrg6j"]
 animations = [{
@@ -1026,13 +1090,9 @@ layer = 0
 script = ExtResource("1_442ev")
 
 [node name="actOne" type="Node2D" parent="."]
+visible = false
 z_index = 99
 z_as_relative = false
-
-[node name="animMngr" type="AnimationTree" parent="actOne"]
-root_node = NodePath("../..")
-tree_root = SubResource("AnimationNodeStateMachine_m0uvq")
-anim_player = NodePath("../animation")
 
 [node name="animation" type="AnimationPlayer" parent="actOne"]
 root_node = NodePath("../..")
@@ -1040,18 +1100,25 @@ libraries = {
 "": SubResource("AnimationLibrary_mv8st")
 }
 
-[node name="stars" type="GPUParticles2D" parent="actOne"]
-modulate = Color(1, 1, 1, 0.25)
-amount = 100000
-process_material = SubResource("ParticleProcessMaterial_ec53r")
-lifetime = 10.0
-preprocess = 30.0
-speed_scale = 0.1
-fixed_fps = 60
-interpolate = false
-fract_delta = false
-visibility_rect = Rect2(-4800, -4800, 9600, 9600)
-local_coords = true
+[node name="bgm" type="AudioStreamPlayer" parent="actOne/animation"]
+mix_target = 1
+max_polyphony = 5
+bus = &"Background Main"
+
+[node name="bgm2" type="AudioStreamPlayer" parent="actOne/animation"]
+mix_target = 1
+max_polyphony = 5
+bus = &"Background Main"
+
+[node name="bgm3" type="AudioStreamPlayer" parent="actOne/animation"]
+volume_db = -20.0
+mix_target = 1
+bus = &"Background Main"
+
+[node name="sfx" type="AudioStreamPlayer" parent="actOne/animation"]
+volume_db = -1.65254
+max_polyphony = 5
+bus = &"Background Main"
 
 [node name="cutscenePart1" type="Node2D" parent="actOne" node_paths=PackedStringArray("bg", "fg")]
 script = ExtResource("2_ugpn3")
@@ -1124,8 +1191,6 @@ animation = &"moving"
 autoplay = "moving"
 frame_progress = 0.870246
 
-[node name="cutscenePart4a" type="Node2D" parent="actOne"]
-
 [node name="uiLayer" type="CanvasLayer" parent="."]
 
 [node name="uiMenu" type="Control" parent="uiLayer"]
@@ -1176,9 +1241,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -823.0
-offset_top = -127.0
+offset_top = -540.0
 offset_right = 827.0
-offset_bottom = -88.0
+offset_bottom = -501.0
 grow_horizontal = 2
 grow_vertical = 0
 label_settings = SubResource("LabelSettings_fmof5")
@@ -1224,3 +1289,5 @@ offset_right = 172.5
 offset_bottom = -123.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

@@ -143,3 +143,9 @@ func goToMainMenu() -> void:
 	_uiAnim.play("RESET")
 	await _uiAnim.animation_finished
 	_uiAnim.play("uiMainMenuAnimation")
+
+#------------------------------------------------------------------------------#
+func startArc() -> void:
+	# Call a signal to sector manager. To start the arc.
+	print("Starting an arc...")
+	get_tree().call_group("gameArcManager", "startGameArc")

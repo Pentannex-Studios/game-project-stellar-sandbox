@@ -7,6 +7,7 @@ extends Button
 @export var uiBtnSFX: AudioStreamPlayer
 
 #------------------------------------------------------------------------------#
+signal open_eyes
 
 #------------------------------------------------------------------------------#
 # Play hover animation button when mouse entered button.
@@ -21,6 +22,7 @@ func _whenMouseExitedButton() -> void:
 # Emit signal to main menu manager.
 func _whenMousePressed() -> void:
 	uiBtnAnimation.play_backwards("uiMenuExitHovered")
+	open_eyes.emit()
 	
 	# FORMAT: Release focus on the button.
 	release_focus()

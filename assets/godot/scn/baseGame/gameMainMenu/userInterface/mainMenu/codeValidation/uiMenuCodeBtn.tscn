@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dput70sdrayl" path="res://assets/godot/tres/uiGlobalTheme.tres" id="1_1atw1"]
 [ext_resource type="FontFile" uid="uid://b3f6o2t3fsb05" path="res://assets/external/font/RobotoCondensed-Light.ttf" id="1_icer6"]
 [ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/codeValidation/uiMenuCodeBtn.gd" id="2_ch47w"]
-[ext_resource type="AudioStream" uid="uid://u57hkwqqf64b" path="res://assets/external/aud/fx/select_007.ogg" id="3_pcdra"]
+[ext_resource type="AudioStream" uid="uid://potfkbsj7gbf" path="res://assets/external/aud/fx/ui/422836__gamedevc__g_ui_button_hover_1.wav" id="4_b5rn8"]
 
 [sub_resource type="Animation" id="Animation_f2c4x"]
 length = 0.001
@@ -61,7 +61,8 @@ libraries = {
 autoplay = "uiMenuStartHighlight"
 
 [node name="uiMenuCodeValidationSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_pcdra")
+stream = ExtResource("4_b5rn8")
+volume_db = 5.0
 bus = &"SFX Main"
 
 [connection signal="mouse_entered" from="." to="." method="_whenMouseEnteredButton"]

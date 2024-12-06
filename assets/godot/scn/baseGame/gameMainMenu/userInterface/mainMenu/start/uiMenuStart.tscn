@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://b357pus0d553w"]
 
 [ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/start/uiMenuStart.gd" id="2_4ujau"]
+[ext_resource type="AudioStream" uid="uid://potfkbsj7gbf" path="res://assets/external/aud/fx/ui/422836__gamedevc__g_ui_button_hover_1.wav" id="3_mrxkr"]
 [ext_resource type="Theme" uid="uid://dput70sdrayl" path="res://assets/godot/tres/uiGlobalTheme.tres" id="3_tctqs"]
-[ext_resource type="AudioStream" uid="uid://m4ny8ff47g0h" path="res://assets/external/aud/fx/select_008 .ogg" id="3_trr1o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkp5y"]
 bg_color = Color(1, 1, 1, 0.0784314)
@@ -164,7 +164,8 @@ libraries = {
 autoplay = "uiMenuStartHighlight"
 
 [node name="uiMenuStartSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_trr1o")
+stream = ExtResource("3_mrxkr")
+volume_db = 5.0
 bus = &"SFX Main"
 
 [connection signal="mouse_entered" from="." to="." method="_whenMouseEnteredButton"]

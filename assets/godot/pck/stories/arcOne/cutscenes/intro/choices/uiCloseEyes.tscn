@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dput70sdrayl" path="res://assets/godot/tres/uiGlobalTheme.tres" id="1_vy3qw"]
 [ext_resource type="FontFile" uid="uid://b3f6o2t3fsb05" path="res://assets/external/font/RobotoCondensed-Light.ttf" id="2_qwt3w"]
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/choices/uiCEChoice.gd" id="3_m3i3m"]
-[ext_resource type="AudioStream" uid="uid://m4ny8ff47g0h" path="res://assets/external/aud/fx/select_008 .ogg" id="4_f3r4x"]
+[ext_resource type="AudioStream" uid="uid://potfkbsj7gbf" path="res://assets/external/aud/fx/ui/422836__gamedevc__g_ui_button_hover_1.wav" id="4_f3r4x"]
 
 [sub_resource type="Animation" id="Animation_f2c4x"]
 length = 0.001

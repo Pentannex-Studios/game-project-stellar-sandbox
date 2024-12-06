@@ -32,3 +32,14 @@ func mindscapeSetOpacity(value: float, includeStars: bool = false) -> void:
 	
 	if includeStars:
 		_tween.tween_property(_msStars, "modulate:a", value, 0.5)
+
+#------------------------------------------------------------------------------#
+func startGameArc() -> void:
+	if get_child_count() != 0 and get_child_count() < 2:
+		if get_child(0).is_in_group("gameArc"):
+			print("Initiated game arc.")
+			
+			get_child(0).startArc()
+			mindscapeSetOpacity(0)
+		else:
+			print("Game arc initiation failed.")
