@@ -5,6 +5,11 @@ extends CanvasLayer
 @onready var _actOneUI: Control = get_node("uiLayer/uiMenu")
 
 #------------------------------------------------------------------------------#
+func _ready() -> void:
+	_actOneIntroAssets.set_visible(false)
+	_actOneUI.set_visible(false)
+
+#------------------------------------------------------------------------------#
 # Hide cursor.
 func editCursorVisibility(showCursor: bool) -> void:
 	if showCursor:
@@ -14,10 +19,6 @@ func editCursorVisibility(showCursor: bool) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func playCutscene() -> void:
+	_actOneIntroAssets.set_visible(true)
+	_actOneUI.set_visible(true)
 	_animation.play("animation")
-
-#------------------------------------------------------------------------------#
-func _on_visibility_changed() -> void:
-	if _actOneIntroAssets and _actOneUI:
-		_actOneIntroAssets.set_visible(is_visible())
-		_actOneUI.set_visible(is_visible())

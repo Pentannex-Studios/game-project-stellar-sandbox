@@ -1090,7 +1090,6 @@ layer = 0
 script = ExtResource("1_442ev")
 
 [node name="actOne" type="Node2D" parent="."]
-visible = false
 z_index = 99
 z_as_relative = false
 
@@ -1116,7 +1115,6 @@ mix_target = 1
 bus = &"Background Main"
 
 [node name="sfx" type="AudioStreamPlayer" parent="actOne/animation"]
-volume_db = -1.65254
 max_polyphony = 5
 bus = &"Background Main"
 
@@ -1241,9 +1239,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -823.0
-offset_top = -540.0
+offset_top = -127.0
 offset_right = 827.0
-offset_bottom = -501.0
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 0
 label_settings = SubResource("LabelSettings_fmof5")
@@ -1289,5 +1287,3 @@ offset_right = 172.5
 offset_bottom = -123.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
