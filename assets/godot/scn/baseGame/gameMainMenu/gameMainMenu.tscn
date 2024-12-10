@@ -1222,11 +1222,11 @@ sampling_rate = 44100.0
 [sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_2e1nk"]
 packet_sequence = SubResource("OggPacketSequence_tb05x")
 
-[sub_resource type="Gradient" id="Gradient_e5fsk"]
+[sub_resource type="Gradient" id="Gradient_ikfes"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.956863)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_je411"]
-gradient = SubResource("Gradient_e5fsk")
+gradient = SubResource("Gradient_ikfes")
 width = 1920
 height = 1080
 use_hdr = true
@@ -1366,7 +1366,7 @@ offset_right = 357.5
 offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "The Journey to the Starlit Veil explores themes of mental health, emotional struggles, and self-reflection. This story involves depictions of loneliness, self-doubt, and moments of personal hardship that may be intense or unsettling for some players.
+text = "The Journey to the Starlit Veil explores themes of mental health, emotional struggles, and self-reflection. This story involves depictions of loneliness, self-doubt, and moments of personal hardship that may be intense or unsettling for you.
 
 Please take your time, engage at your own pace, and feel free to step away if needed. Your well-being comes first."
 label_settings = SubResource("LabelSettings_fna74")

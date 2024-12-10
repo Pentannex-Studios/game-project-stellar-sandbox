@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dr4i15woagsi"]
+[gd_scene load_steps=17 format=3 uid="uid://dr4i15woagsi"]
 
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/arcManager/arcOneManager.gd" id="1_q3ovk"]
-[ext_resource type="PackedScene" uid="uid://cj5xjmrmho42y" path="res://assets/godot/pck/stories/arcOne/cutscenes/intro/actOneIntro.tscn" id="2_421fn"]
+[ext_resource type="Shader" path="res://assets/godot/tres/shaders/shockwave.gdshader" id="2_kjvfe"]
 
 [sub_resource type="Animation" id="Animation_uiee7"]
 length = 0.001
@@ -16,6 +16,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiLayer/uiMenu/overlay:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_xdcqg"]
@@ -38,6 +50,24 @@ _data = {
 "RESET": SubResource("Animation_uiee7"),
 "fade": SubResource("Animation_xdcqg")
 }
+
+[sub_resource type="Gradient" id="Gradient_e5fsk"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.956863)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dcw23"]
+gradient = SubResource("Gradient_e5fsk")
+width = 1920
+height = 1080
+use_hdr = true
+fill_from = Vector2(1, 0.0257143)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8d14l"]
+shader = ExtResource("2_kjvfe")
+shader_parameter/center = Vector2(960, 540)
+shader_parameter/force = 1.05
+shader_parameter/size = 10.48
+shader_parameter/thickness = 10.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wcsqp"]
 animation = &"RESET"
@@ -62,44 +92,78 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("cutscenes/actOneIntro:visible")
+tracks/0/path = NodePath("../uiLayer/uiMenu/overlay:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_1durf"]
-resource_name = "intro"
-length = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("cutscenes/actOneIntro:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("cutscenes/actOneIntro")
+tracks/1/path = NodePath("../uiLayer/uiMenu/uiFadeOverlay:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"playCutscene"
-}]
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../camera:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="Animation" id="Animation_1durf"]
+resource_name = "intro"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../uiLayer/uiMenu/overlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../uiLayer/uiMenu/uiFadeOverlay:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../camera:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 29.7667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(0.6, 0.6)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3486w"]
@@ -110,6 +174,10 @@ _data = {
 
 [node name="arcManager" type="Node2D" groups=["gameArc"]]
 script = ExtResource("1_q3ovk")
+
+[node name="camera" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+process_callback = 0
 
 [node name="uiLayer" type="CanvasLayer" parent="."]
 
@@ -137,6 +205,27 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+
+[node name="overlay" type="TextureRect" parent="uiLayer/uiMenu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_dcw23")
+
+[node name="fx" type="Control" parent="uiLayer/uiMenu"]
+material = SubResource("ShaderMaterial_8d14l")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="spaceAssetManager" type="Node2D" parent="."]
 
@@ -184,5 +273,10 @@ libraries = {
 
 [node name="cutscenes" type="Node2D" parent="spaceCutsceneManager"]
 
-[node name="actOneIntro" parent="spaceCutsceneManager/cutscenes" instance=ExtResource("2_421fn")]
-visible = false
+[node name="soundOne" type="AudioStreamPlayer" parent="spaceCutsceneManager/cutscenes"]
+bus = &"SFX CutScene "
+
+[node name="soundTwo" type="AudioStreamPlayer" parent="spaceCutsceneManager/cutscenes"]
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Main"

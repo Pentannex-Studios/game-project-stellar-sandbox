@@ -4,7 +4,7 @@ extends Node2D
 #------------------------------------------------------------------------------#
 # Parallax strength for each layer
 const fgParallaxStrength = 0.01
-const bgParallaxStrength = 0.002
+const bgParallaxStrength = 0.005
 
 #------------------------------------------------------------------------------#
 # Nodes for each layer

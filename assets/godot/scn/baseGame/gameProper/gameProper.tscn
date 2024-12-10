@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bih5luxeqykid"]
+[gd_scene load_steps=12 format=3 uid="uid://bih5luxeqykid"]
 
 [ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameProper/gameProper.gd" id="1_hjay7"]
 [ext_resource type="PackedScene" uid="uid://d2knxogc4ing1" path="res://assets/godot/scn/baseGame/gameProper/userInterface/toMenu/uiToMenu.tscn" id="2_55g80"]
 [ext_resource type="Environment" uid="uid://pxr6ffxs2bp7" path="res://assets/godot/tres/scnEnv.tres" id="2_h31ue"]
 [ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameProper/userInterface/gameProperUI.gd" id="2_jws2c"]
 [ext_resource type="PackedScene" uid="uid://dp51oah6gmomd" path="res://assets/godot/scn/baseGame/gameProper/gameMindscapeGen/mindScapeMngr.tscn" id="3_y1nyr"]
+[ext_resource type="Shader" path="res://assets/godot/tres/shaders/shockwave.gdshader" id="4_gt0kd"]
 [ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameProper/gameArcMngr.gd" id="4_ok0yk"]
 
 [sub_resource type="Animation" id="Animation_33myk"]
@@ -92,6 +93,13 @@ _data = {
 "pause": SubResource("Animation_e5n1m")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_35bag"]
+shader = ExtResource("4_gt0kd")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.02
+shader_parameter/size = 0.0
+shader_parameter/thickness = 1.0
+
 [node name="spaceGameProper" type="Node2D" groups=["gameManager"]]
 script = ExtResource("1_hjay7")
 
@@ -147,6 +155,16 @@ offset_right = -21.0
 offset_bottom = -23.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 2
+
+[node name="fx" type="ColorRect" parent="uiLayer/uiMenu"]
+material = SubResource("ShaderMaterial_35bag")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
 [node name="mindscape" type="Node2D" parent="."]

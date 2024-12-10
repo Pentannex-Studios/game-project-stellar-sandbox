@@ -23,15 +23,20 @@ extends Node2D
 # Animations.
 
 # Set the mindscape's opacity to value.
-func mindscapeSetOpacity(value: float, includeStars: bool = false) -> void:
+func mindscapeSetOpacity(value: float, includeStars: bool = false, immediate: bool = false) -> void:
 	var _tween: Tween = create_tween()
-	for _tex in _msBgTextures:
-		_tween.tween_property(_tex, "modulate:a", value, 0.5)
+	var _time: float = 0.5
 	
-	_tween.tween_property(_msPhTexture, "modulate:a", value, 0.5)
+	if immediate:
+		_time = 0.0
+	
+	for _tex in _msBgTextures:
+		_tween.tween_property(_tex, "modulate:a", value, _time)
+	
+	_tween.tween_property(_msPhTexture, "modulate:a", value, _time)
 	
 	if includeStars:
-		_tween.tween_property(_msStars, "modulate:a", value, 0.5)
+		_tween.tween_property(_msStars, "modulate:a", value, _time)
 
 #------------------------------------------------------------------------------#
 func startGameArc() -> void:
@@ -40,6 +45,6 @@ func startGameArc() -> void:
 			print("Initiated game arc.")
 			
 			get_child(0).startArc()
-			mindscapeSetOpacity(0)
+			mindscapeSetOpacity(0, false, true)
 		else:
 			print("Game arc initiation failed.")

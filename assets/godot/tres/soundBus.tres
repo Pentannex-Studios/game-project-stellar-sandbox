@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://cmw2crfagjral"]
+[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://cmw2crfagjral"]
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_bwqq6"]
 resource_name = "Limiter"
@@ -8,6 +8,26 @@ resource_name = "StereoEnhance"
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_5om4t"]
 resource_name = "Reverb"
+
+[sub_resource type="AudioEffectHardLimiter" id="AudioEffectHardLimiter_qrgp3"]
+resource_name = "HardLimiter"
+pre_gain_db = -5.0
+
+[sub_resource type="AudioEffectChorus" id="AudioEffectChorus_a2ifw"]
+resource_name = "Chorus"
+voice_count = 4
+voice/3/delay_ms = 12.0
+voice/3/rate_hz = 1.0
+voice/3/depth_ms = 0.0
+voice/3/level_db = 0.0
+voice/3/cutoff_hz = 16000.0
+voice/3/pan = 0.0
+voice/4/delay_ms = 12.0
+voice/4/rate_hz = 1.0
+voice/4/depth_ms = 0.0
+voice/4/level_db = 0.0
+voice/4/cutoff_hz = 16000.0
+voice/4/pan = 0.0
 
 [resource]
 bus/0/volume_db = 0.00282288
@@ -31,7 +51,11 @@ bus/3/name = &"SFX CutScene "
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = -0.792653
+bus/3/volume_db = 6.02
 bus/3/send = &"Master"
 bus/3/effect/0/effect = SubResource("AudioEffectReverb_5om4t")
 bus/3/effect/0/enabled = false
+bus/3/effect/1/effect = SubResource("AudioEffectHardLimiter_qrgp3")
+bus/3/effect/1/enabled = true
+bus/3/effect/2/effect = SubResource("AudioEffectChorus_a2ifw")
+bus/3/effect/2/enabled = false
