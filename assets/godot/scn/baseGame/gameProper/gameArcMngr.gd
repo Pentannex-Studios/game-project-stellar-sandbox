@@ -17,7 +17,7 @@ extends Node2D
 ]
 
 @onready var _msPhTexture: Sprite2D = _mindscape.get_node("spaceSectorManager/spacePhenoGen/spacePllxMngr/spacePTPllx/spacePhenoTex")
-@onready var _msStars: GPUParticles2D = _mindscape.get_node("spaceSectorManager/spaceBgGen/spacePllxMngr/spaceBgPllx/stars")
+@onready var _msStars: CPUParticles2D = _mindscape.get_node("spaceSectorManager/spaceBgGen/spacePllxMngr/spaceBgPllx/stars")
 
 #------------------------------------------------------------------------------#
 # Animations.

@@ -1,6 +1,6 @@
 extends Node2D
 #------------------------------------------------------------------------------#
-@onready var _stars: GPUParticles2D = get_node("spacePllxMngr/spaceBgPllx/stars")
+@onready var _stars: CPUParticles2D = get_node("spacePllxMngr/spaceBgPllx/stars")
 
 var _spaceBgTexture: NoiseTexture2D 
 var _spaceGasTex: NoiseTexture2D
