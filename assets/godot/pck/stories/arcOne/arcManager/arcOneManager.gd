@@ -9,3 +9,7 @@ extends Node2D
 func startArc() -> void:
 	print("Started Game Arc.")
 	_cutsceneAnimator.travel("intro")
+
+# Hide cursor.
+func editCursorVisibility(showCursor: bool) -> void:
+	lib.editCursorVisibility(showCursor)

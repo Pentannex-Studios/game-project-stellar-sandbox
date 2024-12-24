@@ -156,18 +156,5 @@ environment = ExtResource("2_h31ue")
 
 [node name="spaceSectorManager" parent="mindscape" instance=ExtResource("3_y1nyr")]
 
-[node name="spaceBgTex" parent="mindscape/spaceSectorManager/spaceBgGen/spacePllxMngr/spaceBgPllx" index="0"]
-modulate = Color(1, 1, 1, 1)
-
-[node name="spaceGasTex1" parent="mindscape/spaceSectorManager/spaceBgGen/spacePllxMngr/spaceG1Pllx" index="0"]
-modulate = Color(1, 1, 1, 1)
-
-[node name="spaceGasTex2" parent="mindscape/spaceSectorManager/spaceBgGen/spacePllxMngr/spaceG2Pllx" index="0"]
-modulate = Color(1, 1, 1, 1)
-
 [node name="spaceGameArc" type="Node2D" parent="." groups=["gameArcManager"]]
 script = ExtResource("4_ok0yk")
-
-[editable path="mindscape/spaceSectorManager"]
-[editable path="mindscape/spaceSectorManager/spacePhenoGen"]
-[editable path="mindscape/spaceSectorManager/spaceBgGen"]

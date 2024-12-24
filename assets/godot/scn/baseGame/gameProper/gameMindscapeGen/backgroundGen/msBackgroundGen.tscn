@@ -23,7 +23,8 @@ texture = SubResource("PlaceholderTexture2D_5hbrt")
 [node name="stars" type="CPUParticles2D" parent="spacePllxMngr/spaceBgPllx"]
 modulate = Color(1, 1, 1, 0.25)
 amount = 100000
-lifetime = 10.0
+fixed_fps = 1
+fract_delta = false
 local_coords = true
 draw_order = 1
 emission_shape = 3
@@ -33,6 +34,9 @@ angle_min = -720.0
 angle_max = 720.0
 scale_amount_min = 2.0
 scale_amount_max = 3.0
+
+[node name="timer" type="Timer" parent="spacePllxMngr/spaceBgPllx/stars"]
+process_callback = 0
 
 [node name="spaceGPllx" type="Parallax2D" parent="spacePllxMngr"]
 scroll_scale = Vector2(0.2, 0.2)
@@ -63,3 +67,5 @@ limit_end = Vector2(6700, 7000)
 modulate = Color(0.639216, 1, 1, 0.47451)
 z_index = 9
 scale = Vector2(5, 5)
+
+[connection signal="timeout" from="spacePllxMngr/spaceBgPllx/stars/timer" to="." method="_on_timer_timeout"]

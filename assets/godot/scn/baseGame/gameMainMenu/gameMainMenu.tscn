@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cl5mvnsyob8pv"]
+[gd_scene load_steps=34 format=4 uid="uid://cl5mvnsyob8pv"]
 
 [ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameMainMenu/gameMainMenu.gd" id="1_u50fn"]
 [ext_resource type="AudioStream" uid="uid://pp5mvw30ygg7" path="res://assets/external/aud/bgm/score/httpswww.fesliyanstudios.commusicfiles2023-05-02_-_Galaxys_Endless_Expanse_-_www.FesliyanStudios.com2023-05-02_-_Galaxys_Endless_Expanse_-_www.FesliyanStudios.com.mp3" id="2_a52l8"]
@@ -374,6 +374,18 @@ tracks/26/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("uiLayer/uiMenu:modulate")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_cwcnj"]
 resource_name = "generateNewSectorFade"
@@ -510,6 +522,23 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [2]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"editCursorVisibility"
+}, {
+"args": [true],
+"method": &"editCursorVisibility"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_pjph0"]
@@ -1060,9 +1089,12 @@ tracks/13/path = NodePath(".")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"editCursorVisibility"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_mp2rc"]
@@ -1199,6 +1231,49 @@ tracks/10/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"editCursorVisibility"
+}]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("uiLayer/uiMenu/uiAnim/uiInactivity")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [25],
+"method": &"start"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_kvhxs"]
+resource_name = "uiFadeInactivity"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiLayer/uiMenu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_taetd"]
 _data = {
@@ -1206,6 +1281,7 @@ _data = {
 "generateNewSectorFade": SubResource("Animation_cwcnj"),
 "locateSectorOverlay": SubResource("Animation_pjph0"),
 "travelToSector": SubResource("Animation_oayup"),
+"uiFadeInactivity": SubResource("Animation_kvhxs"),
 "uiLogoShowcaseAnimation": SubResource("Animation_31sw0"),
 "uiMainMenuAnimation": SubResource("Animation_mp2rc")
 }
@@ -1269,6 +1345,11 @@ callback_mode_process = 0
 libraries = {
 "": SubResource("AnimationLibrary_taetd")
 }
+
+[node name="uiInactivity" type="Timer" parent="uiLayer/uiMenu/uiAnim"]
+process_callback = 0
+wait_time = 25.0
+one_shot = true
 
 [node name="uiBgPlayer" type="AudioStreamPlayer" parent="uiLayer/uiMenu"]
 stream = ExtResource("2_a52l8")
@@ -1377,7 +1458,7 @@ visible_characters_behavior = 1
 
 [node name="uiGodotIcon" type="TextureRect" parent="uiLayer/uiMenu/uiLogoGrp"]
 modulate = Color(1, 1, 1, 0)
-texture_filter = 2
+texture_filter = 6
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.367
@@ -1397,6 +1478,7 @@ stretch_mode = 5
 
 [node name="uiEseyemIcon" type="TextureRect" parent="uiLayer/uiMenu/uiLogoGrp"]
 modulate = Color(1, 1, 1, 0)
+texture_filter = 6
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.388
@@ -1463,42 +1545,39 @@ texture = SubResource("GradientTexture2D_je411")
 
 [node name="uiMenuExit" parent="uiLayer/uiMenu/uiBtnGrp" instance=ExtResource("8_eiuwx")]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -48.0
-offset_right = -16.0
-offset_bottom = -16.0
-grow_horizontal = 0
+offset_left = 24.0
+offset_top = -56.0
+offset_right = 72.0
+offset_bottom = -24.0
 grow_vertical = 0
+alignment = 0
 
 [node name="uiLocSectBtn" parent="uiLayer/uiMenu/uiBtnGrp" instance=ExtResource("7_fgblm")]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 600.0
-offset_top = -88.0
-offset_right = 768.0
-offset_bottom = -56.0
+offset_left = 24.0
+offset_top = -144.0
+offset_bottom = -112.0
 grow_vertical = 0
 mouse_filter = 2
 
 [node name="uiExploStartBtn" parent="uiLayer/uiMenu/uiBtnGrp" instance=ExtResource("6_sdq32")]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -168.0
-offset_top = -96.0
-offset_right = 168.0
-offset_bottom = -48.0
-grow_horizontal = 2
+offset_left = -376.0
+offset_top = -80.0
+offset_right = -40.0
+offset_bottom = -32.0
+grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
 
@@ -1509,10 +1588,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -768.0
-offset_top = -88.0
-offset_right = -552.0
-offset_bottom = -56.0
+offset_left = -1896.0
+offset_top = -184.0
+offset_right = -1680.0
+offset_bottom = -152.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
@@ -1522,13 +1601,15 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = -48.0
-offset_right = 88.0
-offset_bottom = -16.0
+offset_left = 24.0
+offset_top = -96.0
+offset_right = 97.0
+offset_bottom = -64.0
 grow_vertical = 0
 mouse_filter = 2
+alignment = 0
 
 [connection signal="_montage" from="." to="." method="_montageGame"]
+[connection signal="timeout" from="uiLayer/uiMenu/uiAnim/uiInactivity" to="." method="_on_ui_inactivity_timeout"]
 
 [editable path="uiLayer/uiMenu/uiLocSect/uiSSK"]

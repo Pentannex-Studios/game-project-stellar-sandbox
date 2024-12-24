@@ -123,3 +123,13 @@ func clearSpaceGenThreads() -> void:
 	revertSpacePhenomenaTexturesToDefault()
 
 #------------------------------------------------------------------------------#
+
+# Set the mindscape's opacity to value.
+func mindscapeSetOpacity(value: float, immediate: bool = false) -> void:
+	var _tween: Tween = create_tween()
+	var _time: float = 0.5
+	
+	if immediate:
+		_time = 0.0
+	
+	_tween.tween_property(get_node("spacePllxMngr/spacePTPllx/spacePhenoTex"), "modulate:a", value, _time)

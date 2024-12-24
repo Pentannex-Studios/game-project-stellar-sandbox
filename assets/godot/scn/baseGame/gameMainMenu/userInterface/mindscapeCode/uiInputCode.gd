@@ -155,7 +155,7 @@ func _whenMSKLocBtnPressed():
 	else:
 		# If there's no text in MSK Input, the button will enter copy MSK mode.
 		DisplayServer.clipboard_set(lib.MSK)
-		_uiLocMSKBtn.text = "Copied To Clipboard!"
+		_uiLocMSKBtn.text = "Copied!"
 		
 		await get_tree().create_timer(1).timeout
 		

@@ -1,6 +1,7 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 @onready var _stars: CPUParticles2D = get_node("spacePllxMngr/spaceBgPllx/stars")
+@onready var _star_timer: Timer = get_node("spacePllxMngr/spaceBgPllx/stars/timer")
 
 var _spaceBgTexture: NoiseTexture2D 
 var _spaceGasTex: NoiseTexture2D
@@ -33,6 +34,9 @@ func _ready() -> void:
 				]
 			]
 		)
+	
+	_stars.set_speed_scale(1)
+	_star_timer.start(lib.genRand(1, 9))
 
 # Kills the thread when scene exits the tree.
 # IMPORTANT CODE: Its a must do to prevent warning and potential crash.
@@ -83,11 +87,7 @@ func loadThread(spaceArray: Array) -> void:
 	print("\nLoading space background textures in the thread...")
 	
 	# Load the stars.
-	_stars.set_lifetime(0.5)
-	_stars.set_speed_scale(1)
-	await get_tree().create_timer(lib.genRand(5, 9)).timeout
-	_stars.set_lifetime(60)
-	_stars.set_speed_scale(0.1)
+	_star_timer.start(lib.genRand(1, 9))
 
 # IMPORTANT CODE: Thread Function for background space generation. 
 func _genSpace(spaceArray: Array) -> void:
@@ -203,3 +203,26 @@ func editSpaceGasColor(gas: int = 0, gasColor: Color = Color(1, 1, 1, 1)) -> voi
 	
 	var _tween: Tween = create_tween()
 	_tween.tween_property(_gases[gas], "modulate", gasColor, 5).set_ease(Tween.EASE_IN_OUT)
+
+# Set the mindscape's opacity to value.
+func mindscapeSetOpacity(value: float, includeStars: bool = false, immediate: bool = false) -> void:
+	var _tween: Tween = create_tween()
+	var _time: float = 0.5
+	
+	if immediate:
+		_time = 0.0
+	
+	for _tex in [
+		get_node("spacePllxMngr/spaceBgPllx/spaceBgTex"),
+		get_node("spacePllxMngr/spaceGPllx/spaceGasTex"),
+		get_node("spacePllxMngr/spaceG1Pllx/spaceGasTex1"),
+		get_node("spacePllxMngr/spaceG2Pllx/spaceGasTex2")
+	]:
+		_tween.tween_property(_tex, "modulate:a", value, _time)
+	
+	if includeStars:
+		_tween.tween_property(_stars, "modulate:a", value, _time)
+
+
+func _on_timer_timeout() -> void:
+	_stars.set_speed_scale(0)

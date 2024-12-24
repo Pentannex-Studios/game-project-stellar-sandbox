@@ -52,7 +52,7 @@ func _loadSpaceSector() -> void:
 	
 	else:
 		# Assign chunks of the preset number to the parameters. 
-		var spaceSectorKey: String = lib.SSK
+		var spaceSectorKey: String = lib.MSK
 		_spaceSectSeed = int(spaceSectorKey.get_slice("|", 1))
 		_spaceSectBg = spaceSectorKey.get_slice("|", 2) if spaceSectorKey.get_slice("|", 2).is_valid_html_color() else lib.generateRandomColor()
 		

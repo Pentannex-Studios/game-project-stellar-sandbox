@@ -1,13 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://dr4i15woagsi"]
+[gd_scene load_steps=34 format=3 uid="uid://dr4i15woagsi"]
 
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/arcManager/arcOneManager.gd" id="1_q3ovk"]
 [ext_resource type="Shader" path="res://assets/godot/tres/shaders/shockwave.gdshader" id="2_kjvfe"]
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/parallaxMngr.gd" id="2_mb4nl"]
 [ext_resource type="Texture2D" uid="uid://gny70qw4180d" path="res://assets/external/png/cutscene/ledge.png" id="3_326p0"]
 [ext_resource type="Texture2D" uid="uid://djoga57kja45e" path="res://assets/external/png/cutscene/building.png" id="4_6de07"]
-[ext_resource type="FontFile" uid="uid://dwvsoh5o21col" path="res://assets/external/font/ComingSoon.ttf" id="6_b8xwf"]
-[ext_resource type="Shader" path="res://assets/godot/pck/stories/arcOne/arcManager/arcOneManager.gdshader" id="7_0mald"]
+[ext_resource type="Texture2D" uid="uid://bl1paqb5fieq2" path="res://assets/external/png/cutscene/ledgeAnimation.png" id="6_cp7cj"]
+[ext_resource type="Shader" path="res://assets/godot/tres/shaders/blur.gdshader" id="7_0mald"]
 [ext_resource type="Texture2D" uid="uid://brhmtrddh4sp1" path="res://assets/external/png/fx/vignette.png" id="7_riamt"]
+[ext_resource type="FontFile" uid="uid://b7v8fse3db07l" path="res://assets/external/font/RobotoCondensed-LightItalic.ttf" id="8_46q24"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wcsqp"]
 animation = &"RESET"
@@ -233,10 +234,83 @@ tracks/16/keys = {
 "update": 0,
 "values": [0.005]
 }
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/size")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/thickness")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.2]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/force")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.17]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../uiLayer/uiMenu/fxVignette:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../uiLayer/uiMenu/fxVignette:scale")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/ledge:frame")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_1durf"]
 resource_name = "intro"
 length = 60.0
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -244,10 +318,10 @@ tracks/0/path = NodePath("../uiLayer/uiMenu/uiFadeOverlay:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(5, 8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.83, 1.26, 2.68, 9.06, 12.06, 49.06, 49.07, 49.69, 57.94),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 1), Color(0.0556347, 0.023539, 0.0965366, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -280,7 +354,7 @@ tracks/3/path = NodePath("../uiLayer/uiMenu/cutsceneLabel:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(5.06667, 6.06667, 10.0667, 10.8667, 13.1333, 14.1333, 16.0333, 16.8333, 19.3667, 20.3667, 22.2667, 23.0667, 25.6667, 26.6667, 30.6667, 31.4667, 34.0667, 35.0667, 39.0667, 39.8667),
+"times": PackedFloat32Array(5.22, 6.22, 10.22, 11.02, 14.37, 15.37, 19.38, 20.18, 25.99, 26.99, 31.81, 32.61, 37.2833, 38.2833, 42.2833, 43.0833, 54.05, 55.05, 59.05, 59.85),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -292,7 +366,7 @@ tracks/4/path = NodePath("../uiLayer/uiMenu/cutsceneLabel:text")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(5.06667, 13.0667, 19.3, 25.6667, 34.0667),
+"times": PackedFloat32Array(5.22, 14.3034, 25.9233, 37.2833, 54.05),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": ["I thought I could escape.", "I thought letting go would quiet the noise...", "But instead… I found the silence far louder.", "The stars look so beautiful tonight…", "Too bad... I’ll only see them one last time."]
@@ -367,7 +441,7 @@ tracks/10/keys = {
 "times": PackedFloat32Array(14.7, 17.7333, 23, 42.0333, 48.3333),
 "transitions": PackedFloat32Array(1, 0.7, 0.6, 0.7, 0.7),
 "update": 0,
-"values": [Vector2(960, 922), Vector2(960, 711), Vector2(960, 1403), Vector2(960, 1403), Vector2(960, 711)]
+"values": [Vector2(960, 922), Vector2(960, 770), Vector2(960, 1403), Vector2(960, 1403), Vector2(960, 750)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -400,10 +474,10 @@ tracks/13/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/ledge:modulat
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(16.3667, 17.9667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(16.3667, 17.9667, 42.5333, 45.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.86301, 0.718526, 0.978678, 1), Color(0.399428, 0.399428, 0.399428, 1)]
+"values": [Color(0.86301, 0.718526, 0.978678, 1), Color(0.399428, 0.399428, 0.399428, 1), Color(0.399428, 0.399428, 0.399428, 1), Color(0, 0, 0, 1)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -412,10 +486,10 @@ tracks/14/path = NodePath("cutscenes/cutsceneLayer/background:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(22.3667, 29.4, 40.1667, 46.1333),
+"times": PackedFloat32Array(21.9333, 24.0667, 38.0333, 43.6333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.0156863, 0, 0.0588235, 1), Color(0.0156863, 0, 0.0588235, 0.486275), Color(0.0156863, 0, 0.0588235, 0.486275), Color(0.0156863, 0, 0.0588235, 1)]
+"values": [Color(0.0156863, 0, 0.0588235, 1), Color(0.0156863, 0, 0.0588235, 0.729412), Color(0.0156863, 0, 0.0588235, 0.729412), Color(0.0156863, 0, 0.0588235, 1)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -440,6 +514,95 @@ tracks/16/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.005, 0.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/size")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(48.88, 48.99, 50.87, 51.94, 52.46, 54.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.385, 0.0, 0.0, 5.0, 5.0]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/thickness")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(48.88, 52.96, 55.47),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.047, 0.2, 0.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/force")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(48.88),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.17]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../uiLayer/uiMenu/fxVignette:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 4.9, 13.12, 15.35, 17.94, 43.23, 44.39, 48.97, 49),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.741176), Color(1, 1, 1, 0.419608), Color(1, 1, 1, 0.419608), Color(1, 1, 1, 0.541176), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.580392), Color(1, 1, 1, 0.866667), Color(1, 1, 1, 0)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../uiLayer/uiMenu/fxVignette:scale")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/22/type = "method"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("..")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 59.98),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"editCursorVisibility"
+}, {
+"args": [true],
+"method": &"editCursorVisibility"
+}]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/ledge:frame")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(48.83, 48.9, 48.98, 49.06),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 3, 4]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3486w"]
@@ -476,13 +639,52 @@ gradient = SubResource("Gradient_75uel")
 width = 1920
 height = 1080
 use_hdr = true
-fill_from = Vector2(1, 1)
+fill_from = Vector2(1, 0.695873)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wgax6"]
 shader = ExtResource("7_0mald")
 shader_parameter/blur_amount = 9.5e-08
 shader_parameter/mix_amount = 0.005
 shader_parameter/color_over = Color(0.635294, 0.00784314, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbxa1"]
+atlas = ExtResource("6_cp7cj")
+region = Rect2(2204, 0, 1102, 1102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va32f"]
+atlas = ExtResource("6_cp7cj")
+region = Rect2(3306, 0, 1102, 1102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvsb5"]
+atlas = ExtResource("6_cp7cj")
+region = Rect2(4408, 0, 1102, 1102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijr3e"]
+atlas = ExtResource("6_cp7cj")
+region = Rect2(5510, 0, 1102, 1102)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d60fx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_326p0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbxa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va32f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvsb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijr3e")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_uiee7"]
 length = 0.001
@@ -534,10 +736,10 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8d14l"]
 shader = ExtResource("2_kjvfe")
-shader_parameter/center = Vector2(960, 540)
-shader_parameter/force = 1.05
-shader_parameter/size = 10.48
-shader_parameter/thickness = 10.0
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.17
+shader_parameter/size = 0.0
+shader_parameter/thickness = 0.2
 
 [node name="arcManager" type="Node2D" groups=["gameArc"]]
 script = ExtResource("1_q3ovk")
@@ -582,6 +784,7 @@ z_as_relative = false
 [node name="spaceCutsceneManager" type="Node2D" parent="."]
 
 [node name="cutsceneBlend" type="AnimationTree" parent="spaceCutsceneManager"]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_cueib")
 anim_player = NodePath("../cutsceneAnimator")
 
@@ -875,29 +1078,6 @@ modulate = Color(0.74902, 0.486275, 1, 0)
 position = Vector2(960, 540)
 texture = SubResource("GradientTexture2D_wn3j0")
 
-[node name="fxBlur" type="ColorRect" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
-material = SubResource("ShaderMaterial_wgax6")
-custom_minimum_size = Vector2(1920, 1080)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 1920.0
-offset_bottom = 1080.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-
-[node name="ledge" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
-modulate = Color(0.86301, 0.718526, 0.978678, 1)
-z_index = 2
-z_as_relative = false
-position = Vector2(999, 922)
-texture = ExtResource("3_326p0")
-
 [node name="layer1" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
 modulate = Color(0.858824, 0.67451, 1, 1)
 z_index = 2
@@ -950,8 +1130,32 @@ modulate = Color(0.866111, 0.866111, 0.866111, 1)
 position = Vector2(351, 1117.5)
 texture = ExtResource("4_6de07")
 
+[node name="fxBlur" type="ColorRect" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
+z_index = 2
+material = SubResource("ShaderMaterial_wgax6")
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="ledge" type="AnimatedSprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
+modulate = Color(0.86301, 0.718526, 0.978678, 1)
+z_index = 2
+z_as_relative = false
+position = Vector2(999, 922)
+sprite_frames = SubResource("SpriteFrames_d60fx")
+
 [node name="uiLayer" type="CanvasLayer" parent="."]
-layer = 2
+layer = 3
 
 [node name="uiAnim" type="AnimationPlayer" parent="uiLayer"]
 root_node = NodePath("../..")
@@ -968,19 +1172,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="fxShockwave" type="ColorRect" parent="uiLayer/uiMenu"]
-material = SubResource("ShaderMaterial_8d14l")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-metadata/_edit_use_anchors_ = true
-
 [node name="fxVignette" type="TextureRect" parent="uiLayer/uiMenu"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -1001,6 +1193,19 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
+[node name="fxShockwave" type="ColorRect" parent="uiLayer/uiMenu"]
+z_index = 10
+z_as_relative = false
+material = SubResource("ShaderMaterial_8d14l")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="cutsceneLabel" type="Label" parent="uiLayer/uiMenu"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -1012,7 +1217,7 @@ offset_top = 117.0
 offset_right = 197.5
 offset_bottom = 142.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("6_b8xwf")
+theme_override_fonts/font = ExtResource("8_46q24")
 theme_override_font_sizes/font_size = 26
 text = "I thought I could escape. I thought this would end it all."
 horizontal_alignment = 1

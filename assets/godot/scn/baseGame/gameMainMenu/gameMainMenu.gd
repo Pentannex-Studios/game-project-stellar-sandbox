@@ -15,11 +15,14 @@ extends Node2D
 @onready var _uiLocSectBtn: Button = get_node("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn")
 @onready var _uiExitGameBtn: Button = get_node("uiLayer/uiMenu/uiBtnGrp/uiMenuExit")
 
+@onready var _uiInactivityTimer: Timer = get_node("uiLayer/uiMenu/uiAnim/uiInactivity")
+
 # Locate Sector buttons and inputs.
 @onready var _uiSSK: LineEdit = get_node("uiLayer/uiMenu/uiLocSect/uiSSK")
 
 var _menuCamChanged: bool = false
 var _uiLocFocused: bool = false
+var _uiHidden: bool = false
 
 #------------------------------------------------------------------------------#
 signal _montage
@@ -50,6 +53,15 @@ func _unhandled_input(_event) -> void:
 		if _uiLocFocused:
 			_uiLocFocused = false
 			_locateMindscape(1)
+	
+	if _event is InputEventMouseMotion:
+		if  _event.velocity > Vector2.ZERO and _uiHidden:
+			_uiHidden = false
+			_uiAnim.play_backwards("uiFadeInactivity")
+			lib.editCursorVisibility(true)
+		
+		elif _event.velocity == Vector2.ZERO and not _uiHidden:
+			_uiInactivityTimer.start(25)
 
 #------------------------------------------------------------------------------#
 # Tween camera position across random positions in the map.
@@ -144,8 +156,19 @@ func goToMainMenu() -> void:
 	await _uiAnim.animation_finished
 	_uiAnim.play("uiMainMenuAnimation")
 
+# Hide UI when inactivity.
+func _on_ui_inactivity_timeout() -> void:
+	_uiAnim.play("uiFadeInactivity")
+	await _uiAnim.animation_finished
+	_uiHidden = true
+	lib.editCursorVisibility(false)
+
 #------------------------------------------------------------------------------#
 func startArc() -> void:
 	# Call a signal to sector manager. To start the arc.
 	print("Starting an arc...")
 	get_tree().call_group("gameArcManager", "startGameArc")
+
+# Hide cursor.
+func editCursorVisibility(showCursor: bool) -> void:
+	lib.editCursorVisibility(showCursor)

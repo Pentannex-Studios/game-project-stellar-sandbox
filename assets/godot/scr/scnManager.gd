@@ -16,6 +16,7 @@ var _arcPaths: Array[String] = [
 ]
 
 #------------------------------------------------------------------------------#
+
 func _ready() -> void:
 	# IGNORE: Debug
 	print("Initiated PseudoTree ", self, " Initiating scene loading.")
