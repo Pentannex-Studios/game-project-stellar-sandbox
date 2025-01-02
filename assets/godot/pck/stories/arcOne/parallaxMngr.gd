@@ -4,10 +4,10 @@ extends Node2D
 #------------------------------------------------------------------------------#
 # Parallax strength for each layer
 const l1ParallaxStrength = 0.010
-const l2ParallaxStrength = 0.005
-const l3ParallaxStrength = 0.0001
-const l4ParallaxStrength = 0.00005
-const l5ParallaxStrength = 0.000010
+const l2ParallaxStrength = 0.002
+const l3ParallaxStrength = 0.001
+const l4ParallaxStrength = 0.0005
+const l5ParallaxStrength = 0.0001
 
 #------------------------------------------------------------------------------#
 # Nodes for each layer

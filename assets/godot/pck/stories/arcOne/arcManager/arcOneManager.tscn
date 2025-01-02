@@ -1,11 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://dr4i15woagsi"]
+[gd_scene load_steps=26 format=3 uid="uid://dr4i15woagsi"]
 
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/arcManager/arcOneManager.gd" id="1_q3ovk"]
 [ext_resource type="Shader" path="res://assets/godot/tres/shaders/shockwave.gdshader" id="2_kjvfe"]
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/parallaxMngr.gd" id="2_mb4nl"]
 [ext_resource type="Texture2D" uid="uid://gny70qw4180d" path="res://assets/external/png/cutscene/ledge.png" id="3_326p0"]
 [ext_resource type="Texture2D" uid="uid://djoga57kja45e" path="res://assets/external/png/cutscene/building.png" id="4_6de07"]
-[ext_resource type="Texture2D" uid="uid://bl1paqb5fieq2" path="res://assets/external/png/cutscene/ledgeAnimation.png" id="6_cp7cj"]
+[ext_resource type="Texture2D" uid="uid://cuqrfjwolyd2u" path="res://assets/external/png/cutscene/ledge2.png" id="5_ug42v"]
 [ext_resource type="Shader" path="res://assets/godot/tres/shaders/blur.gdshader" id="7_0mald"]
 [ext_resource type="Texture2D" uid="uid://brhmtrddh4sp1" path="res://assets/external/png/fx/vignette.png" id="7_riamt"]
 [ext_resource type="FontFile" uid="uid://b7v8fse3db07l" path="res://assets/external/font/RobotoCondensed-LightItalic.ttf" id="8_46q24"]
@@ -57,7 +57,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("cutscenes/cutsceneLayer/intro:visible")
+tracks/2/path = NodePath("cutscenes/intro/intro:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -93,214 +93,106 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/layer1/buildings:position")
+tracks/5/path = NodePath("cutscenes/intro/background:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Color(0.0156863, 0, 0.0588235, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/layer2/buildings:position")
+tracks/6/path = NodePath("cutscenes/intro/intro/buildings/layer5:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, 1330)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/layer3/buildings:position")
+tracks/7/path = NodePath("cutscenes/intro/intro/buildings/layer4:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, 1330)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/layer4/buildings:position")
+tracks/8/path = NodePath("cutscenes/intro/intro/buildings/layer3:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, 1330)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/layer5/buildings:position")
+tracks/9/path = NodePath("cutscenes/intro/intro/buildings/layer2:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, 1330)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/ledge:position")
+tracks/10/path = NodePath("cutscenes/intro/intro/buildings/layer1:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(999, 922)]
+"values": [Vector2(-3.685, 1330)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/fade2:modulate")
+tracks/11/path = NodePath("cutscenes/intro/intro/buildings/ledge:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.74902, 0.486275, 1, 0)]
+"values": [Color(0.164706, 0.141176, 0.254902, 1)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/fade:modulate")
+tracks/12/path = NodePath("cutscenes/intro/intro/buildings/fxBlur:material:shader_parameter/blur_amount")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.74902, 0.486275, 1, 1)]
+"values": [9.5e-08]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/ledge:modulate")
+tracks/13/path = NodePath("cutscenes/intro/intro/buildings/ledge:frame")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.86301, 0.718526, 0.978678, 1)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("cutscenes/cutsceneLayer/background:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.0156863, 0, 0.0588235, 0)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/fxBlur:material:shader_parameter/blur_amount")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [9.5e-08]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/fxBlur:material:shader_parameter/mix_amount")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.005]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/size")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/thickness")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.2]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/force")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.17]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("../uiLayer/uiMenu/fxVignette:modulate")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("../uiLayer/uiMenu/fxVignette:scale")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/ledge:frame")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -309,7 +201,7 @@ tracks/22/keys = {
 
 [sub_resource type="Animation" id="Animation_1durf"]
 resource_name = "intro"
-length = 60.0
+length = 45.0
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -318,10 +210,10 @@ tracks/0/path = NodePath("../uiLayer/uiMenu/uiFadeOverlay:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.83, 1.26, 2.68, 9.06, 12.06, 49.06, 49.07, 49.69, 57.94),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.83, 1.26, 2.68, 9.06, 11.27, 43.62, 44.92),
+"transitions": PackedFloat32Array(1, 1, 1, 0.7, 0.7, 0.7, 0.7),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0.0556347, 0.023539, 0.0965366, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 1), Color(0.0556347, 0.023539, 0.0965366, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -330,15 +222,15 @@ tracks/1/path = NodePath("../camera:zoom")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 59.909),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.7, 0.7), Vector2(0.6, 0.6)]
+"values": [Vector2(0.7, 0.7)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("cutscenes/cutsceneLayer/intro:visible")
+tracks/2/path = NodePath("cutscenes/intro/intro:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -354,10 +246,10 @@ tracks/3/path = NodePath("../uiLayer/uiMenu/cutsceneLabel:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(5.22, 6.22, 10.22, 11.02, 14.37, 15.37, 19.38, 20.18, 25.99, 26.99, 31.81, 32.61, 37.2833, 38.2833, 42.2833, 43.0833, 54.05, 55.05, 59.05, 59.85),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(5.22, 6.22, 10.22, 11.02, 14.37, 15.37, 19.38, 20.18, 25.99, 26.99, 31.81, 32.61, 37.2833, 38.2833, 42.2833, 43.0833),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -366,243 +258,144 @@ tracks/4/path = NodePath("../uiLayer/uiMenu/cutsceneLabel:text")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(5.22, 14.3034, 25.9233, 37.2833, 54.05),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(5.22, 14.3034, 25.9233, 37.2833),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": ["I thought I could escape.", "I thought letting go would quiet the noise...", "But instead… I found the silence far louder.", "The stars look so beautiful tonight…", "Too bad... I’ll only see them one last time."]
+"values": ["I thought I could escape.", "I thought letting go would quiet the noise...", "At the moment I lose it all,", "I found the silence far louder..."]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/layer1/buildings:position")
+tracks/5/path = NodePath("cutscenes/intro/background:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(15.1, 18.9667),
-"transitions": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(21.9333, 24.0667, 31.88, 34.09, 35.85, 38.0333, 43.6333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 1062)]
+"values": [Color(0.0156863, 0, 0.0588235, 1), Color(0.0156863, 0, 0.0588235, 0.729412), Color(0.0156863, 0, 0.0588235, 0.729412), Color(0.0156863, 0, 0.0588235, 1), Color(0.0156863, 0, 0.0588235, 1), Color(0.0156863, 0, 0.0588235, 0.729412), Color(0.0156863, 0, 0.0588235, 1)]
 }
-tracks/6/type = "value"
+tracks/6/type = "method"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/layer2/buildings:position")
+tracks/6/path = NodePath("..")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(15.6333, 18.6667),
-"transitions": PackedFloat32Array(1, 2),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 959)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"editCursorVisibility"
+}]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/layer3/buildings:position")
+tracks/7/path = NodePath("cutscenes/intro/intro/buildings/layer5:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(15.4333, 18.1333),
-"transitions": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(9.62, 14.47, 19.89, 22.38),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.459479, 0.459479),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 1130)]
+"values": [Vector2(0, 1330), Vector2(0, 0), Vector2(0, 0), Vector2(0, 1330)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/layer4/buildings:position")
+tracks/8/path = NodePath("cutscenes/intro/intro/buildings/layer4:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(15.7, 17.6333),
-"transitions": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(9.76, 14.51, 20, 22.78),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.459479, 0.459479),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 1187)]
+"values": [Vector2(0, 1330), Vector2(0, 0), Vector2(0, 0), Vector2(0, 1330)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/layer5/buildings:position")
+tracks/9/path = NodePath("cutscenes/intro/intro/buildings/layer3:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(15.8667, 17.6333),
-"transitions": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(9.9, 14.47, 19.95, 23.34),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.459479, 0.459479),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 1195)]
+"values": [Vector2(0, 1330), Vector2(0, 0), Vector2(0, 0), Vector2(0, 1330)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/ledge:position")
+tracks/10/path = NodePath("cutscenes/intro/intro/buildings/layer2:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(14.7, 17.7333, 23, 42.0333, 48.3333),
-"transitions": PackedFloat32Array(1, 0.7, 0.6, 0.7, 0.7),
+"times": PackedFloat32Array(10.06, 14.46, 19.85, 23.92),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.459479, 0.459479),
 "update": 0,
-"values": [Vector2(960, 922), Vector2(960, 770), Vector2(960, 1403), Vector2(960, 1403), Vector2(960, 750)]
+"values": [Vector2(0, 1330), Vector2(0, 0), Vector2(0, 0), Vector2(0, 1330)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/fade2:modulate")
+tracks/11/path = NodePath("cutscenes/intro/intro/buildings/layer1:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(14.8, 19),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(10.19, 14.48, 19.92, 23.15),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.459479, 0.459479),
 "update": 0,
-"values": [Color(0.74902, 0.486275, 1, 0), Color(0.74902, 0.486275, 1, 1)]
+"values": [Vector2(-3.685, 1330), Vector2(0, 0), Vector2(0, 0), Vector2(-3.685, 1330)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/fade:modulate")
+tracks/12/path = NodePath("cutscenes/intro/intro/buildings/ledge:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(14.7667, 19.0333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(13.44, 20.31, 43.12, 44.95),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.5, 0.5),
 "update": 0,
-"values": [Color(0.74902, 0.486275, 1, 1), Color(0.74902, 0.486275, 1, 0)]
+"values": [Vector2(937.931, 1580), Vector2(937.931, 769.195), Vector2(937.931, 769.195), Vector2(937.931, 1580)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/ledge:modulate")
+tracks/13/path = NodePath("cutscenes/intro/intro/buildings/ledge:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(16.3667, 17.9667, 42.5333, 45.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(21.93, 22.99),
+"transitions": PackedFloat32Array(0.5, 0.5),
 "update": 0,
-"values": [Color(0.86301, 0.718526, 0.978678, 1), Color(0.399428, 0.399428, 0.399428, 1), Color(0.399428, 0.399428, 0.399428, 1), Color(0, 0, 0, 1)]
+"values": [Color(0.164706, 0.141176, 0.254902, 1), Color(0, 0, 0, 1)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("cutscenes/cutsceneLayer/background:modulate")
+tracks/14/path = NodePath("cutscenes/intro/intro/buildings/fxBlur:material:shader_parameter/blur_amount")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(21.9333, 24.0667, 38.0333, 43.6333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(33.98, 34.98, 36),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(0.0156863, 0, 0.0588235, 1), Color(0.0156863, 0, 0.0588235, 0.729412), Color(0.0156863, 0, 0.0588235, 0.729412), Color(0.0156863, 0, 0.0588235, 1)]
+"values": [9.5e-08, 2.769, 9.5e-08]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/fxBlur:material:shader_parameter/blur_amount")
+tracks/15/path = NodePath("cutscenes/intro/intro/buildings/ledge:frame")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(15.1, 15.3333, 17.2667, 17.5333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [9.5e-08, 1.231, 1.231, 9.5e-08]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/fxBlur:material:shader_parameter/mix_amount")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(15.1333, 18.5333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.005, 0.0]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/size")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(48.88, 48.99, 50.87, 51.94, 52.46, 54.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.385, 0.0, 0.0, 5.0, 5.0]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/thickness")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(48.88, 52.96, 55.47),
+"times": PackedFloat32Array(0.0300007, 34.56, 34.97),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.047, 0.2, 0.0]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("../uiLayer/uiMenu/fxShockwave:material:shader_parameter/force")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(48.88),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.17]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("../uiLayer/uiMenu/fxVignette:modulate")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0, 4.9, 13.12, 15.35, 17.94, 43.23, 44.39, 48.97, 49),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.741176), Color(1, 1, 1, 0.419608), Color(1, 1, 1, 0.419608), Color(1, 1, 1, 0.541176), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.580392), Color(1, 1, 1, 0.866667), Color(1, 1, 1, 0)]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("../uiLayer/uiMenu/fxVignette:scale")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/22/type = "method"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("..")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0, 59.98),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [false],
-"method": &"editCursorVisibility"
-}, {
-"args": [true],
-"method": &"editCursorVisibility"
-}]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("cutscenes/cutsceneLayer/intro/buildings/ledge:frame")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat32Array(48.83, 48.9, 48.98, 49.06),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 2, 3, 4]
+"values": [0, 0, 1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3486w"]
@@ -620,49 +413,6 @@ gradient = SubResource("Gradient_ikd2v")
 width = 1920
 height = 1080
 
-[sub_resource type="Gradient" id="Gradient_35mda"]
-offsets = PackedFloat32Array(0, 0.346457, 0.732283, 1)
-colors = PackedColorArray(0.113725, 0.113725, 0.113725, 0, 0.415705, 0.415705, 0.415705, 0.0302223, 0.290196, 0.290196, 0.290196, 0.0980392, 0.419608, 0.419608, 0.419608, 0.109804)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_6txwl"]
-gradient = SubResource("Gradient_35mda")
-width = 1920
-height = 1080
-use_hdr = true
-fill_from = Vector2(1, 1)
-
-[sub_resource type="Gradient" id="Gradient_75uel"]
-colors = PackedColorArray(0.290196, 0.290196, 0.290196, 0.0980392, 0.113725, 0.113725, 0.113725, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wn3j0"]
-gradient = SubResource("Gradient_75uel")
-width = 1920
-height = 1080
-use_hdr = true
-fill_from = Vector2(1, 0.695873)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wgax6"]
-shader = ExtResource("7_0mald")
-shader_parameter/blur_amount = 9.5e-08
-shader_parameter/mix_amount = 0.005
-shader_parameter/color_over = Color(0.635294, 0.00784314, 1, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bbxa1"]
-atlas = ExtResource("6_cp7cj")
-region = Rect2(2204, 0, 1102, 1102)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_va32f"]
-atlas = ExtResource("6_cp7cj")
-region = Rect2(3306, 0, 1102, 1102)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qvsb5"]
-atlas = ExtResource("6_cp7cj")
-region = Rect2(4408, 0, 1102, 1102)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijr3e"]
-atlas = ExtResource("6_cp7cj")
-region = Rect2(5510, 0, 1102, 1102)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_d60fx"]
 animations = [{
 "frames": [{
@@ -670,21 +420,18 @@ animations = [{
 "texture": ExtResource("3_326p0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bbxa1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_va32f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qvsb5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ijr3e")
+"texture": ExtResource("5_ug42v")
 }],
 "loop": false,
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wgax6"]
+shader = ExtResource("7_0mald")
+shader_parameter/blur_amount = 9.5e-08
+shader_parameter/mix_amount = 0.005
+shader_parameter/color_over = Color(0.635294, 0.00784314, 1, 1)
 
 [sub_resource type="Animation" id="Animation_uiee7"]
 length = 0.001
@@ -784,7 +531,6 @@ z_as_relative = false
 [node name="spaceCutsceneManager" type="Node2D" parent="."]
 
 [node name="cutsceneBlend" type="AnimationTree" parent="spaceCutsceneManager"]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_cueib")
 anim_player = NodePath("../cutsceneAnimator")
 
@@ -804,17 +550,18 @@ bus = &"SFX Main"
 
 [node name="cutscenes" type="Node2D" parent="spaceCutsceneManager"]
 
-[node name="cutsceneLayer" type="CanvasLayer" parent="spaceCutsceneManager/cutscenes"]
+[node name="intro" type="CanvasLayer" parent="spaceCutsceneManager/cutscenes"]
+layer = 0
 
-[node name="background" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer"]
+[node name="background" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro"]
 modulate = Color(0.0156863, 0, 0.0588235, 0)
 texture = SubResource("GradientTexture2D_ayras")
 centered = false
 
-[node name="intro" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer"]
+[node name="intro" type="Node2D" parent="spaceCutsceneManager/cutscenes/intro"]
 visible = false
 
-[node name="buildings" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro" node_paths=PackedStringArray("l5", "l4", "l3", "l2", "l1")]
+[node name="buildings" type="Node2D" parent="spaceCutsceneManager/cutscenes/intro/intro" node_paths=PackedStringArray("l5", "l4", "l3", "l2", "l1")]
 script = ExtResource("2_mb4nl")
 l5 = NodePath("layer5")
 l4 = NodePath("layer4")
@@ -822,316 +569,310 @@ l3 = NodePath("layer3")
 l2 = NodePath("layer2")
 l1 = NodePath("layer1")
 
-[node name="layer5" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
+[node name="layer5" type="Node2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings"]
+modulate = Color(0.0155492, 1.86161e-05, 0.0612189, 1)
+position = Vector2(0, 1330)
 
-[node name="buildings" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5"]
-
-[node name="building39" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1511, 121)
+[node name="building39" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(1511, 227)
 texture = ExtResource("4_6de07")
 
-[node name="building40" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1185, 143)
+[node name="building40" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(1185, 249)
 texture = ExtResource("4_6de07")
 
-[node name="building41" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(859, 170)
+[node name="building41" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(859, 276)
 texture = ExtResource("4_6de07")
 
-[node name="building42" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(569, 140)
+[node name="building42" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(569, 246)
 texture = ExtResource("4_6de07")
 
-[node name="building43" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(238, 162)
+[node name="building43" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(238, 268)
 texture = ExtResource("4_6de07")
 
-[node name="building44" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(11, 174)
+[node name="building44" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(11, 280)
 texture = ExtResource("4_6de07")
 
-[node name="building31" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(129, 258)
+[node name="building31" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(129, 364)
 texture = ExtResource("4_6de07")
 
-[node name="building32" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(467, 238)
+[node name="building32" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(467, 344)
 texture = ExtResource("4_6de07")
 
-[node name="building33" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.511881, 0.00243118, 0.787174, 1)
-position = Vector2(790, 84)
+[node name="building33" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(790, 190)
 texture = ExtResource("4_6de07")
 
-[node name="building34" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1027, 258)
+[node name="building34" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(1027, 364)
 texture = ExtResource("4_6de07")
 
-[node name="building35" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1027, 258)
+[node name="building35" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(1027, 364)
 texture = ExtResource("4_6de07")
 
-[node name="building36" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1345, 228)
+[node name="building36" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(1345, 334)
 texture = ExtResource("4_6de07")
 
-[node name="building37" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1624, 189)
+[node name="building37" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(1624, 295)
 texture = ExtResource("4_6de07")
 
-[node name="building38" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer5/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1854, 160)
+[node name="building38" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer5"]
+position = Vector2(1854, 266)
 texture = ExtResource("4_6de07")
 
-[node name="layer4" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
+[node name="layer4" type="Node2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings"]
+modulate = Color(0.0300675, 3.58424e-05, 0.0948486, 1)
+position = Vector2(0, 1330)
 
-[node name="buildings" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer4"]
-
-[node name="building30" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer4/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1586, 318)
+[node name="building30" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer4"]
+position = Vector2(1586, 424)
 texture = ExtResource("4_6de07")
 
-[node name="building29" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer4/buildings"]
-modulate = Color(0.45186, 0.00185852, 0.698004, 1)
-position = Vector2(1895, 279)
+[node name="building29" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer4"]
+position = Vector2(1895, 385)
 texture = ExtResource("4_6de07")
 
-[node name="building26" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer4/buildings"]
-modulate = Color(0.458484, 0.00191676, 0.707845, 1)
-position = Vector2(1237, 345)
+[node name="building26" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer4"]
+position = Vector2(1237, 451)
 texture = ExtResource("4_6de07")
 
-[node name="building17" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer4/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1794, 387)
+[node name="building17" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer4"]
+position = Vector2(1794, 493)
 texture = ExtResource("4_6de07")
 
-[node name="building27" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer4/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1023, 416)
+[node name="building27" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer4"]
+position = Vector2(1023, 522)
 texture = ExtResource("4_6de07")
 
-[node name="building25" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer4/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1438, 294)
+[node name="building25" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer4"]
+position = Vector2(1438, 400)
 texture = ExtResource("4_6de07")
 
-[node name="building28" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer4/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(351, 345)
+[node name="building28" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer4"]
+position = Vector2(351, 451)
 texture = ExtResource("4_6de07")
 
-[node name="building20" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer4/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(703, 390)
+[node name="building20" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer4"]
+position = Vector2(703, 496)
 texture = ExtResource("4_6de07")
 
-[node name="building23" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer4/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(84, 395)
+[node name="building23" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer4"]
+position = Vector2(84, 501)
 texture = ExtResource("4_6de07")
 
-[node name="layer3" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
+[node name="layer3" type="Node2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings"]
+modulate = Color(0.029187, 3.49369e-05, 0.0960871, 1)
+position = Vector2(0, 1330)
 
-[node name="buildings" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3"]
-
-[node name="building24" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.579657, 0.00318818, 0.887863, 1)
-position = Vector2(519, 496)
+[node name="building24" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(519, 602)
 texture = ExtResource("4_6de07")
 
-[node name="building21" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(882, 516)
+[node name="building21" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(882, 622)
 texture = ExtResource("4_6de07")
 
-[node name="building18" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(-12, 566)
+[node name="building18" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(-12, 672)
 texture = ExtResource("4_6de07")
 
-[node name="building16" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.36672, 0.00119566, 0.571518, 1)
-position = Vector2(1342, 514)
+[node name="building16" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(1342, 620)
 texture = ExtResource("4_6de07")
 
-[node name="building15" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.478423, 0.00210023, 0.737467, 1)
-position = Vector2(1696, 500)
+[node name="building15" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(1696, 606)
 texture = ExtResource("4_6de07")
 
-[node name="building22" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.641635, 0.00398638, 0.979938, 1)
-position = Vector2(1121, 589)
+[node name="building22" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(1121, 695)
 texture = ExtResource("4_6de07")
 
-[node name="building19" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(289, 366)
+[node name="building19" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(289, 472)
 texture = ExtResource("4_6de07")
 
-[node name="building12" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(901, 678)
+[node name="building12" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(901, 784)
 texture = ExtResource("4_6de07")
 
-[node name="building13" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1495, 643)
+[node name="building13" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(1495, 749)
 texture = ExtResource("4_6de07")
 
-[node name="building8" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1214, 726)
+[node name="building8" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(1214, 832)
 texture = ExtResource("4_6de07")
 
-[node name="building14" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1964, 544)
+[node name="building14" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(1964, 650)
 texture = ExtResource("4_6de07")
 
-[node name="building11" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1810, 726)
+[node name="building11" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(1810, 832)
 texture = ExtResource("4_6de07")
 
-[node name="building" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.471766, 0.00203766, 0.727576, 1)
-position = Vector2(670, 651)
+[node name="building" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(670, 757)
 texture = ExtResource("4_6de07")
 
-[node name="building2" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(413, 623)
+[node name="building2" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(413, 729)
 texture = ExtResource("4_6de07")
 
-[node name="building4" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer3/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(139, 693)
+[node name="building4" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer3"]
+position = Vector2(139, 799)
 texture = ExtResource("4_6de07")
 
-[node name="layer2" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
-modulate = Color(0.858824, 0.67451, 1, 1)
+[node name="layer2" type="Node2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings"]
+modulate = Color(0.0543955, 6.68957e-05, 0.139335, 1)
+position = Vector2(0, 1330)
 
-[node name="buildings" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer2"]
-
-[node name="building9" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer2/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1478, 844.5)
+[node name="building9" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+position = Vector2(1478, 950.5)
 texture = ExtResource("4_6de07")
 
-[node name="building6" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer2/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(765, 863.5)
+[node name="building6" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+position = Vector2(765, 969.5)
 texture = ExtResource("4_6de07")
 
-[node name="building7" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer2/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1091, 929.5)
+[node name="building7" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+position = Vector2(1091, 1035.5)
 texture = ExtResource("4_6de07")
 
-[node name="building10" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer2/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(1819, 908.5)
+[node name="building10" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+position = Vector2(1819, 1014.5)
 texture = ExtResource("4_6de07")
 
-[node name="building5" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer2/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(136, 847.5)
+[node name="building5" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+position = Vector2(136, 953.5)
 texture = ExtResource("4_6de07")
 
-[node name="building3" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer2/buildings"]
-modulate = Color(0.509804, 0, 0.784314, 1)
-position = Vector2(476, 807.5)
+[node name="building3" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+position = Vector2(476, 913.5)
 texture = ExtResource("4_6de07")
 
-[node name="building8" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer2/buildings"]
-position = Vector2(1605, 1007.5)
+[node name="building8" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+position = Vector2(1605, 1113.5)
 texture = ExtResource("4_6de07")
 
-[node name="building4" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer2/buildings"]
-modulate = Color(0.647395, 0.647395, 0.647395, 1)
-position = Vector2(415, 1003.5)
+[node name="building4" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+position = Vector2(415, 1109.5)
 texture = ExtResource("4_6de07")
 
-[node name="fade" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
-modulate = Color(0.74902, 0.486275, 1, 1)
-position = Vector2(960, 540)
-texture = SubResource("GradientTexture2D_6txwl")
-
-[node name="fade2" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
-modulate = Color(0.74902, 0.486275, 1, 0)
-position = Vector2(960, 540)
-texture = SubResource("GradientTexture2D_wn3j0")
-
-[node name="layer1" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
-modulate = Color(0.858824, 0.67451, 1, 1)
-z_index = 2
-z_as_relative = false
-
-[node name="buildings" type="Node2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer1"]
-
-[node name="building" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer1/buildings"]
-modulate = Color(0.741385, 0.741385, 0.741385, 1)
-position = Vector2(1301, 1042)
+[node name="building" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+modulate = Color(0.848905, 0.848905, 0.848905, 1)
+position = Vector2(1301, 1148)
 texture = ExtResource("4_6de07")
 
-[node name="building2" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer1/buildings"]
-modulate = Color(0.674815, 0.674815, 0.674815, 1)
-position = Vector2(688, 1050)
+[node name="building2" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+modulate = Color(0.848905, 0.848906, 0.848905, 1)
+position = Vector2(688, 1156)
 texture = ExtResource("4_6de07")
 
-[node name="building9" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer1/buildings"]
-modulate = Color(0.735797, 0.735797, 0.735797, 1)
-position = Vector2(1878, 1060.5)
+[node name="building11" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+modulate = Color(0.831761, 0.831761, 0.831761, 1)
+position = Vector2(1882, 1167)
 texture = ExtResource("4_6de07")
 
-[node name="building6" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer1/buildings"]
-modulate = Color(0.763809, 0.763809, 0.763808, 1)
-position = Vector2(1001, 1035)
+[node name="building12" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+modulate = Color(0.941365, 0.941365, 0.941364, 1)
+position = Vector2(1001, 1141)
 texture = ExtResource("4_6de07")
 
-[node name="building7" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer1/buildings"]
-modulate = Color(0.741385, 0.741385, 0.741385, 1)
-position = Vector2(1231, 1151.5)
+[node name="building13" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+modulate = Color(0.843184, 0.843184, 0.843184, 1)
+position = Vector2(1231, 1257.5)
 texture = ExtResource("4_6de07")
 
-[node name="building11" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer1/buildings"]
-modulate = Color(0.741385, 0.741385, 0.741385, 1)
-position = Vector2(721, 1153.5)
+[node name="building14" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+modulate = Color(0.87186, 0.87186, 0.87186, 1)
+position = Vector2(721, 1259.5)
 texture = ExtResource("4_6de07")
 
-[node name="building10" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer1/buildings"]
-modulate = Color(0.741385, 0.741385, 0.741385, 1)
-position = Vector2(1599, 1166.5)
+[node name="building15" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(1599, 1272.5)
 texture = ExtResource("4_6de07")
 
-[node name="building5" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer1/buildings"]
-modulate = Color(0.603923, 0.603923, 0.603923, 1)
-position = Vector2(102, 1032.5)
+[node name="building16" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(1579, 1274)
 texture = ExtResource("4_6de07")
 
-[node name="building3" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings/layer1/buildings"]
+[node name="building17" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
+modulate = Color(0.843184, 0.843184, 0.843184, 1)
+position = Vector2(102, 1138.5)
+texture = ExtResource("4_6de07")
+
+[node name="building18" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer2"]
 modulate = Color(0.866111, 0.866111, 0.866111, 1)
-position = Vector2(351, 1117.5)
+position = Vector2(351, 1223.5)
 texture = ExtResource("4_6de07")
 
-[node name="fxBlur" type="ColorRect" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
+[node name="ledge" type="AnimatedSprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings"]
+modulate = Color(0.164706, 0.141176, 0.254902, 1)
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_d60fx")
+
+[node name="layer1" type="Node2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings"]
+modulate = Color(0.0748268, 0.000101321, 0.180434, 1)
+position = Vector2(-3.685, 1330)
+
+[node name="building12" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(1424, 1095)
+scale = Vector2(1.87672, 1.87672)
+texture = ExtResource("4_6de07")
+
+[node name="building15" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(1761, 1510)
+scale = Vector2(1.87672, 1.87672)
+texture = ExtResource("4_6de07")
+
+[node name="building13" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(910, 1436)
+scale = Vector2(1.8447, 1.8447)
+texture = ExtResource("4_6de07")
+
+[node name="building14" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(409, 1351)
+scale = Vector2(2.04907, 2.04907)
+texture = ExtResource("4_6de07")
+
+[node name="building16" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(108, 1624)
+scale = Vector2(2.04907, 2.04907)
+texture = ExtResource("4_6de07")
+
+[node name="building17" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(781, 1732)
+scale = Vector2(2.04907, 2.04907)
+texture = ExtResource("4_6de07")
+
+[node name="building18" type="Sprite2D" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(1396, 1745)
+scale = Vector2(2.04907, 2.04907)
+texture = ExtResource("4_6de07")
+
+[node name="fxBlur" type="ColorRect" parent="spaceCutsceneManager/cutscenes/intro/intro/buildings"]
 z_index = 2
+texture_filter = 6
 material = SubResource("ShaderMaterial_wgax6")
 custom_minimum_size = Vector2(1920, 1080)
 anchors_preset = 8
@@ -1146,13 +887,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-
-[node name="ledge" type="AnimatedSprite2D" parent="spaceCutsceneManager/cutscenes/cutsceneLayer/intro/buildings"]
-modulate = Color(0.86301, 0.718526, 0.978678, 1)
-z_index = 2
-z_as_relative = false
-position = Vector2(999, 922)
-sprite_frames = SubResource("SpriteFrames_d60fx")
 
 [node name="uiLayer" type="CanvasLayer" parent="."]
 layer = 3
@@ -1174,6 +908,7 @@ mouse_filter = 2
 
 [node name="fxVignette" type="TextureRect" parent="uiLayer/uiMenu"]
 modulate = Color(1, 1, 1, 0)
+texture_filter = 6
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1184,6 +919,7 @@ mouse_filter = 2
 texture = ExtResource("7_riamt")
 
 [node name="uiFadeOverlay" type="ColorRect" parent="uiLayer/uiMenu"]
+texture_filter = 6
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1196,6 +932,7 @@ color = Color(0, 0, 0, 0)
 [node name="fxShockwave" type="ColorRect" parent="uiLayer/uiMenu"]
 z_index = 10
 z_as_relative = false
+texture_filter = 6
 material = SubResource("ShaderMaterial_8d14l")
 layout_mode = 1
 anchors_preset = 15
@@ -1218,6 +955,6 @@ offset_right = 197.5
 offset_bottom = 142.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("8_46q24")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 24
 text = "I thought I could escape. I thought this would end it all."
 horizontal_alignment = 1

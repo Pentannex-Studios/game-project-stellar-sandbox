@@ -14,4 +14,5 @@ limit_end = Vector2(6700, 7000)
 
 [node name="spacePhenoTex" type="Sprite2D" parent="spacePllxMngr/spacePTPllx"]
 z_index = 5
+texture_filter = 6
 scale = Vector2(5, 5)
