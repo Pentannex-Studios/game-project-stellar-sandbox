@@ -129,8 +129,8 @@ func _whenMouseEntered() -> void:
 
 # Fires when textbox exits hover.
 func _whenMouseExited() -> void:
-	_uiMSKHover = false
-	if !_uiMSKFocus:
+	if !_uiMSKFocus and _uiMSKHover:
+		_uiMSKHover = false
 		_uiMSKAnimation.play_backwards("uiInputMSKHovered")
 
 func _whenMSKLocBtnMouseEntered():

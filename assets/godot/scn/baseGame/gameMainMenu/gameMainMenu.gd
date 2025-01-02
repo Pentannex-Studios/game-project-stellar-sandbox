@@ -70,12 +70,9 @@ func _montageGame() -> void:
 		# Locks the camera to be changed.
 		if !_menuCamChanged:
 			_menuCamChanged = true
-			var _menuCamZoom: Vector2 = lib.genRandVec2(0.5, 1, "float")
-			_menuCamera.zoom = _menuCamZoom
 		
 		# IMPORTANT CODE: Manages camera animation on main menu.
 		var _menuCamTween: Tween = create_tween()
-		@warning_ignore("integer_division")
 		
 		var _menuCamPos: Vector2 = lib.genRandSplitVec2(-lib.sectSize, lib.sectSize)
 		var _menuCamDuration: float = lib.genRand(45, 90, "float")
@@ -91,14 +88,9 @@ func _proceedToMindscape() -> void:
 	# Play the introduction animation on overlay while adding the playthrough.
 	_uiAnim.play("travelToSector")
 	
-	# Call a signal to game manager. To load cutscene.
-	get_tree().call_group("gameManager", "playCutscene")
-	
-	# Enable gameplay and disable process of mainmenu.
 	await _uiAnim.animation_finished
-	lib.gameplay_enabled = true
-	for _node in get_children():
-		_node.set_process_mode(Node.PROCESS_MODE_DISABLED)
+	
+	_menuCamChanged = false
 
 # Generate new sector.
 func _generateNewMindscape() -> void:
@@ -164,11 +156,11 @@ func _on_ui_inactivity_timeout() -> void:
 	lib.editCursorVisibility(false)
 
 #------------------------------------------------------------------------------#
-func startArc() -> void:
-	# Call a signal to sector manager. To start the arc.
-	print("Starting an arc...")
-	get_tree().call_group("gameArcManager", "startGameArc")
-
 # Hide cursor.
 func editCursorVisibility(showCursor: bool) -> void:
 	lib.editCursorVisibility(showCursor)
+
+#------------------------------------------------------------------------------#
+func startArc() -> void:
+	# Call a signal to sector manager. To start the arc.
+	print("Starting an arc...")

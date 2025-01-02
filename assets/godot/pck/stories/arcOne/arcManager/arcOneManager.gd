@@ -2,14 +2,14 @@
 
 extends Node2D
 #------------------------------------------------------------------------------#
-@onready var _cutsceneManager: AnimationTree = get_node("spaceCutsceneManager/cutsceneBlend")
-@onready var _cutsceneAnimator: AnimationNodeStateMachinePlayback = _cutsceneManager.get("parameters/playback")
+var _cutscenes: Dictionary = {
+	
+}
+
+func loadGameCutscenes(scenes: Object) -> void:
+	# Clean the game arc from other stuff.
+	pass
 
 #------------------------------------------------------------------------------#
 func startArc() -> void:
 	print("Started Game Arc.")
-	_cutsceneAnimator.travel("intro")
-
-# Hide cursor.
-func editCursorVisibility(showCursor: bool) -> void:
-	lib.editCursorVisibility(showCursor)

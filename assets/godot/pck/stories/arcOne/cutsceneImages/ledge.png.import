@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djoga57kja45e"
-path="res://.godot/imported/building.png-d26b6c8933434d06c27a6a2b20de3d44.ctex"
+uid="uid://gny70qw4180d"
+path="res://.godot/imported/ledge.png-def86b0d98641e82722376e229d5d8f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/external/png/cutscene/building.png"
-dest_files=["res://.godot/imported/building.png-d26b6c8933434d06c27a6a2b20de3d44.ctex"]
+source_file="res://assets/godot/pck/stories/arcOne/cutsceneImages/ledge.png"
+dest_files=["res://.godot/imported/ledge.png-def86b0d98641e82722376e229d5d8f4.ctex"]
 
 [params]
 

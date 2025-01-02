@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cl5mvnsyob8pv"]
+[gd_scene load_steps=38 format=4 uid="uid://cl5mvnsyob8pv"]
 
 [ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameMainMenu/gameMainMenu.gd" id="1_u50fn"]
 [ext_resource type="AudioStream" uid="uid://pp5mvw30ygg7" path="res://assets/external/aud/bgm/score/httpswww.fesliyanstudios.commusicfiles2023-05-02_-_Galaxys_Endless_Expanse_-_www.FesliyanStudios.com2023-05-02_-_Galaxys_Endless_Expanse_-_www.FesliyanStudios.com.mp3" id="2_a52l8"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dl052par3gshi" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mindscapeCode/uiInputCode.tscn" id="7_8hp2b"]
 [ext_resource type="PackedScene" uid="uid://dgurew8fui5pv" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/genMindscape/uiMenuGenMs.tscn" id="7_blbwu"]
 [ext_resource type="PackedScene" uid="uid://bp6uu25kxrene" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/codeValidation/uiMenuCodeBtn.tscn" id="7_fgblm"]
+[ext_resource type="Shader" path="res://assets/godot/tres/shaders/blur.gdshader" id="8_23e0w"]
 [ext_resource type="PackedScene" uid="uid://eo7j2g77qayc" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/exit/uiMenuExit.tscn" id="8_eiuwx"]
 [ext_resource type="PackedScene" uid="uid://cmpem1a1hrxi5" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/settings/uiMenuSettings.tscn" id="12_hxl7m"]
 
@@ -386,6 +387,18 @@ tracks/27/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("uiLayer/uiMenu/uiArcSelect:modulate")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_cwcnj"]
 resource_name = "generateNewSectorFade"
@@ -667,7 +680,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_oayup"]
 resource_name = "travelToSector"
-length = 20.0
+length = 25.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -711,10 +724,10 @@ tracks/3/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiTriggerWarning:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(2.03333, 4.1, 13.5667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(2.03333, 4.1, 11.6333, 13.5667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -827,100 +840,103 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("uiCamera:enabled")
+tracks/13/path = NodePath("uiLayer/uiMenu/uiFadeOverlay:color")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("uiLayer/uiMenu/uiFadeOverlay:color")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
 "times": PackedFloat32Array(0, 2, 19.0334, 19.8667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
 }
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:mouse_filter")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:mouse_filter")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [2]
 }
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:disabled")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:mouse_filter")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:mouse_filter")
+tracks/17/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [2]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
+tracks/18/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:disabled")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:disabled")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
-tracks/20/type = "method"
+tracks/19/type = "method"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath(".")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0.1, 19.9333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"editCursorVisibility"
+}, {
+"args": [true],
+"method": &"editCursorVisibility"
+}]
+}
+tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath(".")
+tracks/20/path = NodePath("uiLayer/uiMenu/uiArcSelect:modulate")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"times": PackedFloat32Array(18.9333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"startArc"
-}]
+"times": PackedFloat32Array(20, 22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_kvhxs"]
@@ -1290,6 +1306,12 @@ _data = {
 font = ExtResource("3_bsvqu")
 font_size = 25
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6yeah"]
+shader = ExtResource("8_23e0w")
+shader_parameter/blur_amount = 3.0
+shader_parameter/mix_amount = 0.0
+shader_parameter/color_over = Color(0.635294, 0.00784314, 1, 1)
+
 [sub_resource type="OggPacketSequence" id="OggPacketSequence_tb05x"]
 packet_data = Array[Array]([[PackedByteArray("AXZvcmJpcwAAAAABRKwAAAAAAAAwqQMAAAAAALgB")], [PackedByteArray("A3ZvcmJpcysAAABYaXBoLk9yZyBsaWJWb3JiaXMgSSAyMDEyMDIwMyAoT21uaXByZXNlbnQpAQAAAEcAAABDT01NRU5UUz1Tb3VuZCBnZW5lcmF0ZWQgYnkgR2FtZVN5bnRoIGZyb20gVHN1Z2kgKHd3dy50c3VnaS1zdHVkaW8uY29tKQE="), PackedByteArray("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WooxpRZjKKW1klJrJaXWWmu1ttZiDKW0VFJpraTUWmqtxtZarKmlGFNrMbbWao0xxhxjzTmlFGNqKcbUWowtthxjrDV3EFIKpaQWSkkttRRjai3GUEpqJZXWSkktttZqTK3FGkppraTUWkmptdZaja21GlNKMabWakypxRhjzLW1GHNqLcbWWqyptRhjrDXHGGstAABgwAEAIMCEMlBoyEoAIAoAADEGIcacMwgpxRiExiClGIMQKcWYcxAipRhzDkLGmHMQSskYcw5CKR2EEkpJqYMQSikpFQAAUOAAABBgg6bE4gCFhqwEAEICABiElGLMOecglJJShJBSjDnnHIRSUooQUoox55yDUEpKlVJMMeYchFJSaqlSSjHGnINQSkqpZYwx5hyEEEpJqbWMMcacgxBCKSm11jnnHHQSSkmlpdg655yDEEopJaXWWucchBBKSaWl1mLrnIMQQiklpdRaiyGEUkpJJaWWYosxhFJKKSWllFqLMZZUUkqppdZii7HGUkpKKaXWWosxxppSaqm11mKMscZaU0qptdZaizHGWmsBAAAHDgAAAUbQSUaVRdhowoUHoNCQFQFAFAAAYAxiDDGGnHMQMgiRcwxCByFyzknppGRSQmkhpUxKSCWkFjnnpHRSMimhpVBSJiWkVFopAADswAEA7MBCKDRkJQCQBwAAIaQUY4wxhpRSijHGHENKKcUYY4wppRhjjDHnlFKMMcaYc4wxxhxzzjnGGGPMOeccY8wx55xzjjHGnHPOOcccc84555xjzjnnnHPOCQAAKnAAAAiwUWRzgpGgQkNWAgCpAACEMUox5hyEUhqFGHPOOQilNEgx5pxzEEqpGHPOOQillFIx5pxzEEopJXPOOQghlJJS5pxzEEIoJaXOOQghhFJKSp1zEEIooZSUQgillFJSSqmFEEoppZRUWiqllJJSSqm1VkopJaWUWmqtAADwBAcAoAIbVkc4KRoLLDRkJQCQAQDAGIOQQQYhYxBCCCGEEEIICQAAGHAAAAgwoQwUGrISAEgFAAAMUooxB6WkFCnFmHMQSkkpUoox5yCUklLFmHMQSkmptYox5yCUklJrnXMQSkmptRg75yCUklJrMYYQSkmptRhjDCGUklJrMdZaSkmptRhrzLWUklJrMdZaa0qttRhrrTXnlFprMdZac84FACA0OACAHdiwOsJJ0VhgoSErAYA8AABIKcYYY4wxpRRjjDHGmFKKMcYYY4wxxhhjjDGmGGOMMcYYY4wxxhhjjDHGGGOMMcYYY4wx5hhjjDHGGGPMOcYYY4w55hxjjDHGnHNOAABQgQMAQICNIpsTjAQVGrISAAgHAACMYcw55yCUkEqjlHMQQigllVYapZyDEkIpKbWWOSclpVJSai22zDkpKZWSUmstdhJSai2l1mKssYOQUmuptRZjjR2EUlqKLcYac+0glJJaazHGWmsopaXYYqyx1ppDKam1FmOtNedcUmotxlprzbXnklJrMcZaa625p9ZirLHWXHPvPbUWY4215px7zgUAmDw4AEAl2DjDStJZ4WhwoSErAYDcAABGKcaccw5CCCGEEEIIlVKMOecchBBCCCGEECqlGHPOOQghhBBCCCFkjDnnHHQQQgghhBBCyBhzzjkIIYQQQgghhNA55xyEEEIIIYRQQimlc845ByGEEEIIIYRQSucchBBCCCGEEkoopZTOOQghhBBCCKWEUkopIYQQQgghhBJKKaWUUjoIIYQQQgillFJKKaWEEEIIIYQQSimllFJKCSGEEEIIIZRSSimllBJCCCGEEkoppZRSSiklhBBCCKGUUkoppZRSSgghhFJKKaWUUkoppZQQQighlFJKKaWUUkopIYQSSiillFJKKaWUUkIIJZRSSimllFJKKaWEEEIopZRSSimllFJKCSGUUkoppZRSSimllFIAANCBAwBAgBGVFmKnGVcegSMKGSagQkNWAgDhAAAAIZRSSimllFJqJKWUUkoppZRSIyWllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkqllFJKKaWUUkoppZRSSimllFJKKaUAqMsMB8DoCRtnWEk6KxwNLjRkJQCQFgAAGMOYY45BJ6GUlFprmIJQQuikpNJKbLE1SkEIIYRSUkqttdYy6KiUkkpKrcUWY4yZg1JSKiWl1GKMsdYOQkottRZbi7HmWmsHoaSUWostxlprrr2DkEprreUYY7A559pBKCm12GKMNddaew6ptBZjjLX2XGvNOYhSUoox1hpzzTX33EtKrcWaa641B59zEKal2GqNNeecexA6+NRajbnmHnTQQecedEqt1lprzj0HIXzwubVYa801596DDzoI32qrNedca+89956DbjHWXHPQwQchfPBBuBhrzzn3HIQOOvgeDADIjXAAQFwwkpA6y7DSiBtPwBCBFBqyCgCIAQAgjEEGIYSUUkoppZRiiinGGGOMMcYYY4wxxhhjjDHGBAAAJjgAAARYwa7M0qqN4qZO8qIPAp/QEZuRIZdSMZMTQY/UUIuVYIdWcIMXgIWGrAQAyAAAEIix5lpzjhCU1mLtuVRKOWqx55Qhgpy0nEvJDEFOWmstZMgoJzG2FDKEFLTaWumUUoxiq7F0jDFJqcWWSucgAAAAggAAAxEyEwgUQIGBDAA4QEiQAgAKCwwdw0VAQC4ho8CgcEw4J502AABBiMwQiYjFIDGhGigqpgOAxQWGfADI0NhIu7iALgNc0MVdB0IIQhCCWBxAAQk4OOGGJ97whBucoFNU6iAAAAAAABAA4AEAINkAIqKZmePo8PgACREZISkxOUFJUQkAAAAAACAA+AAASFaAiGhm5jg6PD5AQkRGSEpMTlBSVAIAAAAAAAAAAICAgAAAAAAAQAAAAICA")], [PackedByteArray("DGJpmjyV37fEFjuxYbzwiOqYHy7mndHc+6k5wHZgfXxnM3y7+tuWmzN/bCw+fI6maSINms/EbaMZCJfjNXT55ZMbesEze/816Lbz6nlk7JPIuA1ia07Q+1xpxnlpLSKzMoiTr9eCMgyBVn/CYrfJ6XOwqN7TZXNttsfueGi3"), PackedByteArray("tGV1iN0nDDHXFNTmAOei+Q2d4vJDcwCL7LJeeZj13fRy6KxNf0r97mq3VJ3TlNdHmmmboQ0yjRKUEgG8bpPTduvY6atsI9l9D70F5cQelWtXZRwccFVr6P2Oq3S4EpA+B8/zAjWR4riM2+dMX/PPatlWNj2HxzAc+ceGBQ=="), PackedByteArray("UsRUlFAA2qTOr6N224tv/Voi/dlnd4WpPr/w/MILL7zwwgsvHPXSXuROB9M0TUHE6yW7MeLp1Y/4bsWxbzskH2Qa0qfxB9MUYRnj6ulbV8eJ9lF3TH0AAM/SVRyvYkzH81XhZX21f6xnp3tmjx5vj2+99dbVfXzr8/+/0s55GhNGfzpJzek8p6u/Y9z1PSPmc8tNU0wxPXuRL7+rgwUAcMGAKaarpzeaY2PrnL8OIz4yMhwbGdn5nd/bc/j9G/3+5wtPvGimLdXj1F9bG9PuzR0fjoSjyJx+Oo1pHI9PP39j6dNiXKalI199+PmzfvMDeyLEnZGR4ci8LBCnJ/ufnn0qb/bvmFthq8ZcMtwZjg1HFq6cfz7vh53OoDdN0aDCNTnp55+fdHYmk3POMhzaTsUgXM7bVE92neYYm8lJGY6M7Nx20/QIfRHjSIxRNfz74GCSt8LTp/uX07kAAGH6TuvjHt1x9cDLNVYPbP9fR7dWA2vn8q47ELLJtJOUc0/4izEA7IxC3HfjIbFXMTl4m/9+n33qeDF173zxa+zQZWW87GL52CI7ISI4oQUHkn90AuzN87cwfbyypDbL10337XdoXGbYqpbhkWp7fg9K05DCGASl+t7OIoQlkqHf8HqFd/1z1fAczdbMxpOrHG1ht+N+VpXF/LO453Njn/spt51rB6B/sbhu6rCMGP5Cvs5Uurno0fx39OvtzFJRj+OWf2y448aoivN7emPqVdKPTW+3uFznEiKy+73fa9T6+zKd7RkuFuKmOEBJfdqpbOi5s6g+28b9rdXEXVvu1PgZi7/PRKj3dv61RV5YolmOcMx62LMTOgQgUxX+U8HK4P3yUfnIe3w7KpMWjTT9ONOOD7/mGScVx8ivxuTwaH9FxPVrnPg+mN4u9mMIr7eDrCKKNKc4OU4R0ksrt0RHTdRYXW+NF1bCwqjrKNV6+qPaZnlZsmTarLvncZWxHrax77v1lHR9CdPu0f0vVVtuD2fdmN4srua82w3OdX9rF+WwHKQmWas2i2/sNZot7HHTh0gEJmcKPKqp6rAD"), PackedByteArray("3AR3irajSq1fEQZprDnAqON8u2nW/X0ps9hlTZ1JSpw/us5/l8T2GN8rerT6xjdUTt+hsKRP55/Ar1JjIr+pLrl54qjptz5wFrwhwMC1B684R4Zk6UOsv3JzCZz5FvrzJpSRTv4WYzL16rdfTaMOv/ch"), PackedByteArray("/AhLNY/LUp8/PZ7027n9vlbog/QT84utPb2xR9k0u7pbTVA3A5HN5MaX9GxU1/s6JDzkQl05eLNobwmRmtni582wku7zu3X9AyawsQkigGVgYirfL0rFODePHxirL3xUnyL4QZ5LfqyAcHwV"), PackedByteArray("7ADLaYYvY84Ut7mkbTMAH6w6StG0xT7LpLOH5aiqPU7zaeuwHqPcnd4gyrxuehpH3I6eq1a+sgLckg4zG+/JJ1NY67zPg18od73llTOaN8NBzTb5Fr76JeTL8RyTHW6HN7XltX79yv9FBpDPxtc="), PackedByteArray("/PQKPdLPiHou/0mvzQDi2/XiZ27UvpXIdLcywpvYa00w05emb3LR0OD7dD2y5hklEgzVkmGzpc//2SkrSogbi/DhPPBPwUnmQhFUU7WLb0rvmi43Xw3gS/JyDItKohqf1baQ4Wnw0LSf/g=="), PackedByteArray("zORKdHZvGOraRXLSb+fm4gxblWvp5+0YXec9F1KdxvF9zMcSdl9JGrVvW6YPrTnGWU9QFudOCFXJ8XYe4swT11RWvmVXQysCo7tuKi10x8qOqFaFPL0VVc7+tf4Vb6/eF7t9bfZXug4="), PackedByteArray("hMz8RR7TkvX9/066208Pv1IY5n6Rfvswvat+xM4VwRlvpf1AZSbaQ2vwmyQtQZl+bkdU2f5MtmfNbyV2EJ94IeFAf5qnTI/5QM5VN+5RGJf7qjUgskG141j5t/72Axr7N4fq67ObxhFpFg=="), PackedByteArray("dMD0XunNZP+l20+UXLoeeXfU5PwSu90fSHHUnsi+u1GJbd+KN5MyfF/GjURlOBaZDLS+mjjlreEbjLMetkzGLh9VmXYn45MdewvXY4G1dFwLQ9EkSDWkfqrJ8M3b4z9LPA5vx1SJNRFA"), PackedByteArray("2lN7Hv0HCijgLDw9+ebDz+2fnMw5ZwBiY4xxZGTX+z5w266xkXCMShG3AgDgMY7s7Lrt0eOPP77fti0AyQhmFACgcZjWZRS09TKhJIzS+s7KdUwKyMwEsPFxsNvVW3/1LNDzv9vb29vhMJ0EAAAw1pb1fGn/6S8AAAAA5tx0evfe2alzAAAAAACstXW9dPqZL/3u/+/Lnn36/vzhUFUFAAAAAADApUzS4eiePbfcsmfP6Gg2TRUpJQBAU9m1C5//nb+z8HUAwOGHH374RABwuHNunE6nd+/evXt3OvXdRADw9dc5AA==")]])
 granule_positions = PackedInt64Array(0, 0, 2070)
@@ -1307,6 +1329,18 @@ width = 1920
 height = 1080
 use_hdr = true
 fill_from = Vector2(1, 0.0257143)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_g5nya"]
+offsets = PackedFloat32Array(0, 0.38806, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.721569, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y4q1h"]
+gradient = SubResource("Gradient_g5nya")
+width = 1920
+height = 1080
+use_hdr = true
+fill_from = Vector2(0, 1)
 fill_to = Vector2(1, 1)
 
 [node name="uiMenu" type="Node2D" groups=["mainMenu"]]
@@ -1506,6 +1540,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="fxBlur" type="ColorRect" parent="uiLayer/uiMenu/uiLocSect"]
+z_index = -1
+texture_filter = 6
+material = SubResource("ShaderMaterial_6yeah")
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
 [node name="uiSSK" parent="uiLayer/uiMenu/uiLocSect" instance=ExtResource("7_8hp2b")]
 layout_mode = 1
 anchors_preset = 2
@@ -1535,7 +1584,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="overlay" type="TextureRect" parent="uiLayer/uiMenu/uiBtnGrp"]
-texture_filter = 6
+texture_filter = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1610,6 +1659,27 @@ offset_bottom = -64.0
 grow_vertical = 0
 mouse_filter = 2
 alignment = 0
+
+[node name="uiArcSelect" type="Control" parent="uiLayer/uiMenu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="overlay" type="TextureRect" parent="uiLayer/uiMenu/uiArcSelect"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_y4q1h")
 
 [connection signal="_montage" from="." to="." method="_montageGame"]
 [connection signal="timeout" from="uiLayer/uiMenu/uiAnim/uiInactivity" to="." method="_on_ui_inactivity_timeout"]

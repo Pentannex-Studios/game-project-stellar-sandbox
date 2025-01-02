@@ -13,13 +13,9 @@ var _spaceSectGas: Array = []
 var _spaceSectPheno: int
 
 #------------------------------------------------------------------------------#
-func _ready() -> void:
-	_loadSpaceSector()
-
-#------------------------------------------------------------------------------#
 # Sector Loading and Disposal.
 # IMPORTANT CODE: Initiate chunks to align to main seed with offset via position.
-func _loadSpaceSector() -> void:
+func loadSpaceSector() -> void:
 	# IGNORE: Debug
 	print("\nInitializing Space Sector Key...")
 	
@@ -101,7 +97,7 @@ func reloadSpaceSector(mode: String) -> void:
 	# FORMAT: Just to separate different phases.
 	print(" ")
 	
-	_loadSpaceSector()
+	loadSpaceSector()
 
 # Clear threads on exit.
 func disposeSpaceSector() -> int:

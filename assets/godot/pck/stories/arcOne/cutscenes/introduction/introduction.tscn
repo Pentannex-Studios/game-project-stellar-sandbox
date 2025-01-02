@@ -1,0 +1,852 @@
+[gd_scene load_steps=19 format=3 uid="uid://bsxxkf84jip44"]
+
+[ext_resource type="Texture2D" uid="uid://brhmtrddh4sp1" path="res://assets/external/png/fx/vignette.png" id="1_n1sfr"]
+[ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/introduction/introduction.gd" id="1_whe7n"]
+[ext_resource type="FontFile" uid="uid://b7v8fse3db07l" path="res://assets/external/font/RobotoCondensed-LightItalic.ttf" id="2_2jopy"]
+[ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/parallaxMngr.gd" id="3_u5h6k"]
+[ext_resource type="Texture2D" uid="uid://djoga57kja45e" path="res://assets/godot/pck/stories/arcOne/cutsceneImages/building.png" id="4_qgwrb"]
+[ext_resource type="Texture2D" uid="uid://gny70qw4180d" path="res://assets/godot/pck/stories/arcOne/cutsceneImages/ledge.png" id="5_rsag0"]
+[ext_resource type="Texture2D" uid="uid://cuqrfjwolyd2u" path="res://assets/godot/pck/stories/arcOne/cutsceneImages/ledge2.png" id="6_23x8r"]
+[ext_resource type="Shader" path="res://assets/godot/tres/shaders/blur.gdshader" id="7_afexr"]
+
+[sub_resource type="Animation" id="Animation_g8j5a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fxLayer/fx/fxFadeOverlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("intro/intro:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fxLayer/fx/cutsceneLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fxLayer/fx/cutsceneLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["I thought I could escape. I thought this would end it all."]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("intro/background:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0156863, 0, 0.0588235, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("intro/intro/buildings/layer5:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1330)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("intro/intro/buildings/layer4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1330)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("intro/intro/buildings/layer3:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1330)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("intro/intro/buildings/layer2:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1330)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("intro/intro/buildings/layer1:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3.685, 1330)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("intro/intro/buildings/ledge:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.164706, 0.141176, 0.254902, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("intro/intro/buildings/fxBlur:material:shader_parameter/blur_amount")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9.5e-08]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("intro/intro/buildings/ledge:frame")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1durf"]
+resource_name = "intro"
+length = 50.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fxLayer/fx/fxFadeOverlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.83, 1.26, 2.68, 9.06, 11.27, 43.46, 44.92, 47.97, 49.9),
+"transitions": PackedFloat32Array(1, 1, 1, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.0556347, 0.023539, 0.0965366, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("intro/intro:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fxLayer/fx/cutsceneLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.22, 6.22, 10.22, 11.02, 14.37, 15.37, 19.38, 20.18, 25.99, 26.99, 31.81, 32.61, 37.2833, 38.2833, 42.2833, 43.0833),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fxLayer/fx/cutsceneLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5.22, 14.3034, 25.9233, 37.2833),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["I thought I could escape.", "I thought letting go would quiet the noise...", "At the moment I lose it all,", "I found the silence far louder..."]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("intro/background:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(21.9333, 24.0667, 31.88, 34.09, 35.85, 38.0333, 43.6333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.0156863, 0, 0.0588235, 1), Color(0.0156863, 0, 0.0588235, 0.729412), Color(0.0156863, 0, 0.0588235, 0.729412), Color(0.0156863, 0, 0.0588235, 1), Color(0.0156863, 0, 0.0588235, 1), Color(0.0156863, 0, 0.0588235, 0.729412), Color(0.0156863, 0, 0.0588235, 1)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"editCursorVisibility"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("intro/intro/buildings/layer5:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(9.62, 14.47, 19.89, 22.38),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.459479, 0.459479),
+"update": 0,
+"values": [Vector2(0, 1330), Vector2(0, 0), Vector2(0, 0), Vector2(0, 1330)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("intro/intro/buildings/layer4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(9.76, 14.51, 20, 22.78),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.459479, 0.459479),
+"update": 0,
+"values": [Vector2(0, 1330), Vector2(0, 0), Vector2(0, 0), Vector2(0, 1330)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("intro/intro/buildings/layer3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(9.9, 14.47, 19.95, 23.34),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.459479, 0.459479),
+"update": 0,
+"values": [Vector2(0, 1330), Vector2(0, 0), Vector2(0, 0), Vector2(0, 1330)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("intro/intro/buildings/layer2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(10.06, 14.46, 19.85, 23.92),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.459479, 0.459479),
+"update": 0,
+"values": [Vector2(0, 1330), Vector2(0, 0), Vector2(0, 0), Vector2(0, 1330)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("intro/intro/buildings/layer1:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(10.19, 14.48, 19.92, 23.15),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.459479, 0.459479),
+"update": 0,
+"values": [Vector2(-3.685, 1330), Vector2(0, 0), Vector2(0, 0), Vector2(-3.685, 1330)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("intro/intro/buildings/ledge:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(13.44, 20.31, 43.12, 44.95),
+"transitions": PackedFloat32Array(0.1, 0.1, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(937.931, 1580), Vector2(937.931, 769.195), Vector2(937.931, 769.195), Vector2(937.931, 1580)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("intro/intro/buildings/ledge:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(21.93, 22.99),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(0.164706, 0.141176, 0.254902, 1), Color(0, 0, 0, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("intro/intro/buildings/fxBlur:material:shader_parameter/blur_amount")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(33.98, 34.98, 36),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [9.5e-08, 2.769, 9.5e-08]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("intro/intro/buildings/ledge:frame")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.0300007, 34.56, 34.97),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3486w"]
+_data = {
+"RESET": SubResource("Animation_g8j5a"),
+"intro": SubResource("Animation_1durf")
+}
+
+[sub_resource type="Animation" id="Animation_uiee7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fxLayer/fx/fxFadeOverlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fxLayer/fx/fxVignette:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xdcqg"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fxLayer/fx/fxFadeOverlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_plhy6"]
+_data = {
+"RESET": SubResource("Animation_uiee7"),
+"fade": SubResource("Animation_xdcqg")
+}
+
+[sub_resource type="Gradient" id="Gradient_ikd2v"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ayras"]
+gradient = SubResource("Gradient_ikd2v")
+width = 1920
+height = 1080
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d60fx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_rsag0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_23x8r")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wgax6"]
+shader = ExtResource("7_afexr")
+shader_parameter/blur_amount = 9.5e-08
+shader_parameter/mix_amount = 0.005
+shader_parameter/color_over = Color(0.635294, 0.00784314, 1, 1)
+
+[node name="introduction" type="Node2D"]
+script = ExtResource("1_whe7n")
+
+[node name="cutsceneAnimator" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_3486w")
+}
+
+[node name="soundOne" type="AudioStreamPlayer" parent="cutsceneAnimator"]
+bus = &"SFX CutScene "
+
+[node name="soundTwo" type="AudioStreamPlayer" parent="cutsceneAnimator"]
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Main"
+
+[node name="fxLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="fxAnim" type="AnimationPlayer" parent="fxLayer"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_plhy6")
+}
+
+[node name="fx" type="Control" parent="fxLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="fxVignette" type="TextureRect" parent="fxLayer/fx"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 6
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_n1sfr")
+
+[node name="fxFadeOverlay" type="ColorRect" parent="fxLayer/fx"]
+texture_filter = 6
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="cutsceneLabel" type="Label" parent="fxLayer/fx"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -197.5
+offset_top = 117.0
+offset_right = 197.5
+offset_bottom = 142.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_2jopy")
+theme_override_font_sizes/font_size = 24
+text = "I thought I could escape. I thought this would end it all."
+horizontal_alignment = 1
+
+[node name="intro" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="background" type="Sprite2D" parent="intro"]
+modulate = Color(0.0156863, 0, 0.0588235, 0)
+texture = SubResource("GradientTexture2D_ayras")
+centered = false
+
+[node name="intro" type="Node2D" parent="intro"]
+visible = false
+
+[node name="buildings" type="Node2D" parent="intro/intro" node_paths=PackedStringArray("l5", "l4", "l3", "l2", "l1")]
+script = ExtResource("3_u5h6k")
+l5 = NodePath("layer5")
+l4 = NodePath("layer4")
+l3 = NodePath("layer3")
+l2 = NodePath("layer2")
+l1 = NodePath("layer1")
+
+[node name="layer5" type="Node2D" parent="intro/intro/buildings"]
+modulate = Color(0.0155492, 1.86161e-05, 0.0612189, 1)
+position = Vector2(0, 1330)
+
+[node name="building39" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(1511, 227)
+texture = ExtResource("4_qgwrb")
+
+[node name="building40" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(1185, 249)
+texture = ExtResource("4_qgwrb")
+
+[node name="building41" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(859, 276)
+texture = ExtResource("4_qgwrb")
+
+[node name="building42" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(569, 246)
+texture = ExtResource("4_qgwrb")
+
+[node name="building43" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(238, 268)
+texture = ExtResource("4_qgwrb")
+
+[node name="building44" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(11, 280)
+texture = ExtResource("4_qgwrb")
+
+[node name="building31" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(129, 364)
+texture = ExtResource("4_qgwrb")
+
+[node name="building32" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(467, 344)
+texture = ExtResource("4_qgwrb")
+
+[node name="building33" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(790, 190)
+texture = ExtResource("4_qgwrb")
+
+[node name="building34" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(1027, 364)
+texture = ExtResource("4_qgwrb")
+
+[node name="building35" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(1027, 364)
+texture = ExtResource("4_qgwrb")
+
+[node name="building36" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(1345, 334)
+texture = ExtResource("4_qgwrb")
+
+[node name="building37" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(1624, 295)
+texture = ExtResource("4_qgwrb")
+
+[node name="building38" type="Sprite2D" parent="intro/intro/buildings/layer5"]
+position = Vector2(1854, 266)
+texture = ExtResource("4_qgwrb")
+
+[node name="layer4" type="Node2D" parent="intro/intro/buildings"]
+modulate = Color(0.0300675, 3.58424e-05, 0.0948486, 1)
+position = Vector2(0, 1330)
+
+[node name="building30" type="Sprite2D" parent="intro/intro/buildings/layer4"]
+position = Vector2(1586, 424)
+texture = ExtResource("4_qgwrb")
+
+[node name="building29" type="Sprite2D" parent="intro/intro/buildings/layer4"]
+position = Vector2(1895, 385)
+texture = ExtResource("4_qgwrb")
+
+[node name="building26" type="Sprite2D" parent="intro/intro/buildings/layer4"]
+position = Vector2(1237, 451)
+texture = ExtResource("4_qgwrb")
+
+[node name="building17" type="Sprite2D" parent="intro/intro/buildings/layer4"]
+position = Vector2(1794, 493)
+texture = ExtResource("4_qgwrb")
+
+[node name="building27" type="Sprite2D" parent="intro/intro/buildings/layer4"]
+position = Vector2(1023, 522)
+texture = ExtResource("4_qgwrb")
+
+[node name="building25" type="Sprite2D" parent="intro/intro/buildings/layer4"]
+position = Vector2(1438, 400)
+texture = ExtResource("4_qgwrb")
+
+[node name="building28" type="Sprite2D" parent="intro/intro/buildings/layer4"]
+position = Vector2(351, 451)
+texture = ExtResource("4_qgwrb")
+
+[node name="building20" type="Sprite2D" parent="intro/intro/buildings/layer4"]
+position = Vector2(703, 496)
+texture = ExtResource("4_qgwrb")
+
+[node name="building23" type="Sprite2D" parent="intro/intro/buildings/layer4"]
+position = Vector2(84, 501)
+texture = ExtResource("4_qgwrb")
+
+[node name="layer3" type="Node2D" parent="intro/intro/buildings"]
+modulate = Color(0.029187, 3.49369e-05, 0.0960871, 1)
+position = Vector2(0, 1330)
+
+[node name="building24" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(519, 602)
+texture = ExtResource("4_qgwrb")
+
+[node name="building21" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(882, 622)
+texture = ExtResource("4_qgwrb")
+
+[node name="building18" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(-12, 672)
+texture = ExtResource("4_qgwrb")
+
+[node name="building16" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(1342, 620)
+texture = ExtResource("4_qgwrb")
+
+[node name="building15" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(1696, 606)
+texture = ExtResource("4_qgwrb")
+
+[node name="building22" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(1121, 695)
+texture = ExtResource("4_qgwrb")
+
+[node name="building19" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(289, 472)
+texture = ExtResource("4_qgwrb")
+
+[node name="building12" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(901, 784)
+texture = ExtResource("4_qgwrb")
+
+[node name="building13" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(1495, 749)
+texture = ExtResource("4_qgwrb")
+
+[node name="building8" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(1214, 832)
+texture = ExtResource("4_qgwrb")
+
+[node name="building14" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(1964, 650)
+texture = ExtResource("4_qgwrb")
+
+[node name="building11" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(1810, 832)
+texture = ExtResource("4_qgwrb")
+
+[node name="building" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(670, 757)
+texture = ExtResource("4_qgwrb")
+
+[node name="building2" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(413, 729)
+texture = ExtResource("4_qgwrb")
+
+[node name="building4" type="Sprite2D" parent="intro/intro/buildings/layer3"]
+position = Vector2(139, 799)
+texture = ExtResource("4_qgwrb")
+
+[node name="layer2" type="Node2D" parent="intro/intro/buildings"]
+modulate = Color(0.0543955, 6.68957e-05, 0.139335, 1)
+position = Vector2(0, 1330)
+
+[node name="building9" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+position = Vector2(1478, 950.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building6" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+position = Vector2(765, 969.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building7" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+position = Vector2(1091, 1035.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building10" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+position = Vector2(1819, 1014.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building5" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+position = Vector2(136, 953.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building3" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+position = Vector2(476, 913.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building8" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+position = Vector2(1605, 1113.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building4" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+position = Vector2(415, 1109.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+modulate = Color(0.848905, 0.848905, 0.848905, 1)
+position = Vector2(1301, 1148)
+texture = ExtResource("4_qgwrb")
+
+[node name="building2" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+modulate = Color(0.848905, 0.848906, 0.848905, 1)
+position = Vector2(688, 1156)
+texture = ExtResource("4_qgwrb")
+
+[node name="building11" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+modulate = Color(0.831761, 0.831761, 0.831761, 1)
+position = Vector2(1882, 1167)
+texture = ExtResource("4_qgwrb")
+
+[node name="building12" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+modulate = Color(0.941365, 0.941365, 0.941364, 1)
+position = Vector2(1001, 1141)
+texture = ExtResource("4_qgwrb")
+
+[node name="building13" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+modulate = Color(0.843184, 0.843184, 0.843184, 1)
+position = Vector2(1231, 1257.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building14" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+modulate = Color(0.87186, 0.87186, 0.87186, 1)
+position = Vector2(721, 1259.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building15" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(1599, 1272.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building16" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(1579, 1274)
+texture = ExtResource("4_qgwrb")
+
+[node name="building17" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+modulate = Color(0.843184, 0.843184, 0.843184, 1)
+position = Vector2(102, 1138.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="building18" type="Sprite2D" parent="intro/intro/buildings/layer2"]
+modulate = Color(0.866111, 0.866111, 0.866111, 1)
+position = Vector2(351, 1223.5)
+texture = ExtResource("4_qgwrb")
+
+[node name="ledge" type="AnimatedSprite2D" parent="intro/intro/buildings"]
+modulate = Color(0.164706, 0.141176, 0.254902, 1)
+z_as_relative = false
+position = Vector2(937.931, 1580)
+sprite_frames = SubResource("SpriteFrames_d60fx")
+
+[node name="layer1" type="Node2D" parent="intro/intro/buildings"]
+modulate = Color(0.0748268, 0.000101321, 0.180434, 1)
+position = Vector2(-3.685, 1330)
+
+[node name="building12" type="Sprite2D" parent="intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(1424, 1095)
+scale = Vector2(1.87672, 1.87672)
+texture = ExtResource("4_qgwrb")
+
+[node name="building15" type="Sprite2D" parent="intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(1761, 1510)
+scale = Vector2(1.87672, 1.87672)
+texture = ExtResource("4_qgwrb")
+
+[node name="building13" type="Sprite2D" parent="intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(910, 1436)
+scale = Vector2(1.8447, 1.8447)
+texture = ExtResource("4_qgwrb")
+
+[node name="building14" type="Sprite2D" parent="intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(409, 1351)
+scale = Vector2(2.04907, 2.04907)
+texture = ExtResource("4_qgwrb")
+
+[node name="building16" type="Sprite2D" parent="intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(108, 1624)
+scale = Vector2(2.04907, 2.04907)
+texture = ExtResource("4_qgwrb")
+
+[node name="building17" type="Sprite2D" parent="intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(781, 1732)
+scale = Vector2(2.04907, 2.04907)
+texture = ExtResource("4_qgwrb")
+
+[node name="building18" type="Sprite2D" parent="intro/intro/buildings/layer1"]
+modulate = Color(0.883378, 0.883378, 0.883378, 1)
+position = Vector2(1396, 1745)
+scale = Vector2(2.04907, 2.04907)
+texture = ExtResource("4_qgwrb")
+
+[node name="fxBlur" type="ColorRect" parent="intro/intro/buildings"]
+z_index = 2
+texture_filter = 6
+material = SubResource("ShaderMaterial_wgax6")
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2

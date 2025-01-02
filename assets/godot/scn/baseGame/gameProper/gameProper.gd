@@ -6,7 +6,6 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 # Nodes.
-@onready var _spaceGameArc: Node2D = get_node("spaceGameArc")
 
 #------------------------------------------------------------------------------#
 func _ready() -> void:
@@ -15,11 +14,8 @@ func _ready() -> void:
 		lib.gameplay_enabled = true
 
 #------------------------------------------------------------------------------#
-# Load game arc loaded from the scene loader and place it.
+func loadMindscape() -> void:
+	get_node("mindscape/spaceSectorManager").loadSpaceSector()
+
 func loadGameArc(arc: Object) -> void:
-	# Clean the game arc from other stuff.
-	for _arc in _spaceGameArc.get_children():
-		_arc.queue_free()
-	
-	# Add the game arc.
-	_spaceGameArc.add_child(arc.instantiate(), true)
+	get_node("spaceGameArc").loadGameArc(arc)
