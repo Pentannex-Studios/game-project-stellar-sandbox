@@ -23,6 +23,8 @@ extends Node2D
 var _menuCamChanged: bool = false
 var _uiLocFocused: bool = false
 var _uiHidden: bool = false
+var _selectArc: bool = false
+var _startedOnce: bool = false
 
 #------------------------------------------------------------------------------#
 signal _montage
@@ -51,8 +53,11 @@ func _input(_event) -> void:
 func _unhandled_input(_event) -> void:
 	if _event is InputEventMouseButton:
 		if _uiLocFocused:
+			if _selectArc:
+				_startArc(0)
+			else:
+				_locateMindscape(1)
 			_uiLocFocused = false
-			_locateMindscape(1)
 	
 	if _event is InputEventMouseMotion:
 		if  _event.velocity > Vector2.ZERO and _uiHidden:
@@ -86,7 +91,13 @@ func _montageGame() -> void:
 # Proceed to sector.
 func _proceedToMindscape() -> void:
 	# Play the introduction animation on overlay while adding the playthrough.
-	_uiAnim.play("travelToSector")
+	if not _startedOnce:
+		_uiAnim.play("travelToSector")
+		_startedOnce = true
+		_selectArc = true
+		_uiLocFocused = true
+	else:
+		_startArc(1)
 	
 	await _uiAnim.animation_finished
 	
@@ -111,6 +122,15 @@ func _locateMindscape(_mode: int = 0) -> void:
 		_uiLocFocused = true
 	else: 
 		_uiAnim.play_backwards("locateSectorOverlay")
+
+func _startArc(_mode: int = 0) -> void:
+	if _mode == 0:
+		_uiAnim.play("toMainMenu")
+		_selectArc = false
+	elif _mode == 1:
+		_uiAnim.play_backwards("toMainMenu")
+		_selectArc = true
+		_uiLocFocused = true
 
 # Locating specified sector.
 func _locatingMindscape() -> void:

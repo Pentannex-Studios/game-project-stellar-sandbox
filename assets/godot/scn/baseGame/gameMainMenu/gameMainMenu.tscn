@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://cl5mvnsyob8pv"]
+[gd_scene load_steps=46 format=3 uid="uid://cl5mvnsyob8pv"]
 
 [ext_resource type="Script" path="res://assets/godot/scn/baseGame/gameMainMenu/gameMainMenu.gd" id="1_u50fn"]
 [ext_resource type="AudioStream" uid="uid://pp5mvw30ygg7" path="res://assets/external/aud/bgm/score/httpswww.fesliyanstudios.commusicfiles2023-05-02_-_Galaxys_Endless_Expanse_-_www.FesliyanStudios.com2023-05-02_-_Galaxys_Endless_Expanse_-_www.FesliyanStudios.com.mp3" id="2_a52l8"]
@@ -13,9 +13,20 @@
 [ext_resource type="Shader" path="res://assets/godot/tres/shaders/blur.gdshader" id="8_23e0w"]
 [ext_resource type="PackedScene" uid="uid://eo7j2g77qayc" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/exit/uiMenuExit.tscn" id="8_eiuwx"]
 [ext_resource type="PackedScene" uid="uid://cmpem1a1hrxi5" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/settings/uiMenuSettings.tscn" id="12_hxl7m"]
+[ext_resource type="FontFile" uid="uid://bkedubf4jve6l" path="res://assets/external/font/RobotoCondensed-Regular.ttf" id="14_3qfcm"]
+[ext_resource type="FontFile" uid="uid://b3f6o2t3fsb05" path="res://assets/external/font/RobotoCondensed-Light.ttf" id="14_fe508"]
+[ext_resource type="FontFile" uid="uid://ksb203nbyt27" path="res://assets/external/font/RobotoCondensed-Bold.ttf" id="15_k7wqe"]
+[ext_resource type="PackedScene" uid="uid://bld11nynf8k1" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/start/uiStartArc.tscn" id="17_40fai"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p0vh3"]
 animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mysp8"]
+animation = &"toMainMenu"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_32wrj"]
+animation = &"toMainMenu"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ruwj2"]
 animation = &"uiLogoShowcaseAnimation"
@@ -42,12 +53,16 @@ states/End/position = Vector2(953.333, 88.0494)
 states/RESET/node = SubResource("AnimationNodeAnimation_p0vh3")
 states/RESET/position = Vector2(210.667, 89.4074)
 states/Start/position = Vector2(60, 89.3333)
+states/toMainMenu/node = SubResource("AnimationNodeAnimation_32wrj")
+states/toMainMenu/position = Vector2(849.428, 172.667)
+"states/toMainMenu 2/node" = SubResource("AnimationNodeAnimation_mysp8")
+"states/toMainMenu 2/position" = Vector2(766.094, 264)
 states/uiLogoShowcaseAnimation/node = SubResource("AnimationNodeAnimation_ruwj2")
 states/uiLogoShowcaseAnimation/position = Vector2(436, 87.9588)
 states/uiMainMenuAnimation/node = SubResource("AnimationNodeAnimation_tbct6")
 states/uiMainMenuAnimation/position = Vector2(714.667, 87.8765)
 transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_dsdmg"), "RESET", "uiLogoShowcaseAnimation", SubResource("AnimationNodeStateMachineTransition_exm2w"), "uiLogoShowcaseAnimation", "uiMainMenuAnimation", SubResource("AnimationNodeStateMachineTransition_si82f"), "uiMainMenuAnimation", "End", SubResource("AnimationNodeStateMachineTransition_ra0ku")]
-graph_offset = Vector2(-47.9058, 0)
+graph_offset = Vector2(-61.9058, 63)
 
 [sub_resource type="Animation" id="Animation_h3ajy"]
 length = 0.001
@@ -399,6 +414,30 @@ tracks/28/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiStartArc:mouse_filter")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("uiLayer/uiMenu/uiArcSelect:mouse_filter")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(-0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
 
 [sub_resource type="Animation" id="Animation_cwcnj"]
 resource_name = "generateNewSectorFade"
@@ -678,6 +717,226 @@ tracks/9/keys = {
 "values": [0, 2]
 }
 
+[sub_resource type="Animation" id="Animation_u5j4h"]
+resource_name = "toMainMenu"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiLayer/uiMenu/uiBtnGrp:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333334, 1.86667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:mouse_filter")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2, 0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:editable")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0666667, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0666667, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0666667, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.0666667, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0666667, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:mouse_filter")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:disabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.0666666, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:mouse_filter")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 2]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.1, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("uiLayer/uiMenu/uiArcSelect:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0.0666667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiStartArc:mouse_filter")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.0333333, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("uiLayer/uiMenu/uiArcSelect:mouse_filter")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
 [sub_resource type="Animation" id="Animation_oayup"]
 resource_name = "travelToSector"
 length = 25.0
@@ -832,10 +1091,10 @@ tracks/12/path = NodePath("uiLayer/uiMenu/uiBgPlayer:volume_db")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1, 19.0333, 20.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [-10.0, -80.0]
+"values": [-10.0, -80.0, -80.0, -10.0]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
@@ -937,6 +1196,30 @@ tracks/20/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiStartArc:mouse_filter")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 19.9333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("uiLayer/uiMenu/uiArcSelect:mouse_filter")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 19.9333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 1]
 }
 
 [sub_resource type="Animation" id="Animation_kvhxs"]
@@ -1296,6 +1579,7 @@ _data = {
 "RESET": SubResource("Animation_h3ajy"),
 "generateNewSectorFade": SubResource("Animation_cwcnj"),
 "locateSectorOverlay": SubResource("Animation_pjph0"),
+"toMainMenu": SubResource("Animation_u5j4h"),
 "travelToSector": SubResource("Animation_oayup"),
 "uiFadeInactivity": SubResource("Animation_kvhxs"),
 "uiLogoShowcaseAnimation": SubResource("Animation_31sw0"),
@@ -1311,14 +1595,6 @@ shader = ExtResource("8_23e0w")
 shader_parameter/blur_amount = 3.0
 shader_parameter/mix_amount = 0.0
 shader_parameter/color_over = Color(0.635294, 0.00784314, 1, 1)
-
-[sub_resource type="OggPacketSequence" id="OggPacketSequence_tb05x"]
-packet_data = Array[Array]([[PackedByteArray("AXZvcmJpcwAAAAABRKwAAAAAAAAwqQMAAAAAALgB")], [PackedByteArray("A3ZvcmJpcysAAABYaXBoLk9yZyBsaWJWb3JiaXMgSSAyMDEyMDIwMyAoT21uaXByZXNlbnQpAQAAAEcAAABDT01NRU5UUz1Tb3VuZCBnZW5lcmF0ZWQgYnkgR2FtZVN5bnRoIGZyb20gVHN1Z2kgKHd3dy50c3VnaS1zdHVkaW8uY29tKQE="), PackedByteArray("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WooxpRZjKKW1klJrJaXWWmu1ttZiDKW0VFJpraTUWmqtxtZarKmlGFNrMbbWao0xxhxjzTmlFGNqKcbUWowtthxjrDV3EFIKpaQWSkkttRRjai3GUEpqJZXWSkktttZqTK3FGkppraTUWkmptdZaja21GlNKMabWakypxRhjzLW1GHNqLcbWWqyptRhjrDXHGGstAABgwAEAIMCEMlBoyEoAIAoAADEGIcacMwgpxRiExiClGIMQKcWYcxAipRhzDkLGmHMQSskYcw5CKR2EEkpJqYMQSikpFQAAUOAAABBgg6bE4gCFhqwEAEICABiElGLMOecglJJShJBSjDnnHIRSUooQUoox55yDUEpKlVJMMeYchFJSaqlSSjHGnINQSkqpZYwx5hyEEEpJqbWMMcacgxBCKSm11jnnHHQSSkmlpdg655yDEEopJaXWWucchBBKSaWl1mLrnIMQQiklpdRaiyGEUkpJJaWWYosxhFJKKSWllFqLMZZUUkqppdZii7HGUkpKKaXWWosxxppSaqm11mKMscZaU0qptdZaizHGWmsBAAAHDgAAAUbQSUaVRdhowoUHoNCQFQFAFAAAYAxiDDGGnHMQMgiRcwxCByFyzknppGRSQmkhpUxKSCWkFjnnpHRSMimhpVBSJiWkVFopAADswAEA7MBCKDRkJQCQBwAAIaQUY4wxhpRSijHGHENKKcUYY4wppRhjjDHnlFKMMcaYc4wxxhxzzjnGGGPMOeccY8wx55xzjjHGnHPOOcccc84555xjzjnnnHPOCQAAKnAAAAiwUWRzgpGgQkNWAgCpAACEMUox5hyEUhqFGHPOOQilNEgx5pxzEEqpGHPOOQillFIx5pxzEEopJXPOOQghlJJS5pxzEEIoJaXOOQghhFJKSp1zEEIooZSUQgillFJSSqmFEEoppZRUWiqllJJSSqm1VkopJaWUWmqtAADwBAcAoAIbVkc4KRoLLDRkJQCQAQDAGIOQQQYhYxBCCCGEEEIICQAAGHAAAAgwoQwUGrISAEgFAAAMUooxB6WkFCnFmHMQSkkpUoox5yCUklLFmHMQSkmptYox5yCUklJrnXMQSkmptRg75yCUklJrMYYQSkmptRhjDCGUklJrMdZaSkmptRhrzLWUklJrMdZaa0qttRhrrTXnlFprMdZac84FACA0OACAHdiwOsJJ0VhgoSErAYA8AABIKcYYY4wxpRRjjDHGmFKKMcYYY4wxxhhjjDGmGGOMMcYYY4wxxhhjjDHGGGOMMcYYY4wx5hhjjDHGGGPMOcYYY4w55hxjjDHGnHNOAABQgQMAQICNIpsTjAQVGrISAAgHAACMYcw55yCUkEqjlHMQQigllVYapZyDEkIpKbWWOSclpVJSai22zDkpKZWSUmstdhJSai2l1mKssYOQUmuptRZjjR2EUlqKLcYac+0glJJaazHGWmsopaXYYqyx1ppDKam1FmOtNedcUmotxlprzbXnklJrMcZaa625p9ZirLHWXHPvPbUWY4215px7zgUAmDw4AEAl2DjDStJZ4WhwoSErAYDcAABGKcaccw5CCCGEEEIIlVKMOecchBBCCCGEECqlGHPOOQghhBBCCCFkjDnnHHQQQgghhBBCyBhzzjkIIYQQQgghhNA55xyEEEIIIYRQQimlc845ByGEEEIIIYRQSucchBBCCCGEEkoopZTOOQghhBBCCKWEUkopIYQQQgghhBJKKaWUUjoIIYQQQgillFJKKaWEEEIIIYQQSimllFJKCSGEEEIIIZRSSimllBJCCCGEEkoppZRSSiklhBBCCKGUUkoppZRSSgghhFJKKaWUUkoppZQQQighlFJKKaWUUkopIYQSSiillFJKKaWUUkIIJZRSSimllFJKKaWEEEIopZRSSimllFJKCSGUUkoppZRSSimllFIAANCBAwBAgBGVFmKnGVcegSMKGSagQkNWAgDhAAAAIZRSSimllFJqJKWUUkoppZRSIyWllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUkqllFJKKaWUUkoppZRSSimllFJKKaUAqMsMB8DoCRtnWEk6KxwNLjRkJQCQFgAAGMOYY45BJ6GUlFprmIJQQuikpNJKbLE1SkEIIYRSUkqttdYy6KiUkkpKrcUWY4yZg1JSKiWl1GKMsdYOQkottRZbi7HmWmsHoaSUWostxlprrr2DkEprreUYY7A559pBKCm12GKMNddaew6ptBZjjLX2XGvNOYhSUoox1hpzzTX33EtKrcWaa641B59zEKal2GqNNeecexA6+NRajbnmHnTQQecedEqt1lprzj0HIXzwubVYa801596DDzoI32qrNedca+89956DbjHWXHPQwQchfPBBuBhrzzn3HIQOOvgeDADIjXAAQFwwkpA6y7DSiBtPwBCBFBqyCgCIAQAgjEEGIYSUUkoppZRiiinGGGOMMcYYY4wxxhhjjDHGBAAAJjgAAARYwa7M0qqN4qZO8qIPAp/QEZuRIZdSMZMTQY/UUIuVYIdWcIMXgIWGrAQAyAAAEIix5lpzjhCU1mLtuVRKOWqx55Qhgpy0nEvJDEFOWmstZMgoJzG2FDKEFLTaWumUUoxiq7F0jDFJqcWWSucgAAAAggAAAxEyEwgUQIGBDAA4QEiQAgAKCwwdw0VAQC4ho8CgcEw4J502AABBiMwQiYjFIDGhGigqpgOAxQWGfADI0NhIu7iALgNc0MVdB0IIQhCCWBxAAQk4OOGGJ97whBucoFNU6iAAAAAAABAA4AEAINkAIqKZmePo8PgACREZISkxOUFJUQkAAAAAACAA+AAASFaAiGhm5jg6PD5AQkRGSEpMTlBSVAIAAAAAAAAAAICAgAAAAAAAQAAAAICA")], [PackedByteArray("DGJpmjyV37fEFjuxYbzwiOqYHy7mndHc+6k5wHZgfXxnM3y7+tuWmzN/bCw+fI6maSINms/EbaMZCJfjNXT55ZMbesEze/816Lbz6nlk7JPIuA1ia07Q+1xpxnlpLSKzMoiTr9eCMgyBVn/CYrfJ6XOwqN7TZXNttsfueGi3"), PackedByteArray("tGV1iN0nDDHXFNTmAOei+Q2d4vJDcwCL7LJeeZj13fRy6KxNf0r97mq3VJ3TlNdHmmmboQ0yjRKUEgG8bpPTduvY6atsI9l9D70F5cQelWtXZRwccFVr6P2Oq3S4EpA+B8/zAjWR4riM2+dMX/PPatlWNj2HxzAc+ceGBQ=="), PackedByteArray("UsRUlFAA2qTOr6N224tv/Voi/dlnd4WpPr/w/MILL7zwwgsvHPXSXuROB9M0TUHE6yW7MeLp1Y/4bsWxbzskH2Qa0qfxB9MUYRnj6ulbV8eJ9lF3TH0AAM/SVRyvYkzH81XhZX21f6xnp3tmjx5vj2+99dbVfXzr8/+/0s55GhNGfzpJzek8p6u/Y9z1PSPmc8tNU0wxPXuRL7+rgwUAcMGAKaarpzeaY2PrnL8OIz4yMhwbGdn5nd/bc/j9G/3+5wtPvGimLdXj1F9bG9PuzR0fjoSjyJx+Oo1pHI9PP39j6dNiXKalI199+PmzfvMDeyLEnZGR4ci8LBCnJ/ufnn0qb/bvmFthq8ZcMtwZjg1HFq6cfz7vh53OoDdN0aDCNTnp55+fdHYmk3POMhzaTsUgXM7bVE92neYYm8lJGY6M7Nx20/QIfRHjSIxRNfz74GCSt8LTp/uX07kAAGH6TuvjHt1x9cDLNVYPbP9fR7dWA2vn8q47ELLJtJOUc0/4izEA7IxC3HfjIbFXMTl4m/9+n33qeDF173zxa+zQZWW87GL52CI7ISI4oQUHkn90AuzN87cwfbyypDbL10337XdoXGbYqpbhkWp7fg9K05DCGASl+t7OIoQlkqHf8HqFd/1z1fAczdbMxpOrHG1ht+N+VpXF/LO453Njn/spt51rB6B/sbhu6rCMGP5Cvs5Uurno0fx39OvtzFJRj+OWf2y448aoivN7emPqVdKPTW+3uFznEiKy+73fa9T6+zKd7RkuFuKmOEBJfdqpbOi5s6g+28b9rdXEXVvu1PgZi7/PRKj3dv61RV5YolmOcMx62LMTOgQgUxX+U8HK4P3yUfnIe3w7KpMWjTT9ONOOD7/mGScVx8ivxuTwaH9FxPVrnPg+mN4u9mMIr7eDrCKKNKc4OU4R0ksrt0RHTdRYXW+NF1bCwqjrKNV6+qPaZnlZsmTarLvncZWxHrax77v1lHR9CdPu0f0vVVtuD2fdmN4srua82w3OdX9rF+WwHKQmWas2i2/sNZot7HHTh0gEJmcKPKqp6rAD"), PackedByteArray("3AR3irajSq1fEQZprDnAqON8u2nW/X0ps9hlTZ1JSpw/us5/l8T2GN8rerT6xjdUTt+hsKRP55/Ar1JjIr+pLrl54qjptz5wFrwhwMC1B684R4Zk6UOsv3JzCZz5FvrzJpSRTv4WYzL16rdfTaMOv/ch"), PackedByteArray("/AhLNY/LUp8/PZ7027n9vlbog/QT84utPb2xR9k0u7pbTVA3A5HN5MaX9GxU1/s6JDzkQl05eLNobwmRmtni582wku7zu3X9AyawsQkigGVgYirfL0rFODePHxirL3xUnyL4QZ5LfqyAcHwV"), PackedByteArray("7ADLaYYvY84Ut7mkbTMAH6w6StG0xT7LpLOH5aiqPU7zaeuwHqPcnd4gyrxuehpH3I6eq1a+sgLckg4zG+/JJ1NY67zPg18od73llTOaN8NBzTb5Fr76JeTL8RyTHW6HN7XltX79yv9FBpDPxtc="), PackedByteArray("/PQKPdLPiHou/0mvzQDi2/XiZ27UvpXIdLcywpvYa00w05emb3LR0OD7dD2y5hklEgzVkmGzpc//2SkrSogbi/DhPPBPwUnmQhFUU7WLb0rvmi43Xw3gS/JyDItKohqf1baQ4Wnw0LSf/g=="), PackedByteArray("zORKdHZvGOraRXLSb+fm4gxblWvp5+0YXec9F1KdxvF9zMcSdl9JGrVvW6YPrTnGWU9QFudOCFXJ8XYe4swT11RWvmVXQysCo7tuKi10x8qOqFaFPL0VVc7+tf4Vb6/eF7t9bfZXug4="), PackedByteArray("hMz8RR7TkvX9/066208Pv1IY5n6Rfvswvat+xM4VwRlvpf1AZSbaQ2vwmyQtQZl+bkdU2f5MtmfNbyV2EJ94IeFAf5qnTI/5QM5VN+5RGJf7qjUgskG141j5t/72Axr7N4fq67ObxhFpFg=="), PackedByteArray("dMD0XunNZP+l20+UXLoeeXfU5PwSu90fSHHUnsi+u1GJbd+KN5MyfF/GjURlOBaZDLS+mjjlreEbjLMetkzGLh9VmXYn45MdewvXY4G1dFwLQ9EkSDWkfqrJ8M3b4z9LPA5vx1SJNRFA"), PackedByteArray("2lN7Hv0HCijgLDw9+ebDz+2fnMw5ZwBiY4xxZGTX+z5w266xkXCMShG3AgDgMY7s7Lrt0eOPP77fti0AyQhmFACgcZjWZRS09TKhJIzS+s7KdUwKyMwEsPFxsNvVW3/1LNDzv9vb29vhMJ0EAAAw1pb1fGn/6S8AAAAA5tx0evfe2alzAAAAAACstXW9dPqZL/3u/+/Lnn36/vzhUFUFAAAAAADApUzS4eiePbfcsmfP6Gg2TRUpJQBAU9m1C5//nb+z8HUAwOGHH374RABwuHNunE6nd+/evXt3OvXdRADw9dc5AA==")]])
-granule_positions = PackedInt64Array(0, 0, 2070)
-sampling_rate = 44100.0
-
-[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_2e1nk"]
-packet_sequence = SubResource("OggPacketSequence_tb05x")
 
 [sub_resource type="Gradient" id="Gradient_ikfes"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.956863)
@@ -1342,6 +1618,18 @@ height = 1080
 use_hdr = true
 fill_from = Vector2(0, 1)
 fill_to = Vector2(1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_smd8e"]
+font = ExtResource("14_fe508")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_0fjo3"]
+font = ExtResource("15_k7wqe")
+font_size = 65
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqlot"]
+font = ExtResource("14_3qfcm")
+font_size = 40
 
 [node name="uiMenu" type="Node2D" groups=["mainMenu"]]
 script = ExtResource("1_u50fn")
@@ -1393,6 +1681,7 @@ bus = &"Background Main"
 parameters/looping = true
 
 [node name="uiFadeOverlay" type="ColorRect" parent="uiLayer/uiMenu"]
+visible = false
 texture_filter = 6
 layout_mode = 1
 anchors_preset = 15
@@ -1567,12 +1856,6 @@ offset_bottom = -106.0
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="uiMSKSFX" parent="uiLayer/uiMenu/uiLocSect/uiSSK" index="0"]
-stream = SubResource("AudioStreamOggVorbis_2e1nk")
-
-[node name="uiLocMSKBtn" parent="uiLayer/uiMenu/uiLocSect/uiSSK" index="5"]
-mouse_filter = 2
-
 [node name="uiBtnGrp" type="Control" parent="uiLayer/uiMenu"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -1615,6 +1898,7 @@ offset_left = 24.0
 offset_top = -144.0
 offset_bottom = -112.0
 grow_vertical = 0
+tooltip_text = "Same as Change Mindscape, but with the configurations for a custom, personalized one."
 mouse_filter = 2
 
 [node name="uiExploStartBtn" parent="uiLayer/uiMenu/uiBtnGrp" instance=ExtResource("6_sdq32")]
@@ -1645,6 +1929,7 @@ offset_right = -1680.0
 offset_bottom = -152.0
 grow_horizontal = 0
 grow_vertical = 0
+tooltip_text = "Create a randomly generated mindscape. Nothing to do with the game, just for aesthetics."
 mouse_filter = 2
 
 [node name="uiMenuSettings" parent="uiLayer/uiMenu/uiBtnGrp" instance=ExtResource("12_hxl7m")]
@@ -1681,7 +1966,72 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_y4q1h")
 
+[node name="uiArcDesc" type="Label" parent="uiLayer/uiMenu/uiArcSelect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -768.0
+offset_top = 312.0
+offset_right = -128.0
+offset_bottom = 834.0
+grow_horizontal = 0
+text = "To see is to believe. 
+
+Would you open your eyes to face the hardships? Or have them closed instead to feel them? The start of the journey can and will be hard. 
+
+But, the question is, are you willing to face it? 
+
+This description doesn't really say something about what will you experience when you press play, the same about life. We don't know what and when something happens. But, the bottomline is that we are prepared to face it.
+
+Join us at the Journey of the Starlit Veil: Chapter 1, where memories once fogged and blurred become crystal clear."
+label_settings = SubResource("LabelSettings_smd8e")
+autowrap_mode = 2
+visible_characters_behavior = 1
+
+[node name="uiArcDescTitle" type="Label" parent="uiLayer/uiMenu/uiArcSelect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -768.0
+offset_top = 128.0
+offset_right = -128.0
+offset_bottom = 206.0
+grow_horizontal = 0
+text = "First Arc"
+label_settings = SubResource("LabelSettings_0fjo3")
+autowrap_mode = 2
+visible_characters_behavior = 1
+
+[node name="uiArcDescTitle2" type="Label" parent="uiLayer/uiMenu/uiArcSelect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -768.0
+offset_top = 208.0
+offset_right = -128.0
+offset_bottom = 262.0
+grow_horizontal = 0
+text = "Chapter 1"
+label_settings = SubResource("LabelSettings_dqlot")
+autowrap_mode = 2
+visible_characters_behavior = 1
+
+[node name="uiStartArc" parent="uiLayer/uiMenu/uiArcSelect" instance=ExtResource("17_40fai")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -768.0
+offset_top = -216.0
+offset_right = -128.0
+offset_bottom = -152.0
+grow_horizontal = 0
+grow_vertical = 0
+
 [connection signal="_montage" from="." to="." method="_montageGame"]
 [connection signal="timeout" from="uiLayer/uiMenu/uiAnim/uiInactivity" to="." method="_on_ui_inactivity_timeout"]
-
-[editable path="uiLayer/uiMenu/uiLocSect/uiSSK"]

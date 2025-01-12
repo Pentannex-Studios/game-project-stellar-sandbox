@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bsxxkf84jip44"]
+[gd_scene load_steps=18 format=3 uid="uid://bsxxkf84jip44"]
 
 [ext_resource type="Texture2D" uid="uid://brhmtrddh4sp1" path="res://assets/external/png/fx/vignette.png" id="1_n1sfr"]
 [ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/cutscenes/introduction/introduction.gd" id="1_whe7n"]
 [ext_resource type="FontFile" uid="uid://b7v8fse3db07l" path="res://assets/external/font/RobotoCondensed-LightItalic.ttf" id="2_2jopy"]
-[ext_resource type="Script" path="res://assets/godot/pck/stories/arcOne/parallaxMngr.gd" id="3_u5h6k"]
 [ext_resource type="Texture2D" uid="uid://djoga57kja45e" path="res://assets/godot/pck/stories/arcOne/cutsceneImages/building.png" id="4_qgwrb"]
 [ext_resource type="Texture2D" uid="uid://gny70qw4180d" path="res://assets/godot/pck/stories/arcOne/cutsceneImages/ledge.png" id="5_rsag0"]
 [ext_resource type="Texture2D" uid="uid://cuqrfjwolyd2u" path="res://assets/godot/pck/stories/arcOne/cutsceneImages/ledge2.png" id="6_23x8r"]
@@ -517,19 +516,14 @@ layer = 0
 
 [node name="background" type="Sprite2D" parent="intro"]
 modulate = Color(0.0156863, 0, 0.0588235, 0)
+position = Vector2(960, 540)
+scale = Vector2(3, 3)
 texture = SubResource("GradientTexture2D_ayras")
-centered = false
 
 [node name="intro" type="Node2D" parent="intro"]
 visible = false
 
-[node name="buildings" type="Node2D" parent="intro/intro" node_paths=PackedStringArray("l5", "l4", "l3", "l2", "l1")]
-script = ExtResource("3_u5h6k")
-l5 = NodePath("layer5")
-l4 = NodePath("layer4")
-l3 = NodePath("layer3")
-l2 = NodePath("layer2")
-l1 = NodePath("layer1")
+[node name="buildings" type="Node2D" parent="intro/intro"]
 
 [node name="layer5" type="Node2D" parent="intro/intro/buildings"]
 modulate = Color(0.0155492, 1.86161e-05, 0.0612189, 1)
@@ -843,8 +837,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = -512.0
+offset_top = -520.0
+offset_right = 2458.0
+offset_bottom = 1532.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3

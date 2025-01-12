@@ -72,7 +72,6 @@ limits/debugger/max_chars_per_second=2147483647
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"
 driver/threads/thread_model=2
 textures/lossless_compression/force_png=true
 textures/default_filters/use_nearest_mipmap_filter=true

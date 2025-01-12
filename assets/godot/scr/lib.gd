@@ -28,8 +28,8 @@ extends Node
 # Space sector configs.
 var MSK: String = "[|179645356571623424|ce624280|ee308280|00000000|356cfd80|2|]"
 
-const minSpawnSeed: int = -9223372036854775807
-const maxSpawnSeed: int = 9223372036854775807
+const minSpawnSeed: int = -1500000
+const maxSpawnSeed: int = 1500000
 const sectSize: int = 1920
 const sectSizeMult: int = 5 # Scale multiplier for the space bg.
 const gasColorMinRnge: float = 0.01

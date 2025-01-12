@@ -4,7 +4,7 @@ extends Node2D
 @onready var _spacePhenoGen: Node2D = get_node("spacePhenoGen")
 
 #------------------------------------------------------------------------------#
-var _spaceSectRandGen: bool = true
+var _spaceSectRandGen: bool = false
 
 var _spaceSectKey: String = "[|{0}|{1}|{2}|{3}|{4}|{5}|]"
 var _spaceSectSeed: int
