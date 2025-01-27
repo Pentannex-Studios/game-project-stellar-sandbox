@@ -17,6 +17,11 @@ extends Node2D
 
 @onready var _uiInactivityTimer: Timer = get_node("uiLayer/uiMenu/uiAnim/uiInactivity")
 
+# Arc related.
+@onready var _uiArcLoaded: Control = get_node("uiLayer/uiMenu/uiArcSelect/uiArcLoaded")
+@onready var _uiNoArc: Control = get_node("uiLayer/uiMenu/uiArcSelect/uiNoArc")
+@onready var _uiLoadArcBtn: Button = get_node("uiLayer/uiMenu/uiArcSelect/uiArcLoaded/uiStartArc")
+
 # Locate Sector buttons and inputs.
 @onready var _uiSSK: LineEdit = get_node("uiLayer/uiMenu/uiLocSect/uiSSK")
 
@@ -99,8 +104,17 @@ func _proceedToMindscape() -> void:
 	else:
 		_startArc(1)
 	
-	await _uiAnim.animation_finished
+	# Show different screen if there's arc loaded.
+	if lib.available_arcs:
+		_uiLoadArcBtn.set_disabled(false)
+		_uiArcLoaded.set_visible(true)
+		_uiNoArc.set_visible(false)
+	else:
+		_uiNoArc.set_visible(true)
+		_uiArcLoaded.set_visible(false)
+		_uiLoadArcBtn.set_disabled(true)
 	
+	await _uiAnim.animation_finished
 	_menuCamChanged = false
 
 # Generate new sector.
@@ -181,6 +195,9 @@ func editCursorVisibility(showCursor: bool) -> void:
 	lib.editCursorVisibility(showCursor)
 
 #------------------------------------------------------------------------------#
-func startArc() -> void:
-	# Call a signal to sector manager. To start the arc.
-	print("Starting an arc...")
+# Starting arc.
+func _on_ui_start_arc() -> void:
+	if lib.arc_loaded:
+		_uiAnim.play("startArc")
+	else:
+		pass

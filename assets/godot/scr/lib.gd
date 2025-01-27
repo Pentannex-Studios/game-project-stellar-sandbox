@@ -38,8 +38,10 @@ const gasColorAlpha: float = 0.5
 
 # Gameplay.
 var gameplay_enabled: bool = false
-
-
+var arc_loaded: bool = false
+var available_arcs: Dictionary = {
+	
+}
 
 
 

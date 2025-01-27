@@ -5,7 +5,7 @@
 
 extends Node2D
 #------------------------------------------------------------------------------#
-# Nodes.
+
 
 #------------------------------------------------------------------------------#
 func _ready() -> void:
@@ -17,5 +17,4 @@ func _ready() -> void:
 func loadMindscape() -> void:
 	get_node("mindscape/spaceSectorManager").loadSpaceSector()
 
-func loadGameArc(arc: Object) -> void:
-	get_node("spaceGameArc").loadGameArc(arc)
+#------------------------------------------------------------------------------#

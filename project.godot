@@ -14,7 +14,7 @@ config/name="The Journey to the Starlit Veil"
 config/version="0.1"
 run/main_scene="res://assets/godot/scn/scnManager.tscn"
 config/use_custom_user_dir=true
-config/custom_user_dir_name="userdata"
+config/custom_user_dir_name="data"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0.0196078, 0.0196078, 0.0196078, 1)
 boot_splash/show_image=false
@@ -41,6 +41,11 @@ window/size/window_height_override=540
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 mouse_cursor/custom_image="res://assets/external/png/fx/cursor.png"
+
+[editor]
+
+naming/scene_name_casing=1
+naming/script_name_casing=1
 
 [global_group]
 

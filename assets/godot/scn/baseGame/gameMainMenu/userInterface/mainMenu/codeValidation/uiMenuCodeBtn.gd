@@ -12,12 +12,14 @@ signal locateMindscape
 #------------------------------------------------------------------------------#
 # Play hover animation button when mouse entered button.
 func _whenMouseEnteredButton() -> void:
-	uiMenuCodeValidationAnimation.play("uiMenuLocateHovered")
-	uiMenuCodeValidationSFX.play()
+	if not disabled:
+		uiMenuCodeValidationAnimation.play("uiMenuLocateHovered")
+		uiMenuCodeValidationSFX.play()
 
 # Play hover animation button when mouse exits button.
 func _whenMouseExitedButton() -> void:
-	uiMenuCodeValidationAnimation.play_backwards("uiMenuLocateHovered")
+	if not disabled:
+		uiMenuCodeValidationAnimation.play_backwards("uiMenuLocateHovered")
 
 # Emit signal to main menu manager.
 func _whenMousePressed() -> void:

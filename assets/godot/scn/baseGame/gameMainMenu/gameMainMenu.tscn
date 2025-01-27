@@ -13,20 +13,12 @@
 [ext_resource type="Shader" path="res://assets/godot/tres/shaders/blur.gdshader" id="8_23e0w"]
 [ext_resource type="PackedScene" uid="uid://eo7j2g77qayc" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/exit/uiMenuExit.tscn" id="8_eiuwx"]
 [ext_resource type="PackedScene" uid="uid://cmpem1a1hrxi5" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/settings/uiMenuSettings.tscn" id="12_hxl7m"]
-[ext_resource type="FontFile" uid="uid://bkedubf4jve6l" path="res://assets/external/font/RobotoCondensed-Regular.ttf" id="14_3qfcm"]
 [ext_resource type="FontFile" uid="uid://b3f6o2t3fsb05" path="res://assets/external/font/RobotoCondensed-Light.ttf" id="14_fe508"]
 [ext_resource type="FontFile" uid="uid://ksb203nbyt27" path="res://assets/external/font/RobotoCondensed-Bold.ttf" id="15_k7wqe"]
 [ext_resource type="PackedScene" uid="uid://bld11nynf8k1" path="res://assets/godot/scn/baseGame/gameMainMenu/userInterface/mainMenu/start/uiStartArc.tscn" id="17_40fai"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p0vh3"]
 animation = &"RESET"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mysp8"]
-animation = &"toMainMenu"
-play_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_32wrj"]
-animation = &"toMainMenu"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ruwj2"]
 animation = &"uiLogoShowcaseAnimation"
@@ -53,16 +45,12 @@ states/End/position = Vector2(953.333, 88.0494)
 states/RESET/node = SubResource("AnimationNodeAnimation_p0vh3")
 states/RESET/position = Vector2(210.667, 89.4074)
 states/Start/position = Vector2(60, 89.3333)
-states/toMainMenu/node = SubResource("AnimationNodeAnimation_32wrj")
-states/toMainMenu/position = Vector2(849.428, 172.667)
-"states/toMainMenu 2/node" = SubResource("AnimationNodeAnimation_mysp8")
-"states/toMainMenu 2/position" = Vector2(766.094, 264)
 states/uiLogoShowcaseAnimation/node = SubResource("AnimationNodeAnimation_ruwj2")
 states/uiLogoShowcaseAnimation/position = Vector2(436, 87.9588)
 states/uiMainMenuAnimation/node = SubResource("AnimationNodeAnimation_tbct6")
 states/uiMainMenuAnimation/position = Vector2(714.667, 87.8765)
 transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_dsdmg"), "RESET", "uiLogoShowcaseAnimation", SubResource("AnimationNodeStateMachineTransition_exm2w"), "uiLogoShowcaseAnimation", "uiMainMenuAnimation", SubResource("AnimationNodeStateMachineTransition_si82f"), "uiMainMenuAnimation", "End", SubResource("AnimationNodeStateMachineTransition_ra0ku")]
-graph_offset = Vector2(-61.9058, 63)
+graph_offset = Vector2(274.185, -2.48379)
 
 [sub_resource type="Animation" id="Animation_h3ajy"]
 length = 0.001
@@ -93,79 +81,79 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:disabled")
+tracks/2/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiTriggerWarning:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [false]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:disabled")
+tracks/3/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiTransText:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [false]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiTriggerWarning:modulate")
+tracks/4/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:mouse_filter")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [2]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiTransText:modulate")
+tracks/5/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [2]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:disabled")
+tracks/6/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:mouse_filter")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [false]
+"values": [2]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:disabled")
+tracks/7/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:mouse_filter")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [false]
+"values": [2]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:mouse_filter")
+tracks/8/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -177,55 +165,55 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:mouse_filter")
+tracks/9/path = NodePath("uiLayer/uiMenu/uiLocSect:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:mouse_filter")
+tracks/10/path = NodePath("uiLayer/uiMenu/uiLoading:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2]
+"values": [false]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:mouse_filter")
+tracks/11/path = NodePath("uiLayer/uiMenu/uiLoading:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
+tracks/12/path = NodePath("uiLayer/uiMenu/uiBtnGrp:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("uiLayer/uiMenu/uiLocSect:modulate")
+tracks/13/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiLabel:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -237,115 +225,115 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("uiLayer/uiMenu/uiLoading:visible")
+tracks/14/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiGodotIcon:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [false]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("uiLayer/uiMenu/uiLoading:modulate")
+tracks/15/path = NodePath("uiLayer/uiMenu/uiBgPlayer:playing")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [false]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("uiLayer/uiMenu/uiBtnGrp:modulate")
+tracks/16/path = NodePath("uiLayer/uiMenu/uiBgPlayer:volume_db")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [-10.0]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiLabel:modulate")
+tracks/17/path = NodePath("uiLayer/uiMenu/uiFadeOverlay:color")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("uiLayer/uiMenu/uiLogoGrp/uiGodotIcon:modulate")
+tracks/18/path = NodePath("uiCamera:enabled")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [true]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("uiLayer/uiMenu/uiBgPlayer:playing")
+tracks/19/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:mouse_filter")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [2]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("uiLayer/uiMenu/uiBgPlayer:volume_db")
+tracks/20/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:mouse_filter")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-10.0]
+"update": 1,
+"values": [2]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("uiLayer/uiMenu/uiFadeOverlay:color")
+tracks/21/path = NodePath("uiLayer/uiMenu:modulate")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.0196078, 0.0196078, 0.0196078, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("uiCamera:enabled")
+tracks/22/path = NodePath("uiLayer/uiMenu/uiArcSelect:modulate")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:mouse_filter")
+tracks/23/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiArcLoaded/uiStartArc:mouse_filter")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -357,86 +345,62 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:disabled")
+tracks/24/path = NodePath("uiLayer/uiMenu/uiArcSelect:mouse_filter")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(-0.0333333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [2]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:mouse_filter")
+tracks/25/path = NodePath("uiLayer/uiMenu:process_mode")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [0]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:disabled")
+tracks/26/path = NodePath("uiCamera:process_mode")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [0]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("uiLayer/uiMenu:modulate")
+tracks/27/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiNoArc/fxBlur:material:shader_parameter/blur_amount")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [3.0]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("uiLayer/uiMenu/uiArcSelect:modulate")
+tracks/28/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiNoArc/fxBlur:material:shader_parameter/mix_amount")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/29/type = "value"
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiStartArc:mouse_filter")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-tracks/30/type = "value"
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/path = NodePath("uiLayer/uiMenu/uiArcSelect:mouse_filter")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/keys = {
-"times": PackedFloat32Array(-0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
+"values": [0.9]
 }
 
 [sub_resource type="Animation" id="Animation_cwcnj"]
@@ -717,6 +681,87 @@ tracks/9/keys = {
 "values": [0, 2]
 }
 
+[sub_resource type="Animation" id="Animation_7a204"]
+resource_name = "startArc"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("uiLayer/uiMenu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("uiLayer/uiMenu:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("uiCamera:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("uiCamera:process_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 4]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"startArc"
+}, {
+"args": [false],
+"method": &"editCursorVisibility"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("uiLayer/uiMenu/uiFadeOverlay:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3, 1, 1.36667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.054902, 0.0235294, 0.0980392, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_u5j4h"]
 resource_name = "toMainMenu"
 length = 2.0
@@ -751,8 +796,8 @@ tracks/2/path = NodePath("uiLayer/uiMenu/uiBtnGrp:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.0333334, 1.86667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.5, 0.5),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
@@ -795,146 +840,98 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:disabled")
+tracks/6/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:mouse_filter")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.0666667, 0.266667),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [true, false]
+"update": 1,
+"values": [2, 0]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:disabled")
+tracks/7/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:mouse_filter")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.0666667, 0.266667),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [true, false]
+"update": 1,
+"values": [2, 0]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:disabled")
+tracks/8/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.0666667, 0.266667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:disabled")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0.0666667, 0.266667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [true, false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:mouse_filter")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [2, 0]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:disabled")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0.0666666, 0.266667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:mouse_filter")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [2, 0]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0, 2]
 }
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:disabled")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0.1, 0.266667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("uiLayer/uiMenu/uiArcSelect:modulate")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0.0666667, 2),
-"transitions": PackedFloat32Array(1, 1),
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("uiLayer/uiMenu/uiArcSelect:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.5, 0.5),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiStartArc:mouse_filter")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiArcLoaded/uiStartArc:mouse_filter")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0.0333333, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 2]
 }
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("uiLayer/uiMenu/uiArcSelect:mouse_filter")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0, 1.96667),
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("uiLayer/uiMenu/uiArcSelect:mouse_filter")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [1, 2]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiNoArc/fxBlur:material:shader_parameter/blur_amount")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.085, 0.085),
+"update": 0,
+"values": [3.0, 9.5e-08]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiNoArc/fxBlur:material:shader_parameter/mix_amount")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [0.9, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_oayup"]
@@ -1039,142 +1036,70 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiNewSectGenBtn:disabled")
+tracks/8/path = NodePath("uiLayer/uiMenu/uiBgPlayer:volume_db")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [false, true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiExploStartBtn:disabled")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [false, true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiLocSectBtn:disabled")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [false, true]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuExit:disabled")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [false, true]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("uiLayer/uiMenu/uiBgPlayer:volume_db")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
 "times": PackedFloat32Array(0, 1, 19.0333, 20.0333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [-10.0, -80.0, -80.0, -10.0]
 }
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("uiLayer/uiMenu/uiFadeOverlay:color")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("uiLayer/uiMenu/uiFadeOverlay:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0, 2, 19.0334, 19.8667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
 }
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:mouse_filter")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:mouse_filter")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [2]
 }
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("uiLayer/uiMenu/uiBtnGrp/uiMenuSettings:disabled")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:mouse_filter")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:mouse_filter")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [2]
 }
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK:mouse_filter")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [2]
 }
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("uiLayer/uiMenu/uiLocSect/uiSSK/uiLocMSKBtn:disabled")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/19/type = "method"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath(".")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
 "times": PackedFloat32Array(0.1, 19.9333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -1185,41 +1110,29 @@ tracks/19/keys = {
 "method": &"editCursorVisibility"
 }]
 }
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("uiLayer/uiMenu/uiArcSelect:modulate")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("uiLayer/uiMenu/uiArcSelect:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
 "times": PackedFloat32Array(20, 22),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiStartArc:mouse_filter")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("uiLayer/uiMenu/uiArcSelect/uiArcLoaded/uiStartArc:mouse_filter")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(0, 19.9333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 0]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("uiLayer/uiMenu/uiArcSelect:mouse_filter")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0, 19.9333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [2, 1]
 }
 
 [sub_resource type="Animation" id="Animation_kvhxs"]
@@ -1579,6 +1492,7 @@ _data = {
 "RESET": SubResource("Animation_h3ajy"),
 "generateNewSectorFade": SubResource("Animation_cwcnj"),
 "locateSectorOverlay": SubResource("Animation_pjph0"),
+"startArc": SubResource("Animation_7a204"),
 "toMainMenu": SubResource("Animation_u5j4h"),
 "travelToSector": SubResource("Animation_oayup"),
 "uiFadeInactivity": SubResource("Animation_kvhxs"),
@@ -1590,11 +1504,26 @@ _data = {
 font = ExtResource("3_bsvqu")
 font_size = 25
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6yeah"]
-shader = ExtResource("8_23e0w")
+[sub_resource type="Shader" id="Shader_vcs42"]
+code = "shader_type canvas_item;
+
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
+
+uniform float blur_amount : hint_range(-2.0, 10.0);
+uniform float mix_amount : hint_range(0.0, 1.0);
+uniform vec4 color_over : source_color;
+
+void fragment() {
+	vec4 blurred = textureLod(SCREEN_TEXTURE, SCREEN_UV, blur_amount);
+	vec4 fin = mix(blurred, color_over, mix_amount);
+	COLOR = fin;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_er14b"]
+shader = SubResource("Shader_vcs42")
 shader_parameter/blur_amount = 3.0
 shader_parameter/mix_amount = 0.0
-shader_parameter/color_over = Color(0.635294, 0.00784314, 1, 1)
+shader_parameter/color_over = Color(0.0801228, 8.56547e-05, 0.151563, 1)
 
 [sub_resource type="Gradient" id="Gradient_ikfes"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.956863)
@@ -1606,6 +1535,16 @@ height = 1080
 use_hdr = true
 fill_from = Vector2(1, 0.0257143)
 fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6yeah"]
+shader = ExtResource("8_23e0w")
+shader_parameter/blur_amount = 3.0
+shader_parameter/mix_amount = 0.9
+shader_parameter/color_over = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_smd8e"]
+font = ExtResource("14_fe508")
+font_size = 25
 
 [sub_resource type="Gradient" id="Gradient_g5nya"]
 offsets = PackedFloat32Array(0, 0.38806, 1)
@@ -1619,16 +1558,12 @@ use_hdr = true
 fill_from = Vector2(0, 1)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_smd8e"]
-font = ExtResource("14_fe508")
-font_size = 25
-
 [sub_resource type="LabelSettings" id="LabelSettings_0fjo3"]
 font = ExtResource("15_k7wqe")
 font_size = 65
 
 [sub_resource type="LabelSettings" id="LabelSettings_dqlot"]
-font = ExtResource("14_3qfcm")
+font = ExtResource("14_fe508")
 font_size = 40
 
 [node name="uiMenu" type="Node2D" groups=["mainMenu"]]
@@ -1681,7 +1616,6 @@ bus = &"Background Main"
 parameters/looping = true
 
 [node name="uiFadeOverlay" type="ColorRect" parent="uiLayer/uiMenu"]
-visible = false
 texture_filter = 6
 layout_mode = 1
 anchors_preset = 15
@@ -1771,9 +1705,9 @@ offset_right = 357.5
 offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "The Journey to the Starlit Veil explores themes of mental health, emotional struggles, and self-reflection. This story involves depictions of loneliness, self-doubt, and moments of personal hardship that may be intense or unsettling for you.
+text = "In The Journey to the Starlit Veil, you will explore a surreal world of memories and emotions. Some moments may feel heavy or challenging as you reflect on the past and face difficult choices.
 
-Please take your time, engage at your own pace, and feel free to step away if needed. Your well-being comes first."
+Please move forward at your own pace and feel free to take breaks as needed. The journey is yours to shape. "
 label_settings = SubResource("LabelSettings_fna74")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1832,7 +1766,7 @@ mouse_filter = 1
 [node name="fxBlur" type="ColorRect" parent="uiLayer/uiMenu/uiLocSect"]
 z_index = -1
 texture_filter = 6
-material = SubResource("ShaderMaterial_6yeah")
+material = SubResource("ShaderMaterial_er14b")
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
 anchors_preset = 15
@@ -1955,7 +1889,68 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="overlay" type="TextureRect" parent="uiLayer/uiMenu/uiArcSelect"]
+[node name="uiNoArc" type="Control" parent="uiLayer/uiMenu/uiArcSelect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="fxBlur" type="ColorRect" parent="uiLayer/uiMenu/uiArcSelect/uiNoArc"]
+z_index = -1
+texture_filter = 6
+material = SubResource("ShaderMaterial_6yeah")
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0.0240298, 0.0240298, 0.0240298, 1)
+
+[node name="uiNoArc" type="Label" parent="uiLayer/uiMenu/uiArcSelect/uiNoArc"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -172.5
+offset_right = 320.0
+offset_bottom = 172.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "It seems that there's no stories loaded... 
+
+The files might be corrupted or non-existent. Try checking the game folders and see if there's a folder named \"stories\".
+
+Possible case scenarios are:
+1) There's no folder called stories... It's okay, you can just reinstall the game.
+
+2) The stories inside the folder are corrupted or tampered. "
+label_settings = SubResource("LabelSettings_smd8e")
+autowrap_mode = 2
+visible_characters_behavior = 1
+
+[node name="uiArcLoaded" type="Control" parent="uiLayer/uiMenu/uiArcSelect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="overlay" type="TextureRect" parent="uiLayer/uiMenu/uiArcSelect/uiArcLoaded"]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 15
@@ -1966,7 +1961,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_y4q1h")
 
-[node name="uiArcDesc" type="Label" parent="uiLayer/uiMenu/uiArcSelect"]
+[node name="uiArcDesc" type="Label" parent="uiLayer/uiMenu/uiArcSelect/uiArcLoaded"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -1976,20 +1971,20 @@ offset_top = 312.0
 offset_right = -128.0
 offset_bottom = 834.0
 grow_horizontal = 0
-text = "To see is to believe. 
+text = "To see is to believe.
 
-Would you open your eyes to face the hardships? Or have them closed instead to feel them? The start of the journey can and will be hard. 
+Would you open your eyes to face life's challenges, or keep them closed to simply endure them? The journey ahead won't be easy, but it’s one we all must take.
 
-But, the question is, are you willing to face it? 
+This description doesn’t reveal what lies ahead when you press play—much like life itself. We never truly know what’s coming or when. 
 
-This description doesn't really say something about what will you experience when you press play, the same about life. We don't know what and when something happens. But, the bottomline is that we are prepared to face it.
+Yet, the question remains: are you ready to face it?
 
-Join us at the Journey of the Starlit Veil: Chapter 1, where memories once fogged and blurred become crystal clear."
+Join us in The Journey of the Starlit Veil: Chapter 1, where memories once shrouded in fog and uncertainty begin to take shape, becoming crystal clear."
 label_settings = SubResource("LabelSettings_smd8e")
 autowrap_mode = 2
 visible_characters_behavior = 1
 
-[node name="uiArcDescTitle" type="Label" parent="uiLayer/uiMenu/uiArcSelect"]
+[node name="uiArcDescTitle" type="Label" parent="uiLayer/uiMenu/uiArcSelect/uiArcLoaded"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -2004,7 +1999,7 @@ label_settings = SubResource("LabelSettings_0fjo3")
 autowrap_mode = 2
 visible_characters_behavior = 1
 
-[node name="uiArcDescTitle2" type="Label" parent="uiLayer/uiMenu/uiArcSelect"]
+[node name="uiArcDescTitle2" type="Label" parent="uiLayer/uiMenu/uiArcSelect/uiArcLoaded"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -2019,7 +2014,7 @@ label_settings = SubResource("LabelSettings_dqlot")
 autowrap_mode = 2
 visible_characters_behavior = 1
 
-[node name="uiStartArc" parent="uiLayer/uiMenu/uiArcSelect" instance=ExtResource("17_40fai")]
+[node name="uiStartArc" parent="uiLayer/uiMenu/uiArcSelect/uiArcLoaded" instance=ExtResource("17_40fai")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -2032,6 +2027,8 @@ offset_right = -128.0
 offset_bottom = -152.0
 grow_horizontal = 0
 grow_vertical = 0
+disabled = true
 
 [connection signal="_montage" from="." to="." method="_montageGame"]
 [connection signal="timeout" from="uiLayer/uiMenu/uiAnim/uiInactivity" to="." method="_on_ui_inactivity_timeout"]
+[connection signal="startArc" from="uiLayer/uiMenu/uiArcSelect/uiArcLoaded/uiStartArc" to="." method="_on_ui_start_arc"]

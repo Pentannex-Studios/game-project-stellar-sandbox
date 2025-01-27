@@ -12,14 +12,16 @@ signal startArc
 #------------------------------------------------------------------------------#
 # Play hover animation button when mouse entered button.
 func _whenMouseEnteredButton() -> void:
-	uiMenuStartAnimation.play("uiMenuStartExplorationHovered")
-	uiMenuStartSFX.play()
+	if not disabled:
+		uiMenuStartAnimation.play("uiMenuStartExplorationHovered")
+		uiMenuStartSFX.play()
 
 # Play hover animation button when mouse exits button.
 func _whenMouseExitedButton() -> void:
-	uiMenuStartAnimation.play_backwards("uiMenuStartExplorationHovered")
-	await uiMenuStartAnimation.animation_finished
-	uiMenuStartAnimation.play("uiMenuStartHighlight")
+	if not disabled:
+		uiMenuStartAnimation.play_backwards("uiMenuStartExplorationHovered")
+		await uiMenuStartAnimation.animation_finished
+		uiMenuStartAnimation.play("uiMenuStartHighlight")
 
 # Emit signal to main menu manager.
 func _whenMousePressed() -> void:
